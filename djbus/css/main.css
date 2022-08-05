@@ -67,6 +67,10 @@ header nav ul li a {
     background-repeat: no-repeat;
     height: 800px;
 }
+.visual h2 {
+    display: none; 
+    /* 해당 태그를 사용하지 않은 것처럼 숨김 - 공간을 차지하지 않음 */
+}
 .visual strong {
     display: block;
     /* strong은 인라인 태그라 margin 적용이 안되서 block 요소로 변경 */
