@@ -1,0 +1,110 @@
+/* main.css에 default.css 삽입 - 호출 */
+@import url(default.css);
+
+.category .tit {
+    color: #1D1D1D;
+}
+.category .tit strong {
+    display: block;
+    margin: 121px 0 0 0;
+    font-weight: 700;
+}
+.category .tit h2 {
+    margin: 0 0 25px 0;
+    line-height: 1.4; /* strong과 h2 사이의 행간 때문에 발생한 여백 삭제 */
+    font-size: 45px;
+    font-weight: 300;
+}
+.category ul li {
+    float: left;
+    width: 240px;
+    margin: 0 20px 0 0;
+}
+/* li 중에서 마지막 li를 선택 */
+.category ul li:last-child {
+    margin-right: 0;
+}
+.category ul li a {
+    display: block;
+}
+.category ul li a img {
+    width: 100%;
+    border: 1px solid rgba(204,204,204,0.5);
+    box-sizing: border-box;
+}
+.category ul li a strong {
+    display: block;
+    margin: 5px 0 0 0;
+    font-weight: 400;
+}
+@media screen and (max-width:450px){
+    .category .tit strong {
+        margin: 42px 0 0 0;
+    }
+    .category .tit h2 {
+        font-size: 30px;
+    }
+    .category ul li {
+        width: 48%;
+        margin: 0 4% 0 0;
+    }
+    .category ul li:nth-child(2), .category ul li:nth-child(4) {
+        margin-right: 0;
+    }
+    .category ul li:last-child {
+        display: none;
+    }
+    .category ul li a img {
+        width: 100%;
+    }
+    .category ul li a strong {
+        display: block;
+        margin: 0 0 18px 0;
+    }
+} /* media 종료 */
+
+.network {
+    height: 695px;
+    margin: 202px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+}
+.network h2 {
+    padding: 224px 0 0 0;
+    line-height: 1;
+    font-size: 50px;
+    font-weight: 700;
+}
+.network p {
+    margin: 44px 0 67px 0;
+}
+.network a {
+    display: inline-block;
+    padding: 16px 27px 15px 27px;
+    margin: 0 14px 0 14px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 12px;
+}
+
+@media screen and (max-width:450px) {
+    .network {
+        height: auto;
+        padding: 0 0 70px 0;
+        margin: 37px 0 0 0;
+    }
+    .network h2 {
+        padding: 72px 0 0 0;
+        font-size: 30px;
+    }
+    .network p {
+        margin: 18px 0 38px 0;
+    }
+    .network a {
+        padding: 9px 19px 10px 19px;
+        margin: 0 5px;
+    }
+}  
