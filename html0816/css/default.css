@@ -1,6 +1,6 @@
-@charset "UTF-8"
-
-/* 본고딕 폰트 스타일 css 삽입*/
+@charset "UTF-8";
+    
+/* 본고딕 폰트 스타일 css 삽입 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap');
 
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
