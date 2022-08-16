@@ -1,0 +1,94 @@
+@import url('default.css');
+
+.bus h2 {
+    text-align: center;
+    margin: 80px 0 20px 0;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.bus ul {
+    margin: 20px 0 82px 0;
+}
+.bus ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.bus ul li:last-child {
+    margin-right: 0;
+}
+.bus ul li a {
+    display: block;
+}
+.bus ul li img {
+    margin: 20px 0 10px 0;
+}
+.bus ul li strong {
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.bus ul li p { 
+    display: block;
+}
+.tech {
+    margin: 80px 0 0 0;
+    background-color: #F4F4F4;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tech h2 {
+    text-align: center;
+    padding: 80px 0 20px 0;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.tech ul li {
+    float: left;
+}
+.tech ul li {
+    float: left;
+    margin: 0 40px 0 0;
+}
+
+.tech ul li:last-child {
+    margin-right: 0;
+}
+
+.tech ul li.tech01 a {
+    background-image: url(../images/tech01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tech ul li.tech02 a {
+    background-image: url(../images/tech02.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tech ul li a {
+    text-align: center;
+    display: block;
+    width: 620px;
+    height: 514px;
+    color: #ffffff;
+}
+
+.tech ul li a strong {
+    display: block;
+    padding: 195px 0 10px 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+.tech ul li a span {
+    display: block;
+    padding: 8px 0 0 0;
+    font-size: 15px;
+    font-weight: 400;
+}
