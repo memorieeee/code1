@@ -1,0 +1,258 @@
+@import url(default.css);
+
+.biz h2 {
+    margin: 100px 0 55px 0;
+    color: #1D1D1D;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.biz ul li {
+    float: left;
+    width: 33.33%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.biz ul li.plant {
+    background-image: url(../images/biz01.png);
+}
+.biz ul li.infra {
+    background-image: url(../images/biz02.png);
+}
+.biz ul li.building {
+    background-image: url(../images/biz03.png);
+}
+.biz ul li a {
+    padding: 380px 0 0 50px;
+    display: block;
+    height: 587px;
+    color: #fff;
+}
+.biz ul li a .tit {
+    display: block;
+    margin: 0 0 22px 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+.biz ul li a .tit span {
+    /* pc모드에서 줄바꿈을 주기 위해 */
+    display: block;
+}
+.biz ul li a .sub {
+    display: block;
+    margin-left: 3px;
+    font-size: 15px; 
+}
+
+@media screen and (max-width:640px){
+    .biz h2 {
+        margin: 22px 0 20px 0;
+        font-size: 16px;
+    }
+    .biz ul li {
+        float: none;
+        width: auto;
+    }
+    .biz ul li a {
+    /* 내부에 쓴 글자가 2줄이 되고 3줄이 되도 디자인 스타일을 유지하기 위해서
+    높이가 아니라 위아래 padding으로 구현해야 함 */
+        height: auto;
+        padding: 45px 126px 37px 26px;
+    }
+    .biz ul li a .tit {
+        margin: 0 0 9px 0;
+        font-size: 18px;
+    }
+    .biz ul li a .tit span {
+        /* pc모드에서 줄바꿈을 주기 위해 */
+        display: inline;
+    }
+    .biz ul li a .sub {
+        margin-left: 0px;
+        font-size: 13px; 
+    }
+} /* media 종료 */
+
+.news {
+    margin: 0 0 180px 0;
+}
+.news h2 {
+    margin: 100px 0 55px 0;
+    color: #1D1D1D;
+    font-size: 30px;
+    font-weight: 700;
+}
+.news ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a .date {
+    display: block;
+    margin: 15px 0 13px 0;
+    color: #666666;
+}
+.news ul li a .date span {
+    display: inline-block; /* margin 적용 */
+}
+.news ul li a .date span:first-child {
+    position: relative; /* after의 정렬 기준점 */
+    margin-right: 19px;
+}
+.news ul li a .date span:first-child::after {
+    position: absolute;
+    right: -11px;
+    top: 4px;
+    width: 1px;
+    height: 11px;
+    background-color: #CCCCCC;
+    content: "";
+}
+.news ul li a .tit {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@media screen and (max-width:640px){
+    .news {
+        margin: 0 0 49px 0;
+    }
+    .news h2 {
+        margin: 50px 0 19px 0;
+        font-size: 16px;
+    }
+    .news ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 0 0;
+        border-top: 1px solid #DDDDDD;
+    }
+    .news ul li a {
+        padding: 15px 0 11px 0;
+    }
+    .news ul li a img {
+        display: none;
+    }
+    .news ul li a .date {
+        margin: 0 0 4px 0;
+    }
+    .news ul li a .date span:first-child {
+        margin-right: 15px;
+    }
+    .news ul li a .date span:first-child::after {
+        right: -9px;
+        top: 4px;
+        height: 9px;
+    }
+    .news ul li a .tit {
+        font-size: 14px;
+        line-height: 1.5;
+        max-height: 3em; /* 행간*줄수 */ /* 최대 2줄까지만 제목이 나오도록 설정 */
+        overflow: hidden;
+    }
+} /* media 종료 */
+
+.banner ul li {
+    float: left;
+    width: 550px;
+    height: 360px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.banner ul li:first-child {
+    width: 730px;
+    height: 720px;
+}
+.banner ul li.esg {
+    background-image: url(../images/banner01.png);
+}
+.banner ul li.customer {
+    background-image: url(../images/banner02.png);
+}
+.banner ul li.recruit {
+    background-image: url(../images/banner03.png);
+}
+.banner ul li a {
+    display: block;
+    padding: 72px 0 0 47px;
+    height: 360px;
+    color: #fff;
+}
+.banner ul li:first-child a {
+    padding: 110px 0 0 66px;
+    width: 730px;
+    height: 720px;
+}
+.banner ul li a .top {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+.banner ul li a .tit {
+    display: block;
+    margin: 18px 0 38px 0;
+    font-size: 40px;
+    font-weight: 300;
+}
+.banner ul li:first-child a .tit {
+    margin: 19px 0 58px 0;
+    font-size: 50px;
+}
+
+
+.banner ul li a .tit span {
+    display: block; /* pc에서만 줄바꿈 */
+}
+.banner ul li a .more {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+        
+    .banner ul li {
+        float: none;
+        width: auto;
+        height: auto;
+    }
+    .banner ul li:first-child {
+        width: auto;
+        height: auto;
+    }
+    .banner ul li a {
+        height: auto;
+        padding: 34px 34px 31px 40px;
+    }
+    .banner ul li:first-child a {
+        height: auto;
+        padding: 34px 34px 31px 40px;
+    }
+    .banner ul li a .top {
+        font-size: 13px;
+    }
+    .banner ul li a .tit {
+        margin: 10px 0 20px 0;
+        font-size: 20px;
+    }
+    .banner ul li:first-child a .tit {
+        margin: 10px 0 20px 0;
+        font-size: 20px;
+    }
+    .banner ul li a .tit span {
+        display: inline; 
+    }
+    .banner ul li a .more {
+        font-size: 13px;
+    }
+    
+}
