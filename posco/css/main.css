@@ -160,6 +160,9 @@
     }
 } /* media 종료 */
 
+.banner h2 {
+    display: none;
+}
 .banner ul li {
     float: left;
     width: 550px;
@@ -254,5 +257,5 @@
     .banner ul li a .more {
         font-size: 13px;
     }
-    
+
 }
