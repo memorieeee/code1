@@ -57,6 +57,17 @@ header .gnb button {
     display: none; /* 모바일 메뉴 열기 버튼 */
 }
 
+header.fixed { /* header가 고정됐을 때 jquery가 class를 추가 */
+    position: fixed;
+    background-color: #fff;
+}
+header.fixed ul li a {
+    color: #1d1d1d;
+}
+header.fixed button i {
+    color: #3d3d3d;
+}
+
 @media screen and (max-width:640px){
     header {
         height: 44px;
@@ -86,6 +97,10 @@ header .gnb button {
     }
     header .gnb button span {
         display: none;
+    }
+
+    header.fixed .gnb button i {
+        color: #1d1d1d;
     }
 
 }/* media 종료 */
@@ -159,7 +174,7 @@ header .gnb button {
     margin: 0 92px 0 0;
 }
 .biz .inner {
-    width: 458px;
+    width: 462px;
 }
 .biz h2 {
     margin: 40px 0 10px 0;
@@ -177,7 +192,7 @@ header .gnb button {
 }
 .biz .link ul li {
     float: left;
-    margin: 0 2px 2px 0;
+    margin: 2px 2px 2px 2px;
     width: 150px; 
     border-radius: 15px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
@@ -243,12 +258,13 @@ header .gnb button {
 
     .biz .link {
         position: relative;
+        left: -8px;
         overflow: auto;
         height: 61px;
     }
     .biz .link ul {
         position: absolute;
-        left: 0;
+        left: 8px;
         top: 8px;
     }
     .biz .rowgroup1 .link ul {
@@ -261,5 +277,78 @@ header .gnb button {
         width: 595px;
     }
 
+}/* media 종료 */
+
+.purpose {
+    position: relative;
+    height: 450px;
+    background: url(../images/purpose_bg.png) no-repeat center center / cover ;
+    color: #fff;
+    text-align: center;
+}
+.purpose::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    content: "";
+}
+.purpose .inner {
+    position: relative;
+    z-index: 1;
+}
+.purpose h2 {
+    padding: 116px 0 37px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.purpose h2 strong {
+    position: relative;
+}
+.purpose h2 strong::before {
+    left: -130px;
+    top: -85px;
+    content: '"';
+}
+.purpose h2 strong::after {
+    right: -125px;
+    bottom: -90px;
+    content: '"';
+}
+.purpose h2 strong::before, .purpose h2 strong::after {
+    position: absolute;
+    font-size: 160px;
+    font-weight: 700;
+    color: rgba(225,225,225,0.7)
+}
+@media screen and (max-width:640px){
+    .purpose {
+        height: auto;
+    }
+    .purpose h2 {
+        padding: 81px 0 57px 0;
+        font-size: 22px;
+    }
+    .purpose h2 strong::before {
+        left: -20px;
+        top: -50px;
+        content: '"';
+    }
+    .purpose h2 strong::after {
+        right: 40px;
+        bottom: -80px;
+        content: '"';
+    }
+    .purpose h2 strong::before, .purpose h2 strong::after {
+        font-size: 50px;
+    }
+    .purpose h2 span {
+        display: block;
+    }
+    .purpose p {
+        padding: 23px 0 54px 0;
+    }
 
 }/* media 종료 */
