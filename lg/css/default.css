@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap');
 
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p {
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p, i {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -24,6 +24,18 @@ em, address {
 /* 항목 앞에 동그라미 삭제 */
 ul, li {
     list-style: none;
+}
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit; /* 서체 상속 - button은 body에서 적용한 서체를 자동으로 상속받지 않음\
+    -form관련 태그는 다 그렇다. */
+    line-height: inherit;
+    letter-spacing: inherit;
+    cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
 }
 
 html, body {
