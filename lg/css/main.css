@@ -25,6 +25,9 @@ header h1 {
 }
 header h1 a {
     display: block;
+    width: 79px;
+    height: 35px;
+    background: url(../images/logo_w.svg) no-repeat center center / 100%;
 }
 header .gnb {
     float: left;
@@ -61,6 +64,9 @@ header.fixed { /* header가 고정됐을 때 jquery가 class를 추가 */
     position: fixed;
     background-color: #fff;
 }
+header.fixed h1 a {
+    background-image: url(../images/logo.svg);
+}
 header.fixed ul li a {
     color: #1d1d1d;
 }
@@ -75,8 +81,9 @@ header.fixed button i {
     header h1 {
         margin: 13px 0 0 0;
     }
-    header h1 img {
-        width: 40px; /* 모바일에서는 로고 사이즈 변경 */
+    header h1 a {
+        width: 40px;
+        height: 18px;
     }
     header .gnb {
         float: right;
@@ -351,4 +358,169 @@ header.fixed button i {
         padding: 23px 0 54px 0;
     }
 
+}/* media 종료 */
+
+.news {
+    margin: 150px 0 175px 0;
+}
+.news h2 {
+    display: none; 
+    /* 웹표준상 section은 반드시 heading태그를 포함해야 하기 때문에 h2를 주고 숨김처리함. */
+}
+.news ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+    box-shadow: 0 0 30px rgba(0,0,0,0.16);
+    border-radius: 30px;
+}
+
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a img {
+    border-radius: 30px 30px 0 0;
+}
+.news ul li a .cate {
+    display: block;
+    margin: 10px 25px 10px 20px;
+    font-weight: 700;
+}
+.news ul li a .tit {
+    display: block;
+    margin: 0 25px 0 20px;
+    font-size: 20px;
+    font-weight: 400;
+    /* 2줄 고정 */
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+}
+.news ul li a .date {
+    display: block;
+    margin: 22px 25px 34px 20px;
+    color: #666;
+}
+@media screen and (max-width:640px){
+    .news {
+        margin: 80px 0 127px 0;
+    }
+    .news ul li {
+        display: none;
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .news ul li:first-child {
+        display: block;
+        /* 한개의 li만 나오도록 하기 위해서 모든 li를 숨기고 첫번째 li만 남도록 함. */
+    }
+    .news ul li a img {
+        width: 100%;
+    }
+    .news ul li a .cate {
+        margin: 20px 78px 0 20px;
+    }
+    .news ul li a .tit {
+        margin: 0 78px 0 20px;
+        font-size: 16px;
+        height: auto;
+        overflow: visible;
+    }
+    .news ul li a .date {
+        margin: 0;
+        padding: 20px 78px 22px 20px;
+    }
+}/* media 종료 */
+
+footer {
+    padding: 58px 0 131px 0;
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+footer .family {
+    float: right;
+}
+footer .family button {
+    width: 150px;
+    height: 40px;
+    padding: 0 10px 0 17px ;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    /* button태그는 높이를 주면 글자가 위아래 가운데 세로정렬을 함. 
+    a였다면 padding이나 line-height로 세로정렬값을 별도로 줘야 함. */
+}
+footer .family button span {
+    float: left;
+}
+footer .family button i {
+    float: right;
+    color: #ccc;
+}
+footer .inner {
+    float: left; 
+}
+footer .fnav li {
+    position: relative;
+    float: left;
+}
+footer .fnav li.privacy {
+    font-weight: 700;
+}
+footer .fnav li::after {
+    position: absolute;
+    right: -2px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #ddd;
+    content: "";
+}
+footer .fnav li:last-child:after {
+    display: none;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 16px;
+}
+footer .fnav li:first-child a {
+    padding-left: 0;
+}
+footer .finfo {
+    margin: 36px 0 0 0;
+    color: #ccc;
+}
+footer .copyright {
+    color: #ccc;
+}
+@media screen and (max-width:640px){
+    footer {
+        padding: 38px 0 48px 0;
+    }
+    footer .family {
+        float: none;
+    }
+    footer .family button {
+        width: 139px;
+        height: 31px;
+        padding: 0 15px 0 18px ;
+    }
+    footer .inner {
+        float: none; 
+    }
+    footer .fnav li::after {
+        height: 9px;
+    }
+    footer .fnav {
+        margin: 38px 0 0 0;
+    }
+    footer .fnav li a {
+        padding: 0 14px;
+    }
+    footer .finfo {
+        margin: 16px 0 10px 0;
+    }
 }/* media 종료 */
