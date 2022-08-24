@@ -1,0 +1,154 @@
+@import url('default.css');
+
+header {
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%; /* position absolute를 주면 요소가 inline-block이 된것처럼 
+    내부에 콘텐츠가 존재하는 만큼의 넓이만 갖는다. */
+    height: 100px;
+    border-bottom: 1px solid rgba(225,225,225,0.2);
+    color: #fff;
+}
+
+header h1 {
+    float: left;    
+    margin: 38px 295px 0 0;
+}
+header h1 a {
+    display: block;
+    width: 180px;
+    height: 28.78px;
+    background: url(../images/logo_w.svg) no-repeat center center / 100%;
+    /* 로고를 영역에 꽉차게 하기 위해서 size 넓이 100% 
+    (높이는 비율에 맞게 줘야함 - 높이 안 써주면 알아서 들어감)
+    cover는 배경을 영역에 빈틈없이 메우는 것이기 때문에 로고가 짤림. */
+    font-size: 0;
+    line-height: 0;
+    /* 접근성 때문에 로고의 대체 택스트로 쓴 글자 숨기기 */
+}
+header .gnb {
+    float: left;
+    margin: 21px 0 0 0;
+}
+header .gnb button {
+    display: none /* 모바일에서만 표시 - 메뉴 버튼 */;
+}
+header .gnb ul li {
+    float: left;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 23px;
+    font-size: 20px;
+}
+header .tnb {
+    float: right;
+    margin: 36px 13px 0 0;
+}
+header .tnb ul li {
+    float: left;
+}
+header .tnb ul li button {
+    
+}
+header .tnb ul li button span {
+    display: none;
+}
+header .tnb ul li button i {
+    padding: 10px;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+        border-bottom: none;
+    }
+    header h1 {
+        margin: 19px 20px 0 0;
+    }
+    header h1 a {
+        width: 81.31px;
+        height: 13px;
+    }
+    header .gnb {
+        float: right;
+        margin: 11px 0 0 10px;
+    }
+    header .gnb button {
+        display: block /* 모바일에서만 표시 - 메뉴 버튼 */;
+    }
+    header .gnb button span {
+        display: none;
+    }
+    header .gnb button i {
+        font-size: 22px;
+        font-weight: 300;
+    }
+    header .gnb ul {
+        display: none;
+    }
+
+    /* h1 gnb tnb 코딩순서가 위와 같을 때 모든 요소에 
+    float:right를 주면 화면에 나타나는 순서는 tnb gnb h1이 된다.
+    ---> float:right를 먼저 선언한 요소가 오른쪽 자리를 선점 */
+
+    header .tnb {
+        float: right;
+        margin: 36px 13px 0 0;
+    }
+    header .tnb ul li {
+        float: left;
+    }
+    header .tnb ul li button {
+        
+    }
+    header .tnb ul li button span {
+        display: none;
+    }
+    header .tnb ul li button i {
+        padding: 10px;
+        font-size: 26px;
+        font-weight: 300;
+    }
+}/* media 종료 */
+
+
+.visual {
+    height: 860px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    padding: 345px 0 36px 0;
+    font-size: 55px;
+    font-weight: 700;
+}
+.visual p {
+    font-size: 20px;
+}
+.visual .txt_mobile {
+    display: none;
+}
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+        padding: 0 0 164px 0;
+    }
+    .visual h2 {
+        padding: 175px 0 16px 0;
+        font-size: 26px;
+    }
+    .visual p {
+        font-size: 13px;
+    }
+    .visual .txt_pc {
+        display: none; /* pc에서만 보일 글자 */
+    }
+    .visual .txt_mobile {
+        display: block; /* 모바일에서만 보일 글자 */
+    }
+} /* media 종료 */
