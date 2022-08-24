@@ -377,6 +377,10 @@ header .tnb ul li button i {
     .interview .cnt_box .inner {
         padding: 17px 30px 31px 30px;
     }
+    .interview .cnt_box .inner p {
+    color: rgba(225,225,225,0.8);
+    }
+
     .interview .cnt_box h3 {
         margin: 17px 0 19px 0;
         font-size: 18px;
