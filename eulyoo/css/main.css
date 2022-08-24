@@ -49,9 +49,6 @@ header .tnb {
 header .tnb ul li {
     float: left;
 }
-header .tnb ul li button {
-    
-}
 header .tnb ul li button span {
     display: none;
 }
@@ -64,6 +61,7 @@ header .tnb ul li button i {
 @media screen and (max-width:640px){
     header {
         height: 45px;
+        min-width: auto;
         border-bottom: none;
     }
     header h1 {
@@ -90,29 +88,22 @@ header .tnb ul li button i {
     header .gnb ul {
         display: none;
     }
-
     /* h1 gnb tnb 코딩순서가 위와 같을 때 모든 요소에 
     float:right를 주면 화면에 나타나는 순서는 tnb gnb h1이 된다.
     ---> float:right를 먼저 선언한 요소가 오른쪽 자리를 선점 */
 
     header .tnb {
-        float: right;
-        margin: 36px 13px 0 0;
-    }
-    header .tnb ul li {
-        float: left;
-    }
-    header .tnb ul li button {
-        
-    }
-    header .tnb ul li button span {
-        display: none;
+        margin: 11px 0 0 0;
     }
     header .tnb ul li button i {
-        padding: 10px;
-        font-size: 26px;
-        font-weight: 300;
+        padding: 0;
+        font-size: 22px;
     }
+    header .tnb ul li.mypage {
+        display: none;
+    }
+        
+    
 }/* media 종료 */
 
 
@@ -152,3 +143,253 @@ header .tnb ul li button i {
         display: block; /* 모바일에서만 보일 글자 */
     }
 } /* media 종료 */
+
+.book {
+    margin: 209px 0 245px 0;
+}
+.book .tit {
+    float: left;
+}
+.book .tit h2 {
+    margin: 0 0 20px 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1D1D1D;
+}
+.book .tit .btn {
+    margin: 48px 0 0 0;
+}
+.book .tit .btn button {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid #3d3d3d;
+}
+.book .tit .btn button span {
+    display: none;
+}
+.book .tit .btn button i {
+    margin: 2px 0 0 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+/* 컨텐츠 영역밖으로 나가는 리스트 - 스크롤 (모바일)
+    1. ul을 감싸는 div가 있어야함.
+    2. ul을 감싸는 div는 overflow:auto 이어야 함. (모바일)
+        넓이와 높이를 입력 
+    3. ul은 li 전체의 넓이를 가져야 함 --> 모든  li 한줄로 좌우로 들어가야 함.
+    position:absolute (모바일) - 좌우로 슬라이드는 absolute만 됨.
+    */
+.book .list {
+    margin-left: 330px;
+}
+/* 
+왼쪽 요소는 float:left 를 주고
+오른쪽 요소는 margin-left로 왼쪽 요소의 넓이 만큼을 여백으로 준다. 
+오른쪽 요소는 block임 
+오른쪽 요소가 왼쪽요소를 인지하지 못하고 위로 올라옴. 
+*/
+
+.book .list ul {
+    width: 1980px; /* 모든 li가 한줄로 들어갈 수 있는 넓이 */
+}
+.book .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+
+.book .list ul li a {
+    display: block;
+}
+.book .list ul li a img {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.book .list ul li a .subject {
+    display: block;
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.book .list ul li a .writer {
+    display: block;
+    margin: 10px 0 13px 0;
+}
+.book .list ul li a .content {
+    display: block;
+    /* 여러줄로 표시 */
+    line-height: 1.5;
+    height: 4.5em;
+    overflow: hidden;
+}
+
+@media screen and (max-width:640px){
+    .book {
+        margin: 69px 0 105px 0;
+    }
+    .book .tit {
+        float: none;
+    }
+    .book .tit h2 {
+        float: left;
+        margin: 0;
+        font-size: 22px;
+    }
+    .book .tit p {
+        display: none; /* 모바일 숨김 */
+    }
+    .book .tit .btn {
+        float: right;
+        margin: 0;
+    }
+    .book .tit .btn button {
+        float: left;
+        width: 26px;
+        height: 26px;
+        margin-right: 4px;
+    }
+    .book .tit .btn button i {
+        font-size: 20px;
+    }
+    .book .list {
+        overflow-y: hidden; /* 가로스크롤 바가 생성되면 가로 스크롤만큼 높이가 줄어서 세로 스크롤바가 생성되는 것을 방지 */
+        overflow-x: auto;
+        width: calc(100% + 20px);
+        /* calc는 넓이나 높이의 수치를 계산할 때 사용
+        대부분 %와 px를 혼용할 때 사용
+        list에 100%를 주면 wrapper가 좌우에 여백 20px을 준 안쪽으로 넓이가 생성된다. 
+        그런데 오른쪽만 콘텐츠 영역 밖으로 더 나가고자 하면 calc(100% + 20px) */
+        padding: 30px 0 0 0;
+        margin-left: 0;
+    }
+    
+    .book .list ul {
+        width: 960px; /* 모든 li가 한줄로 들어갈 수 있는 넓이 */
+    }
+    .book .list ul li {
+        width: 140px;
+        margin: 0 20px 0 0;
+    }
+    .book .list ul li a img {
+        width: 100%;
+    }
+    .book .list ul li a .subject {
+        margin-top: 4px;
+        font-size: 16px;
+    }
+    .book .list ul li a .writer {
+        display: none;
+    }
+    .book .list ul li a .content {
+        display: none;
+    }
+}
+
+.interview {
+    background-color: #FFF6EF;
+    padding: 0 0 62px 0;
+}
+.interview h2 {
+    padding: 40px 0 33px 0;
+    font-size: 40px;
+    font-family: 700;
+    color: #1D1D1D;
+}
+.interview .colgroup {
+    position: relative; /* pic_box 정렬의 기준점 */
+}
+.interview .pic_box {
+    position: absolute;
+    left: 0;
+    top: 64px;
+}
+.interview .pic_box img {
+    width: 620px;
+}
+.interview .cnt_box {
+    background-color: #483D33;
+    margin: 0 0 0 110px;
+    height: 444px;
+    color: #fff;
+}
+.interview .cnt_box .inner {
+    padding: 86px 110px 0 602px;
+}
+.interview .cnt_box h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+.interview .cnt_box a {
+    display: block;
+    margin-top: 51px;
+    width: 150px;
+    height: 35px; 
+    padding: 0 7px 0 10px;
+    line-height: 35px;
+    white-space: nowrap;
+    /* 버튼 디자인에서 글자를 높이의 위아래 가운데 배치하기 위해서는 
+    행간을 높이값과 동일하게 주는 것이 가장 쉬운 방법이다.  */
+    border: 1px solid rgba(225,225,225,0.6);   
+}
+.interview .cnt_box a span {
+    float: left;
+}
+.interview .cnt_box a i {
+    float: right;
+    margin: 5px 0 0 0;
+}
+@media screen and (max-width:640px){
+    .interview {
+        padding: 0 0 22px 0;
+    }
+    .interview h2 {
+        padding: 26px 0 7px 0;
+        font-size: 22px;
+    }
+    .interview .pic_box {
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: center;
+    }
+    .interview .pic_box::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80%;
+        background-color: #483D33;
+        content: "";
+    }
+    .interview .pic_box img {
+        width: 260px;
+        position: relative;
+        z-index: 1;
+    }
+    .interview .cnt_box {
+        height: auto;
+        margin: 0;
+    }
+    .interview .cnt_box .inner {
+        padding: 17px 30px 31px 30px;
+    }
+    .interview .cnt_box h3 {
+        margin: 17px 0 19px 0;
+        font-size: 18px;
+    }
+    .interview .cnt_box a {
+        display: block;
+        margin-top: 31px;
+        width: 138px;
+        height: 32px; 
+        padding: 0 4px 0 10px;
+        line-height: 32px;
+    }
+    .interview .cnt_box a i {
+        font-size: 20px;
+    }
+}

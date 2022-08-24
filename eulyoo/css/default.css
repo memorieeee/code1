@@ -37,8 +37,6 @@ button {
 }
 
 html, body {
-    min-width: 1280px;
-    /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소넓이를 줌 */
     color: #3d3d3d;
     line-height: 1.5;
     font-family: 'EY', 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif; 
@@ -48,6 +46,12 @@ html, body {
     font-size: 15px; 
     font-weight: 400;
     word-break: keep-all;
+}
+
+#wrap { /* "id=wrap" */
+    overflow-x: hidden;
+    min-width: 1280px;
+    /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소넓이를 줌 */
 }
 
 /*콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치*/
@@ -61,8 +65,12 @@ html, body {
     모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현.
     구현방식이 달라서 고정값을 모두 삭제*/
     html, body {
-        min-width: auto;
         font-size: 13px;
+    }
+
+    #wrap { /* "id=wrap" */
+        position: relative;
+        min-width: auto;
     }
     
     /* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
