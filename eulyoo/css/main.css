@@ -145,7 +145,7 @@ header .tnb ul li button i {
 } /* media 종료 */
 
 .book {
-    margin: 209px 0 245px 0;
+    margin: 209px 0 265px 0;
 }
 .book .tit {
     float: left;
@@ -261,7 +261,7 @@ header .tnb ul li button i {
         대부분 %와 px를 혼용할 때 사용
         list에 100%를 주면 wrapper가 좌우에 여백 20px을 준 안쪽으로 넓이가 생성된다. 
         그런데 오른쪽만 콘텐츠 영역 밖으로 더 나가고자 하면 calc(100% + 20px) */
-        padding: 30px 0 0 0;
+        padding: 30px 0 10px 0;
         margin-left: 0;
     }
     
@@ -395,5 +395,208 @@ header .tnb ul li button i {
     }
     .interview .cnt_box a i {
         font-size: 20px;
+    }
+}
+.news .tit {
+    margin: 244px 0 0 0;
+}
+.news .tit h2 {
+    float: left;
+    padding: 0 0 52px 0;
+    font-size: 40px;
+    font-family: 700;
+    color: #1D1D1D;
+}
+.news .tit .btn {
+    float: right;
+    margin: 13px 0 0 0;
+}
+.news .tit .btn button {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid #3d3d3d;
+}
+.news .tit .btn button span {
+    display: none;
+}
+.news .tit .btn button i {
+    margin: 2px 0 0 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+.news .list ul {
+    /* li 넓이 290 + 여백 40 = 330, 330 * 7개 = */
+    width: 2310px;
+    margin: 0 0 0 -330px;
+}
+.news .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a img {
+    width: 100%;
+}
+.news .list ul li a .subject {
+    display: block;
+    margin: 5px 0 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+    /* 무조건 2줄 */
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+
+    /* 무조건 1줄
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    */
+}
+.news .list ul li a .content {
+    display: block;   
+}
+@media screen and (max-width:640px){
+    .news .tit {
+        margin: 78px 0 0 0;
+    }
+    .news .tit h2 {
+        font-size: 22px;
+        padding: 0;
+    }
+    .news .tit .btn {
+        margin: 0;
+    }
+    .news .tit .btn button {
+        width: 26px;
+        height: 26px;
+        margin-right: 4px;
+    }
+    .news .tit .btn button i {
+        margin: 2px 0 0 0;
+        font-size: 20px;
+    }
+    .news .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 35px 0 10px 0;
+        width: calc(100% + 40px);
+        margin: 0 0 0 -20px;
+
+        /* 왼쪽으로 20px 이동
+        1. position: relative;
+            left: -20px
+        2. margin: 0 0 0 -20px */
+    }
+    .news .list ul {
+        /* li 넓이 170 + 여백 20 = 190, 190 * 7개 = */
+        width: 1330px;
+        margin: 0 0 0 20px;
+    }
+    .news .list ul li {
+        width: 170px;
+        margin: 0 20px 0 0;
+    }
+    .news .list ul li a .subject {
+        margin: 5px 0 0 0;
+        font-size: 16px;
+        /* 무조건 2줄 */
+        height: 4.5em;
+    }
+    .news .list ul li a .content {
+        display: none;   
+    }
+}
+footer {
+    margin: 315px 0 0 0;
+    background-color: #483D33;
+    color: rgba(225,225,225,0.6);
+    padding: 51px 0 148px 8px;
+}
+footer .flogo {
+    float: left;
+}
+footer .flogo img {
+    width: 128px;
+}
+footer .fnav {
+    float: left;
+    margin: 0 76px 0 92px;
+}
+footer .fnav ul li a {
+    display: block;
+    line-height: 30px;
+}
+footer .sns {
+    float: right;
+    line-height: 0;
+}
+footer .sns a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /* 글자 없애기 */
+    font-size: 0;
+}
+footer .sns a.insta {
+    background: url(../images/sns_insta.svg) no-repeat center center; 
+} 
+footer .sns a.facebook {
+    background: url(../images/sns_facebook.svg) no-repeat center center; 
+}   
+footer .sns a.naver {
+    background: url(../images/sns_naverpost.svg) no-repeat center center; 
+} 
+footer .copyright {
+    float: left;
+    line-height: 30px;
+}
+
+@media screen and (max-width:640px){
+    footer {
+        text-align: center;
+        margin: 114px 0 0 0;
+        padding: 20px 0 30px 0;
+    }
+    footer .flogo {
+        float: none;
+    }
+    footer .flogo img {
+        width: 96px;
+    }
+    footer .fnav {
+        float: none;
+        margin: 21px 0 21px 0;
+    }
+    footer .fnav ul li a {
+        line-height: 18px;
+    }
+    footer .sns {
+        float: none;
+    }
+    footer .sns a {
+        width: 30px;
+        height: 30px;
+    }
+    footer .sns a.insta {
+        background-size: 18.65px auto;
+        /* background-size : %로 주면 background가 들어간 영역의 넓이의 몇%로 적용됨.
+        원래 배경 이미지의 비율로 계산되는 것이 아님. */
+    } 
+    footer .sns a.facebook {
+        background-size: 8.9px auto;
+    }   
+    footer .sns a.naver {
+        background-size: 15.83px auto;
+    } 
+    footer .copyright {
+        float: none;
+        margin: 24px 0 0 0;
+        line-height: 18px;
     }
 }
