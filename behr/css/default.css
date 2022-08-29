@@ -51,7 +51,7 @@ html, body {
 }
 
 #wrap { /* "id=wrap" */
-    overflow: hidden;
+    /* overflow: hidden; */
     min-width: 1280px;
     /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 최소넓이를 줌 */
 }
