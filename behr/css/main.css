@@ -420,3 +420,113 @@ aside button i {
         display: none; 
     }
 }
+
+footer {
+    padding-bottom: 63px;
+    background-color: #3D3D3D;
+    color: rgba(225,225,225,0.7);
+}
+
+footer .inner {
+    position: relative; /* flogo정렬의 기준점 */
+}
+footer .sns {
+    height: 78px;
+    border-bottom: 1px solid rgba(225,225,225,0.1);
+}
+footer .sns ul {
+    float: right;
+    margin: 23px 0 0 0;
+}
+footer .sns ul li {
+    float: left;
+    margin: 0 20px 0 0;
+}
+footer .sns ul li:last-child {
+    margin-right: 0;
+}
+footer .sns ul li a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    background-color: rgba(225,225,225,0.4);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    /* a안에 글자가 안보이게 */
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns ul li.facebook a {
+    background-image: url(../images/sns_facebook.svg);
+}
+footer .sns ul li.blog a {
+    background-image: url(../images/sns_naver.svg);
+}
+footer .sns ul li.insta a {
+    background-image: url(../images/sns_insta.svg);
+}
+footer .sns ul li.youtube a {
+    background-image: url(../images/sns_youtube.svg);
+}
+footer .flogo {
+    position: absolute;
+    left: 0;
+    top: 27px;
+} 
+footer .flogo img {
+    width: 84px;
+    opacity: 0.7;   
+}
+footer .finfo {
+    margin: 30px 0;
+    line-height: 1.7;
+}
+footer .finfo span {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+@media screen and (max-width:640px){
+    footer {
+        padding-bottom: 38px;
+    }
+    footer .sns {
+        text-align: center;
+        height: 60px;
+    }
+    footer .sns ul {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        padding: 18px 0 0 0;
+    }
+    footer .sns ul li {
+        margin: 0 14px 0 0;
+    }
+    footer .sns ul li:last-child {
+        margin-right: 0;
+    }
+    footer .sns ul li a {
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        background-size: 20px auto;
+    }
+    footer .flogo {
+        margin: 13px 0 0 0;
+        position: relative;
+        left: auto;
+        top: auto;
+    } 
+    footer .flogo img {
+        width: 61px;
+    }
+    footer .finfo {
+        margin: 10px 0;
+    }
+    footer .finfo span {
+        margin-right: 0;
+    }
+}/* footer media 종료 */
