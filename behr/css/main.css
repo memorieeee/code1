@@ -338,6 +338,9 @@ header nav > ul > li > ul { /* 2차메뉴 */
     
 }/* brand media 종료 */
 
+.service h2 {
+    display: none;
+}
 .service ul li {
     float: left;
     width: 33.33%;
