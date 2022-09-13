@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
 body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd {
     padding: 0;
@@ -49,13 +49,13 @@ html, body {
 }
 #wrap { /* id="wrap" */
     overflow: hidden;
-    min-width: 1400px;
+    min-width: 1280px;
     /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 
        최소 넓이를 줌 */
 }
 /* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
 .wrapper {
-    width: 1400px;
+    width: 1280px;
     margin: 0 auto;
 }
 @media screen and (max-width:640px){
