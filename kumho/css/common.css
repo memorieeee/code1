@@ -15,6 +15,7 @@ html, body {
 }
 #wrap { /* id="wrap" */
     overflow: hidden;
+    position: relative;
     min-width: 1400px;
     /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해 
        최소 넓이를 줌 */
@@ -48,6 +49,9 @@ html, body {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 100; /* z-index가 높은 숫자가 위로 올라옴
+    header 아래 콘텐츠 요소는 z-index가 필요하면 100이하의 값을 줌
+    header가 무조건 위에 있어야 함 */
     width: 100%;
     /* absolute를 주면 요소가 inline태그처럼 
     콘텐츠가 존재하는 만큼만 넓이를 갖는다.
@@ -59,13 +63,8 @@ html, body {
     position: absolute;
     left: 19px;
     top: 23px;
+    z-index: 103;
 }
-.header .lang {
-    position: absolute;
-    right: 30px;
-    top: 25px;
-}
-
 .header .logo a {
     display: block;
     width: 112px;
@@ -79,7 +78,10 @@ html, body {
     font-size: 0;
     line-height: 0;
 }
-
+.header .gnb {
+    position: relative;
+    z-index: 102;
+}
 .header .gnb .open {
     display: none; /* 모바일에서만 나타남 */
 }
@@ -93,13 +95,146 @@ html, body {
     display: flex;
     justify-content: center;
     /* ul의 넓이 안에서 li를 가운데 정렬 */
+    margin: 5px 6px 0 0;
+    padding: 20px 0 0 0;
+    height: 165px;
+
+    /* 1차 메뉴 a와  2차 메뉴 ul 위아래 사이에는 여백이 존재하면 안됨, 메뉴가 out됨 
+    ul이 정확하게 a 밑에 배치될 수 있도록 줘야 함 
+    하지만 실제 디자인에서 a와 ul 사이에 여백이 존재한다면 이는 2차메뉴 ul의 상단 padding값으로 주면 된다.
+    padding은 내부 여백이라 실제 여백으로 판단하지 않음.
+    2차메뉴 ul의 높이는 일정한게 좋음
+    2차메뉴 사이를 좌우로 이동할 수 있어야 함 (메뉴가 out되면 안됨)
+    --> 높이 값을 주면 됨. 
+     */
+}
+.header .gnb > ul > li {
+    position: relative;
+    width: 150px;
+    text-align: center;
+}
+.header .gnb > ul > li > a {
+    display: block;
+    font-size: 20px;
+    line-height: 95px;
+}
+
+.header .gnb > ul > li:hover > a {
+    font-weight: 700;
+    color: #ED1C24;   
+}
+.header .gnb > ul > li:hover > a > span {
+    position: relative;
+}
+.header .gnb > ul > li:hover > a > span::after {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    height: 2px;
+    background-color: #ED1C24;
+    content: "";
 }
 .header .gnb > ul > li > ul {
     display: none; /* 2차메뉴 */
+    position: absolute;
+    left: 0;
+    top: 95px;
+    width: 100%;
 }
-.header .lang ul {
-    display: none;
+.header .gnb > ul > li > ul > li > a {
+    display: block;
+    line-height: 2.2;
+
+}
+.header .lang {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    z-index: 103;
+}
+
+.header .lang button {
+    width: 116px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 18px;
+    align-items: center;
+    /* button 내부 요소 i와 span태그를 좌우 정렬, 위아래 가운데 배치 */
+    display: flex;
+    justify-content: space-around;
+ 
+}
+.header .lang button i {
+    font-size: 18px;
 }
 .header .lang .close {
     display: none;
+}
+.header .lang ul {
+   display: none; 
+   position: absolute;
+   left: 0;
+   top: 35px;
+   width: 116px;
+   height: 70px;
+   border-radius: 18px;
+   background-color: rgba(225,225,225,0.9);
+   color: #3D3D3D;
+   text-align: center;
+   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.header .lang ul li:first-child {
+    margin: 6px 0 0 0;
+}
+.header .lang ul li a {
+    display: block;
+    line-height: 1.8;
+}
+.header .lang ul li a:hover, .header .lang ul li.active a {
+    color: #ED1C24;
+}
+
+/* lang가 열렸을 때 */
+.header .lang.lang_open ul {
+    display: block;
+}
+.header .lang.lang_open .open {
+    display: none;
+}
+.header .lang.lang_open .close {
+    display: flex;
+}
+
+/* 메뉴에 마우스를 오버했을때 */
+.header.menu_open {    
+    color: #3D3D3D;
+}
+.header.menu_open::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 101;
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    content: "";
+}
+
+.header.menu_open .gnb > ul > li > a {
+    color: #1d1d1d;
+}
+
+.header.menu_open .logo {
+    z-index: 103;
+}
+.header.menu_open .logo a {
+    background-image: url(../images/common/logo.svg); 
+}
+.header.menu_open .gnb > ul > li > ul {
+    display: block; /* 2차메뉴 */
+}
+.header.menu_open .lang button {
+    border: 1px solid #3D3D3D;
 }

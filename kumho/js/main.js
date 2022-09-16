@@ -18,6 +18,19 @@ $(document).ready(function(){
         console.log('window의 높이'+winH);
     })
 
+    /* 
+        .header .lang .open 클릭했을 때
+        1. ul이 나타남
+        2. open 숨김, close 나타남
+        --> .header .lang에 lang_open 클래스를 추가 
 
-    
+        .header .lang 에 close 클릭했을 때
+        --> .header .lang에  lang_open 클래스를 삭제
+    */
+    $('.header .lang .open').on('click',function(){
+        $('.header .lang').addClass('lang_open');
+    });
+    $('.header .lang .close').on('click',function(){
+        $('.header .lang').removeClass('lang_open');
+    });
 }); //document.ready 종료
