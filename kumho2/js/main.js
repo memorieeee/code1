@@ -16,5 +16,25 @@ $(document).ready(function(){
         $('.visual .cnt_h').height(winH); // visual의 높이를 window의 높이로 설정
         console.log('window의 높이' + winH);
     });
+    
+    /* 
+        .biz .list ul li에 마우스를 오버하면
+        .biz .list ul li에 over 클래스 추가
+        마우스를 오버한 li에만 active클래스 추가
+
+        --> 마우스 아웃 : 반대로 실행
+    */
+    $('.biz .list ul li').on('mouseenter',function(){
+        $('.biz .list ul').addClass('over');
+        $(this).addClass('active');
+    });
+
+    $('.biz .list ul li').on('mouseleave',function(){
+        $('.biz .list ul').removeClass('over');
+        $(this).removeClass('active');
+    });
+
+
+
 
 });//document.ready 종료
