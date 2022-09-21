@@ -43,6 +43,10 @@ html, body {
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
+.cnt_wrap {
+    position: relative;
+}
+
 .header {
     position: absolute;
     left: 0;
@@ -464,3 +468,114 @@ html, body {
     }
 
 }/* header 반응형 종료 */
+
+.footer {
+    background-color: #121212;
+    color: #FFF;
+}
+.footer .family {
+    position: absolute;
+    right: 0;
+    top: 74px;
+}
+.footer .family .inner {
+    position: relative; /* ul의 정렬의 기준 */
+    width: 175px;
+}
+.footer .family button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* button 안에 있는 span과 i를 좌우 끝으로 배치, 위아래 가운데 배치 */
+    width: 100%;
+    height: 46px;
+    padding: 0 12px 0 17px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 8px;
+}
+.footer .family button i {
+    color: #ccc;
+    font-size: 24px;
+}
+.footer .family ul { 
+    display: none;
+    position: absolute; /* 넓이를 가지고 있는 inner를 기준으로 정렬 */
+    left: 0;
+    bottom: 46px;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 8px;
+    border-bottom-width: 0;
+    background-color: #121212;
+}
+.footer .family ul li a {
+    line-height: 2;
+}
+.footer .family ul li a:hover {
+    color: #ED1C24;
+}
+.footer .family .btn_close {
+    display: none;
+}
+/* family가 열렸을 때의 스타일 
+    1. btn_open 사라짐
+    2. ul이 나타남
+    3. btn_close 나타남
+*/
+.footer .family.open .btn_open {
+    display: none;
+}
+.footer .family.open ul {
+    display: block;
+    padding: 14px 0 18px 18px;
+}
+.footer .family.open .btn_close {
+    display: flex;
+}
+.footer .fnav {
+    display: flex;
+    padding: 64px 0 10px 0;
+}
+.footer .fnav li {
+    margin-right: 26px;
+}
+.footer .copyright {
+    padding: 0 0 82px 0;
+    color: rgba(255,255,255,0.7);
+}
+
+@media screen and (max-width:640px){
+    .footer .family {
+        position: relative;
+        right: auto;
+        top: auto;
+        display: flex;
+        justify-content: center;
+        padding: 55px 0 0 0;
+    }
+    .footer .family .inner {
+        width: 155px;
+    }
+    .footer .family button {
+        height: 40px;
+        padding: 0 9px 0 15px;
+    }
+    .footer .family button i {
+        font-size: 20px;
+    }
+    .footer .family ul { 
+        bottom: 40px;
+        padding: 14px 0 18px 14px;
+    }
+    .footer .fnav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 25px 0 24px 0;
+    }
+    .footer .fnav li {
+        margin-right: 20px;
+    }
+    .footer .copyright {
+        padding: 0 0 57px 0;
+    }
+}

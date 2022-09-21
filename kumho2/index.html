@@ -254,8 +254,10 @@
             </div>
         </section>
         <footer class="footer">
-            <div class="wrapper">
-                <div class="family">
+            <!-- wrapper와 동일한 넓이를 가진 
+                position:relative가 있는 요소는 cnt_wrap이라고 클래스를 줌 -->
+            <div class="wrapper cnt_wrap">
+                <div class="family "> <!--family가 열리면 open클래스 추가(jquery)-->
                     <div class="inner">
                         <button class="btn_open" title="그룹사 바로가기 열기">
                             <span>그룹사 바로가기</span>
@@ -273,12 +275,20 @@
                             <li><a href="#n" target="_blank" title="새창으로 열림">아시아나세이버</a></li>
                             <li><a href="#n" target="_blank" title="새창으로 열림">에어서울</a></li>
                         </ul>
-                        <button class="btn_open" title="그룹사 바로가기 닫기">
+                        <button class="btn_close" title="그룹사 바로가기 닫기">
                             <span>그룹사 바로가기</span>
                             <i class="material-symbols-rounded">arrow_drop_up</i>
                         </button>
                     </div>
                 </div>
+                <ul class="fnav">
+                    <li><a href="#n">제보실</a></li>
+                    <li><a href="#n">고객센터</a></li>
+                    <li><a href="#n">OB사랑방</a></li>
+                    <li><a href="#n">Contact us</a></li>
+                    <li><a href="#n">개인정보처리방침</a></li>
+                </ul>
+                <div class="copyright">ⓒ KUMHO E&C ALL RIGHTS RESERVED</div>
             </div>
         </footer>
     </div>

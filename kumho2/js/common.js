@@ -22,7 +22,6 @@ $(document).ready(function(){
         }
     });
 
-
     /*
         .header .lang .open 클릭했을 때
         1. ul이 나타나야함
@@ -85,8 +84,21 @@ $(document).ready(function(){
                 /* 1차메뉴를 클릭했을 때 a href로 페이지가 이동하는 현상을 막기 */
                 $(this).toggleClass('sub_open');
             }   
-            
         });
 
-});
+        /* .footer .family .btn_open 클릭하면
+        .footer .family에 open 클래스 추가
+        .footer .family .btn_close 클릭하면
+        .footer .family에 open 클래스 삭제
+        */
+
+        $('.footer .family .btn_open').on('click', function(){
+            $('.footer .family').addClass('open');
+        });
+        $('.footer .family .btn_close').on('click', function(){
+            $('.footer .family').removeClass('open');
+        });
+
+
+}); //document,write
 
