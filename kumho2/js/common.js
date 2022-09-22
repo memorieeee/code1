@@ -72,24 +72,33 @@ $(document).ready(function(){
         $('.header .gnb .close').on('click',function(){
             $('.header').removeClass('menu_mobile');
         });
+
         /* 
             1차 메뉴를 클릭해서
+            --> li를 클릭할 때 실행을 하면 하위메뉴를 클릭할때도 이벤트가 발생.
+                1차메뉴를 클릭하는 것과 하위메뉴를 클릭하는 것을 구분하여
+                이 이벤트는 1차메뉴를 클릭할 때만 작동해야 함.
+                1차메뉴를 클릭하는 이벤트를 1차메뉴의 a에 줘야 함.
+                --> class는 a를 감싸는 li에 줘야함 
+        
             닫혀있으면 li에 sub_open 클래스를 추가
             열려있으면 li에 sub_open 클래스를 삭제
             --> toggle 클래스
         */
-        $('.header .gnb > ul > li').on('click',function(e){
+
+        $('.header .gnb > ul > li > a').on('click',function(e){
             if(pcMobile == 'mobile'){
                 e.preventDefault();
                 /* 1차메뉴를 클릭했을 때 a href로 페이지가 이동하는 현상을 막기 */
-                $(this).toggleClass('sub_open');
+                $(this).parents('li').toggleClass('sub_open');
             }   
         });
 
-        /* .footer .family .btn_open 클릭하면
-        .footer .family에 open 클래스 추가
-        .footer .family .btn_close 클릭하면
-        .footer .family에 open 클래스 삭제
+        /* 
+            .footer .family .btn_open 클릭하면
+            .footer .family에 open 클래스 추가
+            .footer .family .btn_close 클릭하면
+            .footer .family에 open 클래스 삭제
         */
 
         $('.footer .family .btn_open').on('click', function(){

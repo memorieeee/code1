@@ -112,6 +112,9 @@ html, body {
     width: 150px;
     text-align: center;
 }
+.header .gnb > ul > li.now > a {
+    font-weight: 700;
+}
 .header .gnb > ul > li > a {
     display: block;
     font-size: 20px;
@@ -158,10 +161,9 @@ html, body {
     display: block;
     line-height: 36px;
 }
-
-
-.header .gnb > ul > li > ul > li > a:hover {
-    color: #ED1C24;
+.header .gnb > ul > li > ul > li > a:hover,
+.header .gnb > ul > li > ul > li.now > a {
+    color: #3D3D3D;
     font-weight: 700;
 }
 .header .lang {
@@ -330,7 +332,7 @@ html, body {
         content: "\e5cf";
     }
     .header .gnb > ul > li:hover > a {
-        color: #3d3d3d !important;
+        color: #3d3d3d;
     }
     .header .gnb > ul > li:hover > a > span {
         position: relative;
@@ -355,7 +357,7 @@ html, body {
         line-height: 2;
     }
     .header .gnb > ul > li > ul > li > a:hover {
-        color: #ED1C24;
+        color: #3D3D3D;
         font-weight: 700;
     }
 

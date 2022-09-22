@@ -76,6 +76,7 @@
 }
 .lnb .menu .home i {
     display: block;
+    font-size: 24px;
     margin-top: 10px; 
 }
 .lnb .menu .depth {
@@ -138,7 +139,7 @@
 }
 .lnb .lnb_btn ul li {
     width: 45px;
-    border-right: 1px solid rgba(225,225,225,0.6);
+    border-left: 1px solid rgba(225,225,225,0.6);
     text-align: center;
 }
 .lnb .lnb_btn ul li:last-child {
@@ -155,6 +156,89 @@
     font-size: 24px;
 }
 
+@media screen and (max-width:640px){
+    .lnb {
+        position: relative; 
+        z-index: 90; /* lnb가 콘텐츠에 깔리지 않도록 하기 위해서 z-index를 준다.
+        콘텐츠에 z-index 90이상 주면 안됨 */
+        height: 35px;
+        line-height: 35px; 
+        /* 높이가 제한되고 요소들이 좌우로 배치되어있는 디자인은
+        높이만큼 행간을 준다. */
+    }
+    .lnb .wrapper {
+        margin: 0; /* wrapper의 기본여백을 lnb에서는 삭제 */
+    } 
+    .lnb .menu  {
+        width: calc(100% - 35px);
+    }
+    .lnb .menu .home {
+        width: 35px;
+        border-left: 0;
+    }
+    .lnb .menu .home i {
+        font-size: 18px;
+        margin-top: 8px; 
+    }
+    /*
+    home - 35px 
+    1차메뉴 depth
+    2차메뉴 depth
+    lnb_btn - 35px 
+
+    lnb_wrap - 100% 
+        - menu    100% - 35px
+            - 자식에게는 menu의 넓이가 100%
+            - home 35px 고정
+            - depth 1차 메뉴 : (100% -35px)의 절반
+            - depth 2차 메뉴
+        - lnb_btn 35px 고정 
+
+    home, lnb_btn의 넓이는 고정
+    depth의 넓이는 가변 - 전체 넓이(100%)에서 home, 
+    lnb_btn의 넓이를 뺀 나머지의 절반씩
+    */
+    .lnb .menu .depth {
+        width: calc((100% - 35px) / 2);
+    }
+    .lnb .menu .depth button {
+        padding: 0 13px 0 20px;
+    }
+    .lnb .menu .depth button i {
+        font-size: 14px;
+    }
+    .lnb .menu .depth ul {
+        top: 35px;
+        padding: 0 0 7px 0;
+    }
+    .lnb .menu .depth ul li a {
+        line-height: 27px;
+        padding: 0 0 0 15px;
+    }
+    .lnb .menu .depth ul li.now a, 
+    .lnb .menu .depth ul li.now a:hover {
+        background-color: #fff;
+    } 
+
+    .lnb .lnb_btn ul li.print {
+        display: none;
+    }
+    .lnb .lnb_btn ul li {
+        width: 35px;
+        border-left: 0;
+    }
+    .lnb .lnb_btn ul li:last-child {
+        border-right: 0;
+    }
+    .lnb .lnb_btn ul li button {
+        height: 35px; /* lnb높이 */
+    }
+    .lnb .lnb_btn ul li button i {
+        padding: 10px 2px 0 0;
+        font-size: 18px;
+    }
+}
+
 .container {
     min-height: 300px;
     /*
@@ -163,10 +247,29 @@
         초기에 콘텐츠가 없으면 header/footer에 열리는 콘텐츠가 짤리는 현상이 발생한다.
         그래서 최소높이를 주고 코딩함. 
     */
-
+}
+.container .sub_tit {
+    margin: 109px 0 33px 0;
 }
 .container .sub_tit h2 {
-    font-size: 50px;
     color: #1D1D1D;
+    font-size: 50px;
     font-weight: 400;
+}
+.container .contents {
+    margin: 0 0 265px 0;
+}
+
+@media screen and (max-width:640px){
+    .container .sub_tit {
+        margin: 54px 0 34px 0;
+    }
+    .container .sub_tit h2 {
+        color: #1D1D1D;
+        font-size: 30px;
+        text-align: center;
+    }
+    .container .contents {
+        margin: 0 0 88px 0;
+    }
 }
