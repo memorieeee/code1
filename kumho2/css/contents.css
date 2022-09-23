@@ -220,7 +220,7 @@ color: #fff;
 }
 .cnt_historyN .year_tit {
     position: relative;
-    width: calc(100% + 40px);
+    width: calc(100% + 58px);
 }
 .cnt_historyN .year_tit.left {
     left: -20px;
