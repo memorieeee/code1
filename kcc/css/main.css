@@ -1,0 +1,252 @@
+@import url('default.css');
+
+h1 {
+    display: none;
+}
+.visual {
+    color: #fff;
+}
+.visual ul li {
+    float: left;
+    width: 50%;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.visual ul li.left {
+    background-image: url(../images/visual01.png);
+}
+.visual ul li.right {
+    background-image: url(../images/visual02.png);
+}
+.visual ul li .blue {
+    position: relative;
+    float: right;
+    margin: 390px 0 0 0;
+    background-color: rgba(2,54,101,0.9);
+    width: 500px;
+    height: 300px;
+}
+.visual ul li .blue h2 {
+    margin: 61px 0 15px 134px;
+}
+.visual ul li .blue strong {
+    display: block;
+    margin: 0 0 0 137px;
+}
+.visual ul li .blue p {
+    margin: 0 0 0 71px;
+}
+.visual ul li .blue p::after {
+    position: absolute;
+    left: 67px;
+    top: 233px;
+    width: 370px;
+    height: 3px;
+    background-color: #fff; 
+    content: "";
+}
+
+.visual ul li .red {
+    position: relative;
+    float: left;
+    margin: 233px 0 0 0;
+    background-color: rgba(183,0,2,0.9);
+    width: 500px;
+    height: 300px;
+}
+.visual ul li .red h2 {
+    margin: 61px 0 15px 60px;
+}
+.visual ul li .red p {
+    margin: 0 0 0 60px;
+}
+.visual ul li .red p::after {
+    position: absolute;
+    left: 60px;
+    top: 233px;
+    width: 370px;
+    height: 3px;
+    background-color: #fff; 
+    content: "";
+}
+
+.visual ul li h2 {
+    font-size: 35px;
+    line-height: 42px;
+}
+.visual ul li h2 span {
+    font-weight: 700;
+}
+@media screen and (max-width:640px){
+    .visual ul li {
+        height: auto;
+    }
+    .visual ul li .blue {
+        margin: 30;
+        width: auto;
+        height: 105px;
+    }
+    .visual ul li .blue h2 {
+        margin: 21px 20px 9px 0;
+    }
+    .visual ul li .blue strong {
+        margin: 0 0 0 173px;
+    }
+    .visual ul li .blue p {
+        display: none;
+    }
+    .visual ul li .blue p::after {
+        left: 0;
+        top: 0;
+        width: auto;
+        height: 2px;
+    }
+    .visual ul li .red {
+        margin: 95px 0 0 0;
+        width: auto;
+        height: 105px;
+    }
+    .visual ul li .red h2 {
+        margin: 21px 88px 11px 20px;
+    }
+    .visual ul li .red p {
+        display: none;
+    }
+    .visual ul li .red p::after {
+        left: 0;
+        top: 0;
+        width: auto;
+        height: 2px;
+    }
+    .visual ul li h2 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+.banner {
+    position: relative;
+    padding: 205px 0 238px 0;
+    color: #fff;
+    background-image: url(../images/banner.png);
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+}
+.banner strong {
+    font-weight: 700;
+}
+.banner strong::before {
+    position: absolute;
+    left: 612px;
+    top: 202px;
+    width: 56px;
+    height: 1px;
+    background-color: #fff; 
+    content: "";
+}
+.banner h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 11px 0 6px 0;
+}
+.banner ul {
+    margin-top: 70px;
+}
+.banner ul li {
+    display: inline-block;
+    margin-right: 80px;
+}
+.banner ul li:last-child {
+    margin-right: 0;
+}
+
+.banner ul li i {
+    font-size: 50px;
+}
+.banner ul li span {
+    display: block;
+    font-size: 17px;
+}
+@media screen and (max-width:640px){
+    .banner {
+        padding: 70px 0 89px 0;
+    }
+    .banner strong::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48px;
+    }
+    .banner h2 {
+        font-size: 25px;
+        margin: 9px 0 6px 0;
+    }
+    .banner ul {
+        margin-top: 42px;
+    }
+    .banner ul li {
+        margin-right: 28px;
+    }
+    .banner ul li i {
+        font-size: 30px;
+    }
+    .banner ul li span {
+        display: block;
+        font-size: 13px;
+    }
+}
+.notice {
+    position: relative;
+    padding: 205px 0 238px 0;
+    color: #fff;
+    background-image: url(../images/recruite.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+}
+.notice strong {
+    font-weight: 700;
+}
+.notice strong::before {
+    position: absolute;
+    left: 612px;
+    top: 202px;
+    width: 56px;
+    height: 1px;
+    background-color: #fff; 
+    content: "";
+}
+.notice h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 11px 0 6px 0;
+}
+.notice ul {
+    margin-top: 70px;
+}
+.notice ul li {
+    display: inline-block;
+    color: #3D3D3D;
+    background-color: #fff;
+    width: 230px;
+    height: 316px;
+}
+.notice ul li.hire {
+    background-image: url(../images/notice.png);
+    width: 510px;
+    height: 316px;
+    color: #fff;
+}
+.notice ul li a {
+    display: block;
+}
+.notice ul li h3 {
+    font-size: 30px;
+    font-weight: 700px;
+}
