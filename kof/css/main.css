@@ -67,7 +67,6 @@
     background-image: url(../images/main/search_ico.svg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
     font-size: 0; /* 버튼글자없애기 */
     cursor: pointer; /* 마우스오버시 손바닥모양 */
 }
