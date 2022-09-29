@@ -47,3 +47,256 @@ html, body {
 .cnt_wrap {
     position: relative;
 }
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+    /*
+    header와 서브메뉴(lnb)와 footer에서 풀다운 메뉴가
+    중복될때 header가 맨 위에 올라가려고 제일 높은 숫자 
+    header - 300
+    lnb - 200
+    footer - 100
+    */
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin: 31px 0 0 84px;
+}
+.header .logo a {
+    display: block;
+    width: 176px;
+    height: 39px;
+    background-image: url(../images/common/logo_w.svg); 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: contain;
+    font-size: 0;
+    line-height: 0;
+}
+
+@media screen and (min-width:641px){
+    /* 브라우저사이즈 641사이즈 이상에서만 적용하는 스타일 */
+    .header .gnb {
+        float: right;
+        margin: 0 84px 0 0;
+    }
+    .header .gnb .gnb_open {
+        display: none; /* 모바일에서만 보임 */
+    }
+    .header .gnb .gnb_close {
+        display: none; /* 모바일에서만 보임 */
+    }
+    
+    .header .gnb > ul > li {
+        position: relative; /* 2차메뉴 정렬의 중심 */
+        float: left;
+        width: 180px;
+    }
+    .header .gnb > ul > li > a { /* 1차메뉴 */
+        display: block;
+        line-height: 100px;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .header .gnb > ul > li > ul { /* 2차메뉴 */
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100px; /* 1차메뉴 높이 제외하고 정확하게 그 아래 배치 */
+        width: 100%;
+        height: 415px;
+        padding: 28px 0 0 0;
+        border-left: 1px solid #ddd;
+    }
+    .header .gnb > ul > li > ul > li > a {
+        display: block;
+        padding: 0 0 0 22px;
+        font-size: 16px;
+        line-height: 36px;
+    }
+ 
+    /* 오버스타일 */
+    
+    .header .gnb > ul > li:hover > a {
+        font-weight: 700; 
+        color: #0053A3;
+    }
+    .header .gnb > ul > li:hover > ul {
+        background-color: #0053A3;
+        color: #fff;
+    }
+    .header .gnb > ul > li > ul > li > a:hover {
+        font-weight: 700; 
+    }
+
+} /* gnb의 pc스타일 */
+
+/* header가 고정됐을때 & menu가 열렸을때  */
+.header.fixed {
+    position: fixed; /* 무조건 body와만 정렬 - 넓이 100% - 1400px 이하에서 window의 넓이만큼만 인식해서 메뉴가 깨짐 */
+    min-width: 1400px; /* 최소넓이 */
+    background-color: #fff;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.06);
+}
+.header.fixed, .header.menu_open {
+    color: #3D3D3D;
+}
+.header.fixed .logo a, .header.menu_open .logo a  {
+    background-image: url(../images/common/logo.svg);
+}
+.header.menu_open::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1; 
+    /* position 속성이 있는 요소와 없는 요소가 나란히 존재할때, position이 있는 요소가 무조건 위로 올라감.
+        이때 position이 있는 요소를 position 없는 요소 아래로 내리는 방법이 z-index:-1; */
+    width: 100%;
+    height: 515px;
+    background-color: #fff;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.06);
+    content: "";
+}
+.header.menu_open::after {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    content: "";
+}
+.header.menu_open .gnb > ul > li > ul { /* 2차메뉴 */
+    display: block;
+}
+
+@media screen and (max-width:640px){
+    .header {
+        height: 45px;
+    }
+    .header .logo {
+        margin: 16px 0 0 20px;
+    }
+    .header .logo a {
+        width: 87px;
+        height: 19px;
+    }
+    .header .gnb {
+        float: right;
+        overflow-y: auto; /*모바일 메뉴가 길어지면 메뉴가 스크롤 되도록 하는 값*/
+    }
+    .header .gnb > ul {
+        display: none;
+        margin: 69px 20px 34px 20px;
+    }
+    .header .gnb > ul > li {
+        border-bottom: 1px solid #F4F4F4;
+    }
+    .header .gnb > ul > li:last-child {
+        border-bottom: 0;
+    }
+    .header .gnb > ul > li > a {
+        display: block;
+        position: relative;
+        font-size: 18px;
+        line-height: 38px;
+    }
+    .header .gnb > ul > li > a::after {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        font-family: "Font Awesome 6 Free";
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+        font-size: 8px;
+        font-weight: 900;
+        color: #3D3D3D;
+        content: "\f078";
+    }
+    .header .gnb > ul > li > ul {
+        display: none;
+        background-color: #0053A3;
+        padding: 20px 0 20px 0;
+        color: #fff;
+    }
+    .header .gnb > ul > li > ul > li > a {
+        display: block;
+        padding: 0 0 0 26px;
+        font-size: 17px;
+        line-height: 30px;
+    }
+    .header .gnb button {
+        height: 45px;
+        padding: 0 21px 0 21px;
+    }
+    .header .gnb button span {
+        display: none; /* 글자숨김 */
+    }
+    .header .gnb button i {
+        font-size: 13px;
+    }
+    .header .gnb .gnb_close {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        color: #0053A3;
+        
+    }
+    /* 서브메뉴가 열렸을때 */
+    .header .gnb > ul > li.sub_open > a {
+      
+        font-weight: 700;
+    }
+    .header .gnb > ul > li.sub_open > a::after {
+        content: "\f077";
+    }
+    .header .gnb > ul > li.sub_open > ul  {
+        display: block;
+    }
+
+
+    /* 메뉴가 열렸을때 */
+    .header.menu_mobile .gnb {
+        position: fixed; /* fixed는 body와만 정렬 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: #1d1d1d;
+    }
+    .header.menu_mobile .gnb .gnb_open {
+        display: none;
+    }
+    .header.menu_mobile .gnb > ul {
+        display: block;
+    }
+    .header.menu_mobile .gnb .gnb_close {
+        display: block;
+    }
+
+    .header.fixed {
+        min-width: 350px; /* 최소넓이 */
+    }
+    .header.fixed, .header.menu_open {
+        color: #1d1d1d;
+    }
+    .header.fixed .gnb .gnb_open i {
+        color: #0053A3;
+    }
+
+
+} /*header 모바일 스타일*/
