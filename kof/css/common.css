@@ -306,7 +306,7 @@ aside.top {
     display: none;
     position: fixed;
     right: 100px;
-    bottom: 212px;
+    bottom: 31 0px;
     z-index: 250;
 }
 aside.top button {
@@ -321,4 +321,120 @@ aside.top span {
 aside.top i {
     margin-top: 4px;
     font-size: 26px;
+}
+
+@media screen and (max-width:640px){
+    aside.top {
+        position: absolute;
+        right: 20px;
+        bottom: 380px;
+    }
+    aside.top button {
+        width: 29px;
+        height: 29px;
+    }
+    aside.top i {
+        margin-top: 3px;
+        font-size: 16px;
+    }
+}
+
+.footer {
+    background-color: #242D36;
+    color: #CCCCCC;
+}
+.footer .sns {
+    position: absolute;
+    right: 0;
+    top: 50px; 
+}
+.footer .sns ul li {
+    float: left;
+}
+.footer .sns ul li a {
+    display: block;
+    width: 49px;
+    height: 49px;
+    /* img를 a영역에 위아래/좌우 가운데 배치하기 위해서 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .flogo {
+    float: left;
+    margin: 59px 96px 0 0;
+}
+.footer .flogo img {
+    width: 144px;
+}
+.footer .inner {
+    float: left;
+    margin: 66px 0 0 0;
+}
+.footer .fnav li {
+    float: left;
+    margin: 0 35px 0 0;
+}
+.footer .finfo {
+    margin: 47px 0 10px 0;
+}
+.footer .finfo span {
+    display: inline-block; 
+    /* 전화번호, 팩스처럼 짧은 span태그로 묶인 요소에 display:inline-block;을 주면 모바일에서 2줄로 분리되어 나타나지 않음 */
+    margin: 0 33px 0 0;
+}
+.footer .copyright {
+    margin: 0 0 103px 0;
+    color: #999999;
+}
+@media screen and (max-width:640px){
+    .footer .sns {
+        position: relative;
+        right: auto;
+        top: auto; 
+        height: 62px;
+        /* ul을 가운데 정렬 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .sns::after {
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: rgba(225,225,225,0.3);
+        content: "";
+    }
+    .footer .sns ul li a {
+        width: 49px;
+        height: 49px;
+        /* img를 a영역에 위아래/좌우 가운데 배치하기 위해서 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .flogo {
+        float: none;
+        margin: 21px 0 28px 0;
+    }
+    .footer .flogo img {
+        width: 91px;
+    }
+    .footer .inner {
+        margin: 0;
+    }
+    .footer .fnav li {
+        margin: 0 26px 0 0;
+    }
+    .footer .finfo {
+        margin: 41px 0 15px 0;
+    }
+    .footer .finfo span {
+        margin: 0 26px 0 0;
+    }
+    .footer .copyright {
+        margin: 0 0 54px 0;
+    }
 }
