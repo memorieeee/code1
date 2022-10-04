@@ -306,7 +306,7 @@ aside.top {
     display: none;
     position: fixed;
     right: 100px;
-    bottom: 31 0;
+    bottom: 310px 0 0 0;
     z-index: 250;
 }
 aside.top button {
