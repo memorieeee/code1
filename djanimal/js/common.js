@@ -7,7 +7,7 @@ $(document).ready(function(){
     let winW;
     let pcMobile;
     deviceChk(); // deviceChk라는 이름을 갖은 함수 호출
-    
+
     //브라우저가 리사이즈 될때마다 실행
     $(window).resize(function(){
         deviceChk();
@@ -34,16 +34,15 @@ $(document).ready(function(){
         --> on은 이벤트핸들러로 단한번만 주면, 
             mouseenter 이벤트가 발생할때마다 실행됨
         --> pc일때만 on을 주려고 하면 안된다.
-
         메뉴 : .header .gnb > ul > li
     */
-    
+
     $('.header .gnb > ul > li').on('mouseenter focusin', function(){
         if(pcMobile == 'pc'){ //pc일때만 실행 (같다는 의미는 == )
             $('.header').addClass('menu_open');
         }// if문 
     });// mouseenter
-    
+
     $('.header').on('mouseleave', function(){
         $('.header').removeClass('menu_open');
     });
@@ -83,7 +82,7 @@ $(document).ready(function(){
         /* 해당 요소를 클릭했을때 기본적으로 발생하는 이벤트를 취소 - href로 페이지가 이동하는걸 취소 시킴 */
     });
 
-    
+
     /*
         family site 
         footer .family를 클릭하면 fa_open 클래스 추가/삭제

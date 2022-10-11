@@ -3,7 +3,6 @@ $(document).ready(function(){
         visual의 높이를 브라우저의 높이와 동일하게
         $(window).height() - 브라우저 창의 높이
         $(document).height() - 스크롤된 전체 문서의 높이
-
         $(window).height()의 높이를 visual의 높이로 설정
         1. 처음에 로딩했을때
         2. 브라우저가 리사이즈 될때마다도
@@ -28,7 +27,7 @@ $(document).ready(function(){
        ol의 넓이가 모든 li를 좌우로 배치할 수 있는 넓이를 가져야함
        li의 사이즈가 가변 - ol의 넓이도 가변 (jquery가 계산)
     */
-    
+
     //처음에 로딩 되었을때
     let areaW // list의 넓이값
     let liW // 하나의 li의 넓이값
@@ -72,7 +71,6 @@ $(document).ready(function(){
             2번이 보일때 ol의 left는 (li의 넓이 + li여백)값을 음수로 줌
             3번이 보일때 ol의 left는 (li의 넓이 + li여백)*2값을 음수로 줌
             4번이 보일때 ol의 left는 (li의 넓이 + li여백)*3값을 음수로 줌
-
             -(li의 넓이 + li여백) * (idx-1)
         */
         if(idx > 1){
