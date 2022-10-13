@@ -1,0 +1,169 @@
+@import url(default.css);
+@import url(common.css);
+
+h1 {
+    font-size: 4rem;
+}
+h1 span {
+    font-size: 2rem;
+}
+
+.event h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 48px;
+    margin: 2em 0 2em 0;
+}
+.event ul li {
+    float: left;
+    /*  넓이:660px, 1400에서 660은 몇% (1400/660)*100=47% 
+    100-47-47 = 6% 
+    한줄에 li 2개, 여백 1개, 
+    100 - (li하나의 넓이 *2) = 100-(47*2) = 6 
+    한줄에 들어가는 여백과 li의 합이 100% */
+    width: 47%; 
+    margin: 0 6% 0 0;
+
+    /* 여백을 고정으로 주는 경우 - %가 아니고 px값을 줌
+        li 넓이 계산법 - 100%/li의 갯수 = 50% 
+        한줄에 들어가야하는 여백의 총합 = 80px / li의 갯수 = 80px, 80/2 = 40px
+        calc(100%/li갯수 - 한줄 여백 총합/li갯수)
+     */
+    /* width: calc(50% - 40px);
+    margin: 0 80px 0 0; */
+}
+.event ul li:nth-child(2),
+.event ul li:last-child {
+    margin-right: 0;
+}
+.event ul li a img {
+    width: 100%;
+}
+@media screen and (max-width:640px){
+    .event h2 {
+        font-size: 30px;
+    }
+}
+.product {
+    background-color: #ffd301;
+    padding: 6.133rem 0 5.467rem 0;
+}
+.product h2 {
+    display: none;
+}
+.product ul li {
+    /* 여백이 고정일 경우, 
+        100%/li갯수 = 100/4 = 25%
+        한줄에 들어가는 모든 여백(90px)/li의 갯수(4) = 90px/4 = 22.5px
+    */
+    float: left;
+    width: calc(25% - 22.5px); 
+    margin: 0 30px 0 0;
+    border: 3px solid #3d3d3d;
+    border-radius: 60px 0 60px 60px;
+    background-color: #fff;
+    background-position: right 18% bottom -40%;
+    background-repeat: no-repeat;
+    /* background-size: 40% auto; 가로는 background를 주는 영역의 넓이의 몇%, 높이는 auto로 넓이 맞춰서 비율에 맞게 조정 */
+    background-size: 156px auto; /*배경이미지 사이즈를 고정 px로 입력*/
+}
+.product ul li:last-child {
+    margin-right: 0;
+}
+.product ul li.pro1 {
+    background-image: url(../images/main/product_1.png);
+}
+.product ul li.pro2 {
+    background-image: url(../images/main/product_2.png);
+}
+.product ul li.pro3 {
+    background-image: url(../images/main/product_3.png);
+}
+.product ul li.pro4 {
+    background-image: url(../images/main/product_4.png);
+}
+.product ul li a {
+    display: block;
+    padding: 2.667rem 2rem 4.267rem 2rem;
+}
+.product ul li a p {
+    margin: 0 0 8.333rem 0;
+    /* 3줄 고정 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 4.5em;
+}
+.product ul li a img {
+    /* width: 20%; a 사이즈를 기준으로 20% */
+  
+}
+.product ul li a h3 {
+    margin: 0 0 1.2rem 0;
+    color: #1d1d1d;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden; 
+    text-overflow: ellipsis; /* 잘린 글자는 끝에 ... */
+}
+.product ul li a h3 span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666666;
+}
+@media screen and (max-width:1440px){
+    .product ul li {
+        background-size: 146px auto; 
+    }
+    .product ul li a h3 {
+        font-size: 1.8rem;
+    }
+    .product ul li a img {
+        transform: scale(0.8,0.8); /* 원래 이미지 크기에 비례해서 80%크기로 변환*/
+}
+@media screen and (max-width:1080px){
+    .product ul li {
+        /* 한줄에 들어가는 모든 여백 60, 60/3 =20 */
+        width: calc(33.33% - 20px); 
+        margin: 0 30px 0 0;
+        background-size: 136px auto; 
+    }
+    .product ul li:nth-child(4) {
+        display: none;
+    }
+    .product ul li:nth-child(3) {
+        margin-right: 0;
+    }
+    .product ul li a h3 {
+        font-size: 1.7rem;
+    }
+    .product ul li a p {
+        margin: 0 0 7.333rem 0;
+    }
+@media screen and (max-width:740px){
+    .product ul li {
+        /* 한줄에 들어가는 모든 여백 30, 30/2 =15 */
+        width: calc(50% - 15px); 
+        margin: 0 30px 0 0;
+        background-size: 126px auto; 
+    }
+    .product ul li:nth-child(3) {
+        display: none;
+    }
+    .product ul li:nth-child(2) {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:440px){
+    .product ul li {
+        float: none;
+        width: 100%; 
+        margin: 0;
+    }
+    .product ul li:nth-child(2) {
+        margin-right: 0;
+    }
+}
