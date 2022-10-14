@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/popup.js"></script>
+    <title>팝업 테스트</title>
+</head>
+<body>
+    <div id="wrap">
+        <section class="visual1 popup swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>꼭 필요한 성분만을 담아 생명 에너지를 연구합니다.</span>
+                        <strong>Our Story</strong>
+                    </div>
+                    <img src="images/popup1.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>건강한 삶으로 이끌어갈 수 있는 연구를 목표로 합니다.</span>
+                        <strong>Sends Your<br>
+                            Secret Signal</strong>
+                    </div>
+                    <img src="images/popup2.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>올바른 케어로 이너르와 함께 나의 이너 신호에 귀 기울여보세요.</span>
+                        <strong>With Innere.</strong>
+                    </div>
+                    <img src="images/popup3.png" alt="">
+                </li>
+            </ul>
+            <button class="ctrl_prev">이전 팝업보기</button>
+            <button class="ctrl_next">다음 팝업보기</button>
+            <div class="ctrl_group">
+                <div class="ctrl_paging"></div>
+                <button class="ctrl_stop">정지</button>
+                <button class="ctrl_play">재생</button>
+            </div>
+            <!-- swiper-pagination 
+            swiper에서 기본제공하는 각 요소별 class명을 그대로 사용하면 기본 스타일이 적용됨 (스타일을 변경해서 써도 됨)
+            스타일을 전부 제어하려면 클래스명을 변경하면 됨. 
+            단, jquery에서 swiper init에서 요소의 클래스명 변경 -->
+        </section>
+    </div>
+</body>
+</html>

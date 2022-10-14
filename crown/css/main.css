@@ -2,18 +2,20 @@
 @import url(common.css);
 
 h1 {
-    font-size: 4rem;
+    font-size: 0;
 }
 h1 span {
-    font-size: 2rem;
+    font-size: 0;
 }
-
+.event {
+    margin: 0 0 4.667rem 0;
+}
 .event h2 {
-    font-size: 48px;
+    font-size: 3.2rem;
     font-weight: 700;
     color: #1d1d1d;
-    line-height: 48px;
-    margin: 2em 0 2em 0;
+    line-height: 1;
+    margin: 8rem 0 6.4rem 0;
 }
 .event ul li {
     float: left;
@@ -23,7 +25,7 @@ h1 span {
     100 - (li하나의 넓이 *2) = 100-(47*2) = 6 
     한줄에 들어가는 여백과 li의 합이 100% */
     width: 47%; 
-    margin: 0 6% 0 0;
+    margin: 0 6% 6rem 0;
 
     /* 여백을 고정으로 주는 경우 - %가 아니고 px값을 줌
         li 넓이 계산법 - 100%/li의 갯수 = 50% 
@@ -37,14 +39,120 @@ h1 span {
 .event ul li:last-child {
     margin-right: 0;
 }
+.event ul li:nth-child(2),
+.event ul li:nth-child(4) {
+    margin-top: -12.533rem;
+}
+
+.event ul li a {
+    display: block;
+}
+.event ul li a strong {
+    display: block;
+    font-size: 2.133rem;
+    font-weight: 700;
+}
+.event ul li a span {
+    display: block;
+    margin: 0.4rem 0 0.933rem 0;
+    font-size: 1.333rem;
+    font-weight: 400;
+}
 .event ul li a img {
     width: 100%;
+    border-radius: 2.667rem;
 }
-@media screen and (max-width:640px){
+.event .more {
+    position: absolute;
+    left: 14.333rem;
+    top: 4.133rem;
+}
+@media screen and (max-width:1300px){
     .event h2 {
-        font-size: 30px;
+        font-size: 2.8rem;
+    }
+    .event ul li a strong {
+        font-size: 1.6rem;
+    }
+    .event ul li a span {
+        font-size: 17px;
+        overflow: hidden;
+        line-height: 1.5;
+        height: 3em;
+    }
+    .event .more {
+        left: 12.333rem;
+        top: 3.5rem;
     }
 }
+@media screen and (max-width:900px){
+    .event h2 {
+        font-size: 2.533rem;
+    }
+    .event ul li a strong {
+        font-size: 1.6rem;
+        white-space: nowrap; /* 줄바꿈 금지 */
+        overflow: hidden; 
+        text-overflow: ellipsis;
+    }
+    .event ul li a span {
+        font-size: 1rem;
+        overflow: hidden;
+        line-height: 1.5;
+        height: 3em;
+    }
+    .event .more {
+        left: 11.333rem;
+        top: 3.1rem;
+    }
+}
+@media screen and (max-width:760px){
+    .event h2 {
+        font-size: 2.4rem;
+    }
+    .event ul li a strong {
+        font-size: 1.467rem;
+        white-space: nowrap; /* 줄바꿈 금지 */
+        overflow: hidden; 
+        text-overflow: ellipsis;
+    }
+    .event ul li a span {
+        font-size: 0.933rem;
+        overflow: hidden;
+        line-height: 1.5;
+        height: 3em;
+    }
+    .event .more {
+        left: 11rem;
+        top: 3.1rem;
+    }
+}
+@media screen and (max-width:550px){
+    .event ul li {
+        float: none;
+        width: 100%; 
+        margin: 0 0 2.267rem 0;
+    }
+    .event ul li:nth-child(2),
+    .event ul li:nth-child(4) {
+        margin-top: 0;
+    }
+    .event h2 {
+        font-size: 2.267rem;
+        margin: 3.533rem 0 1.333rem 0;
+    }
+    .event ul li a strong {
+        font-size: 1.2rem;
+    }
+    .event ul li a span {
+        font-size: 0.867rem;
+    }
+    .event .more {
+        left: 11rem;
+        top: 2.8rem;
+    }
+}
+
 .product {
     background-color: #ffd301;
     padding: 6.133rem 0 5.467rem 0;
@@ -59,14 +167,14 @@ h1 span {
     */
     float: left;
     width: calc(25% - 22.5px); 
-    margin: 0 30px 0 0;
-    border: 3px solid #3d3d3d;
-    border-radius: 60px 0 60px 60px;
+    margin: 0 2rem 0 0;
+    border: 0.2rem solid #3d3d3d;
+    border-radius: 4rem 0 4rem 4rem;
     background-color: #fff;
     background-position: right 18% bottom -40%;
     background-repeat: no-repeat;
     /* background-size: 40% auto; 가로는 background를 주는 영역의 넓이의 몇%, 높이는 auto로 넓이 맞춰서 비율에 맞게 조정 */
-    background-size: 156px auto; /*배경이미지 사이즈를 고정 px로 입력*/
+    background-size: 10.400rem auto; /*배경이미지 사이즈를 고정 px로 입력*/
 }
 .product ul li:last-child {
     margin-right: 0;
@@ -116,7 +224,7 @@ h1 span {
 }
 @media screen and (max-width:1440px){
     .product ul li {
-        background-size: 146px auto; 
+        background-size: 9.733rem auto; 
     }
     .product ul li a h3 {
         font-size: 1.8rem;
@@ -128,8 +236,8 @@ h1 span {
     .product ul li {
         /* 한줄에 들어가는 모든 여백 60, 60/3 =20 */
         width: calc(33.33% - 20px); 
-        margin: 0 30px 0 0;
-        background-size: 136px auto; 
+        margin: 0 2rem 0 0;
+        background-size: 9.067rem auto; 
     }
     .product ul li:nth-child(4) {
         display: none;
@@ -143,12 +251,13 @@ h1 span {
     .product ul li a p {
         margin: 0 0 7.333rem 0;
     }
+}
 @media screen and (max-width:740px){
     .product ul li {
         /* 한줄에 들어가는 모든 여백 30, 30/2 =15 */
         width: calc(50% - 15px); 
-        margin: 0 30px 0 0;
-        background-size: 126px auto; 
+        margin: 0 2rem 0 0;
+        background-size: 8.4rem auto; 
     }
     .product ul li:nth-child(3) {
         display: none;
