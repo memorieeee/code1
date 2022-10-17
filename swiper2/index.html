@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/popup.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <title>Swiper 팝업</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="popup swriper"> <!-- 팝업의 높이 결정 -->
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>자연에서 찾은 순수한 아름다움의 비밀</span>
+                        <strong>Cosmetics<br>with Nature</strong>
+                    </div>
+                    <img src="images/popup4.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>건강한 삶으로 이끌어갈 수 있는 연구를 목표로 합니다.</span>
+                        <strong>Sends Your<br>Secret Signal</strong>
+                    </div>
+                    <img src="images/popup5.png" alt="">
+                </li>
+                <li class="swiper-slide">
+                    <div class="txt">
+                        <span>당신의 숨어있는 비밀 이너 신호, 응시하며 케어할게요.</span>
+                        <strong>With Innere.</strong>
+                    </div>
+                    <img src="images/popup6.png" alt="">
+                </li>
+            </ul>
+            <!--
+                이전 버튼 : swiper-button-prev
+                다음 버튼 : swiper-button-next
+                페이징 : swiper-pagination
+                기본 swiper의 이름을 따르면 기본 스타일이 적용됨.
+                스타일을 직접 주려면 class명을 변경해도 됨. 
+                swiper는 기본적으로 일시정지 버튼과 재생버튼을 제공하지 않음
+
+                접근성 : button 태그에 버튼의 기능을 text로 써야 함 (css로 글자 지우기)
+                    일시정지 버튼과 재생버튼은 같이 사용 가능
+                    단, 기능을 설명하는 text를 변경해야 함 
+            -->
+            <button class="btn_prev">이전 팝업 보기</button>
+            <button class="btn_next">다음 팝업 보기</button>
+            <div class="ctrl_wrap">
+                <div class="btn_paging"></div>
+                <button class="btn_stop">일시정지</button> <!-- 일시정지/재생 버튼 -->
+            </div>
+        </div>
+        <div class="wrapper">
+            <h1>배너 - 반응형으로 보일 개수 제한</h1>
+            <div class="banner1 swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="images/banner1.png" alt="">
+                        <strong>파바 X 요리용디! 아픈 사람도 눈뜨게 하는 치즈페어?</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner2.png" alt="">
+                        <strong>파리바게뜨에서 선보이는 ‘돌에 구운 베이글’</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner3.png" alt="">
+                        <strong>파리지앵으로 산다 EP.4 오픈 알바 편 4탄(퇴사자 추천빵?!)</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner4.png" alt="">
+                        <strong>파리지앵으로 산다 EP.4 오픈 알바 편 3탄(올림픽북문점)</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner5.png" alt="">
+                        <strong>부산갈매기 부기와 파바의 만남! 부기케이크 등장!</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <h1>배너 - 사이즈를 css에서 제어</h1>
+            <div class="banner2 swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="images/banner1.png" alt="">
+                        <strong>파바 X 요리용디! 아픈 사람도 눈뜨게 하는 치즈페어?</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner2.png" alt="">
+                        <strong>파리바게뜨에서 선보이는 ‘돌에 구운 베이글’</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner3.png" alt="">
+                        <strong>파리지앵으로 산다 EP.4 오픈 알바 편 4탄(퇴사자 추천빵?!)</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner4.png" alt="">
+                        <strong>파리지앵으로 산다 EP.4 오픈 알바 편 3탄(올림픽북문점)</strong>
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="images/banner5.png" alt="">
+                        <strong>부산갈매기 부기와 파바의 만남! 부기케이크 등장!</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

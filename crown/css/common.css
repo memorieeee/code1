@@ -73,3 +73,164 @@ html, body {
 .skip_nav a:focus {
     top: 0;
 } 
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    font-size: 0;
+    line-height: 0;
+    margin: 35px 0 0 0;
+}
+header .logo img {
+    width: 127px;
+}
+header .gnb {
+    float: right;
+}
+header .gnb .gnb_open {
+    display: none;
+    padding: 20px 0 0 0;
+}
+header .gnb .gnb_open img {
+    width: 20px;
+}
+header .gnb ul li {
+    float: left;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 0 33px;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+@media screen and (max-width:1200px){
+    header .logo {
+        margin: 32px 0 0 0;
+    }
+    header .gnb ul li a {
+        padding: 0 20px;
+        font-size: 16x;
+    }
+}
+@media screen and (max-width:640px){
+    header {
+        height: 70px;
+    }
+    header .logo {
+        margin: 20px 0 0 0;
+    }
+    header .logo img {
+        width: 80px;
+    } 
+    header .gnb .gnb_open {
+        display: block;
+    }
+    header .gnb ul {
+        display: none;
+    }
+}
+.footer {
+    position: relative;
+}
+.footer .family {
+    position: absolute;
+    right: calc(50% - 700px);
+    /* 
+    wrapper없이 콘텐츠 영역의 끝에 family를 배치 
+    right: 50%에서 콘텐츠의 넓이 절반 700px를 빼줌 
+    */
+    top: 92px;
+}
+.footer .family button {
+    width: 125px;
+    height: 36px;
+    border: 1px solid #ccc;
+}
+.footer .ftop {
+    height: 62px;
+    border-bottom: 1px solid #dddddd;
+}
+.footer .ftop .fnav li {
+    position: relative;
+    float: left;
+    margin-right: 34px;
+}
+.footer .ftop .fnav li::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 13px;
+    color: #dddddd;
+    content: "";
+}
+.footer .ftop .fnav li.privacy a {
+    font-weight: 700;
+}
+.footer .ftop .fnav li:last-child::after {
+    display: none;
+}
+.footer .ftop .fnav li a {
+    display: block;
+    line-height: 62px; /* ftop높이 */
+}
+.footer .fsub .flogo {
+    float: left;
+}
+.footer .fsub .flogo img {
+    width: 86px;
+}
+.footer .fsub .inner {
+    margin: 31px 0 124px 130px;
+}
+footer .fsub .finfo span {
+    display: inline-block;
+    margin-right: 30px;
+}
+footer .fsub .copyright {
+    color: #ccc;
+    margin-top: 25px;
+}
+@media screen and (max-width:1440px){
+    .footer .family {
+        right: 20px;
+    }
+}
+@media screen and (max-width:640px){
+    .footer .family {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 37px 0 20px 0;
+    }
+    .footer .ftop {
+        height: auto;
+        border-bottom: 0;
+    }
+    .footer .ftop .fnav li {
+        margin-right: 25px;
+        margin-bottom: 5px;
+    }
+    .footer .ftop .fnav li::after {
+        width: 0;
+        height: 0;
+    }
+    .footer .ftop .fnav li a {
+        line-height: 1.5;
+    }
+    .footer .fsub .flogo { 
+        display: none;
+    }
+    .footer .fsub .inner {
+        margin: 20px 0 84px 0;
+    }
+    footer .fsub .finfo span {
+        margin-right: 15px;
+    }
+}
