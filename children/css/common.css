@@ -79,3 +79,116 @@ html, body {
 ::selection{background:#ED1B2D;color:#fff;}
 ::-moz-selection{background:#ED1B2D;color:#fff;}
 ::-webkit-selection{background:#ED1B2D;color:#fff;} 
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin: 28px 0 0 50px;
+}
+.header .logo a {
+    display: block;
+    width: 225px;
+    height: 45px;
+    background-image: url(../images/common/logo_w.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb {
+    float: right;
+    margin: 0 156px 0 0;
+}
+.header .gnb .gnb_open {
+    display: none;
+}
+.header .gnb ul li {
+    float: left;
+}
+.header .gnb ul li a {
+    display: block;
+    padding: 0 37px;
+    line-height: 100px; 
+    /* header의 높이값, 글자를 위아래 가운데 배치하기 위해 */
+    font-size: 22px;
+}
+
+/* header가 고정일때 */
+.header.black {
+    /* border-bottom: 1px solid #ddd; */
+    color: #1D1D1D;
+    background-color: #fff;
+    box-shadow: 0, 3px, 4px, rgba(0,0,0,0.08);
+}   
+.header.black .logo a {
+    background-image: url(../images/common/logo.svg);
+}
+/* 
+1440
+1280 1240 1200
+1024 1000 980
+800
+640 
+*/
+@media screen and (max-width:1280px){
+    .header .gnb {
+        margin: 0 100px 0 0;
+    }
+    .header .gnb ul li a {
+        padding: 0 26px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:980px){
+    .header .gnb {
+        margin: 0 52px 0 0;
+    }
+    .header .gnb ul li a {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:640px){
+    .header {
+        height: 50px;
+    }
+    .header .logo {
+        margin: 13px 0 0 20px;
+    }
+    .header .logo a {
+        width: 139px;
+        height: 28px;
+    }
+    .header .gnb {
+        margin: 0;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        padding: 19px 20px 16px 0;
+    }
+    .header .gnb .gnb_open span {
+        display: block;
+        width: 16px;
+        height: 2px;
+        border-radius: 1px;
+        margin-bottom: 3px;
+        background-color: #fff;
+        font-size: 0;
+        line-height: 0;
+    }
+    .header .gnb ul {
+        display: none;
+    }
+    .header.fixed .gnb .gnb_open span {
+        background-color: #1D1D1D;
+    }
+}
