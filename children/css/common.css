@@ -1,12 +1,12 @@
 /* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
 
 html, body {
     color: #3D3D3D;
     line-height: 1.5;
-    font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     /* 폰트 적용 우선순위
-       을유 웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
+       웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
        apple sd gothic - 아이폰에서 지원하는 폰트 */
     font-size: 16px;
     font-weight: 400;
@@ -31,11 +31,7 @@ html, body {
     1400px - 콘텐츠 영역인데 왼쪽 20 + 오른쪽 20 = 1440px이 넓이
     padding으로 좌우에 여백을 20px씩 줌 */
 }
-@media screen and (max-width:1000px){
-    html, body {
-        font-size: 14px;
-    }
-}
+
 @media screen and (max-width:640px){
     /* 640px 이하의 디바이스에서만 아래 css가 적용
       pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
@@ -150,10 +146,19 @@ html, body {
 }
 @media screen and (max-width:980px){
     .header .gnb {
-        margin: 0 52px 0 0;
+        margin: 0 80px 0 0;
     }
     .header .gnb ul li a {
-        padding: 0 15px;
+        padding: 0 20px;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:800px){
+    .header .gnb {
+        margin: 0 40px 0 0;
+    }
+    .header .gnb ul li a {
+        padding: 0 16px;
         font-size: 16px;
     }
 }

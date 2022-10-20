@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+    <script src="js/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
-    <script src="js/jquery.counterup.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>세이브더칠드런 보건영양</title>
 </head>
 <body>
     <div id="wrap">
-        <header class="header ">
+        <header class="header">
             <h1 class="logo"><a href="index.html">세이브더칠드런</a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span>메뉴열기</span><span></span><span></span></button>
@@ -44,39 +47,123 @@
                 </div>
             </section>
             <section class="section count">
-                <div class="wrapper">
-                    <div class="tit">
-                        <h2><strong>매일 1만 4,200명 이상</strong>의<br>
-                            아동이 5살이 되기 전<br>
-                            목숨을 잃습니다.</h2>
-                        <p><span>세이브더칠드런은 예방 가능한 질병으로 사망하는</span>
-                            <span>5세 미만 아동이 없도록 산모와 신생아 및 영유아를 위한</span>
-                            보건영양 사업을 진행합니다.</p>
+                    <div class="wrapper">
+                        <div class="tit">
+                            <h2><strong>매일 1만 4,200명 이상</strong>의<br>
+                                아동이 5살이 되기 전<br>
+                                목숨을 잃습니다.</h2>
+                            <p><span>세이브더칠드런은 예방 가능한 질병으로 사망하는</span>
+                                <span>5세 미만 아동이 없도록 산모와 신생아 및 영유아를 위한</span>
+                                보건영양 사업을 진행합니다.</p>
+                        </div>
+                        <ul class="rate">
+                            <li>
+                                <div class="exp">매일 5세 미만 영유아 사망수</div>
+                                <div class="num"><strong>14,200</strong><span>명</span></div>
+                            </li>
+                            <li>
+                                <div class="exp">매년 5세 미만 영유아 사망수</div>
+                                <div class="num"><strong>5,200,000</strong><span>명</span></div>
+                            </li>
+                            <li>
+                                <div class="exp">예방 가능한 질병으로 인한 사망 비율</div>
+                                <div class="num"><strong>45.54</strong><span>%</span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="rate">
-                        <li>
-                            <div class="exp">매일 5세 미만 영유아 사망수</div>
-                            <div class="num"><strong>14,200</strong><span>명</span></div>
-                        </li>
-                        <li>
-                            <div class="exp">매년 5세 미만 영유아 사망수</div>
-                            <div class="num"><strong>5,200,000</strong><span>명</span></div>
-                        </li>
-                        <li>
-                            <div class="exp">예방 가능한 질병으로 인한 사망 비율</div>
-                            <div class="num"><strong>45.54</strong><span>%</span></div>
-                        </li>
-                    </ul>
-                </div>
             </section>
             <section class="section biz">
-                <h2>세이브더칠드런 사업소개</h2>
+                <div class="wrapper">
+                    <div class="biz_wrap">
+                        <img src="images/main/biz.png" alt="물에 손을 대고 있는 두 아이 사진">
+                        <div class="inner">
+                            <a href="#n">
+                                <strong>보건영양</strong>
+                                <h2>예방접종을 통한 면역강화 사업</h2>
+                                <p>감벨라 지역주민 및 지역 내 난민캠프 주민 아동 대상으로 
+                                    예방접종율을 제고하고, 의료 접근성 향상을 위해 보건 교육, 
+                                    의료장비 및 의약품 지원, 예방접종 권장 홍보</p>
+                                <p class="exp">* 지원 국가 : 에티오피아</p>
+                                <div class="more"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section news">
-                <h2>현장소식</h2>
+                <div class="wrapper cnt_wrap">
+                    <h2>현장소식과 이야기가 <span>궁금하세요?</span></h2>
+                    <div class="list swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news01.png" alt="에티오피아 풍경 사진"></span>
+                                    <strong>에티오피아 파견직원의 일기 '메마른 땅에도 싹트는 희망'</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news02.png" alt="봉사 사진"></span>
+                                    <strong>숫자? 데이터? 진짜 성과는 이런 것이죠 - 해외 아동보호 담당 인터뷰</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news03.png" alt="아기의 손 사진"></span>
+                                    <strong>[인포그래픽] 라오스의 변화 - 엄마와 아이 모두 건강하게</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span><img src="images/main/news04.png" alt="아이들 사진"></span>
+                                    <strong>라오스 파견 직원의 출장가방 들여다보기</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_paging"></div>
+                    </div><!-- list 종료 -->
+                    <a href="#n" class="more">뉴스 더보기</a>
+                </div><!-- wrapper 종료 -->
             </section>
             <section class="section support">
-                <h2>지원 및 후원</h2>
+                <div class="wrapper">
+                    <div class="support_wrap">
+                        <div class="inner">
+                            <h2><span>월 3만 원이면, 연간</span>
+                                <span>10명의 아동에게 학용품을 지원하고</span>
+                                <span>4명의 산모에게 출산물품을</span>
+                                지원할 수 있습니다.</h2>
+                            <p>매월 정기후원을 통해, 더 많은 아이들에게<br>
+                                장기적인 도움을 주실 수 있습니다.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <span>세이브더칠드런의 멤버십</span>
+                                    <strong>Giving Club</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span>매월 아동의 소식</span>
+                                    <strong>월페이퍼</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span>매월 정기후원</span>
+                                    <strong>후원하기</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span> SNS 긴급구호 소식</span>
+                                    <strong>골든타임세이버</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <footer class="section footer fp-auto-height"> 
                 <!-- section과 fp-auto-height를 동시에 선언하면 footer처럼 높이가 낮은 콘텐츠를 배치할 수 있음-->
