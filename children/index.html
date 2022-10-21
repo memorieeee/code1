@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
@@ -19,7 +18,7 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header">
+        <header class="header fixed"><!-- fullpage가 안 들어갔을 때, 스크롤 내리면 fixed 추가 -->
             <h1 class="logo"><a href="index.html">세이브더칠드런</a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span>메뉴열기</span><span></span><span></span></button>
@@ -35,9 +34,11 @@
         <div id="fullpage"> <!-- fullpage 효과를 줄 모든 태그를 감싸는 요소(이름변경가능) -->
             <section class="section visual"> <!-- 클래스명 section을 주면 해당요소는 1page차지(이름변경불가)-->
                 <div class="inner">    
-                    <h2>모든 아동은<br>
-                            건강하게 태어나<br>
-                            자랄 권리가 있습니다.</h2>
+                    <h2>
+                        <span class="block"><span>모든 아동은</span></span>
+                        <span class="block"><span>건강하게 태어나</span></span>
+                        <span class="block"><span>자랄 권리가 있습니다.</span></span>
+                    </h2>
                         <!-- 비디오 파일이 사용자의 컴퓨터에 다운로드가 완료된 이후에 재생 됨
                             즉, 용량이 엄청 작아야 함. -->
                     <video loop muted data-autoplay playsinline> <!-- 비디오 자동실행 무한반복 -->
@@ -129,33 +130,33 @@
                 <div class="wrapper">
                     <div class="support_wrap">
                         <div class="inner">
-                            <h2><span>월 3만 원이면, 연간</span>
-                                <span>10명의 아동에게 학용품을 지원하고</span>
+                            <h2><strong>월 3만 원이면,</strong>
+                                <span>연간 10명의 아동에게 학용품을 지원하고</span>
                                 <span>4명의 산모에게 출산물품을</span>
                                 지원할 수 있습니다.</h2>
                             <p>매월 정기후원을 통해, 더 많은 아이들에게<br>
                                 장기적인 도움을 주실 수 있습니다.</p>
                         </div>
                         <ul>
-                            <li>
+                            <li class="list01">
                                 <a href="#n">
                                     <span>세이브더칠드런의 멤버십</span>
                                     <strong>Giving Club</strong>
                                 </a>
                             </li>
-                            <li>
+                            <li class="list02">
                                 <a href="#n">
                                     <span>매월 아동의 소식</span>
                                     <strong>월페이퍼</strong>
                                 </a>
                             </li>
-                            <li>
+                            <li class="list03 active">
                                 <a href="#n">
                                     <span>매월 정기후원</span>
                                     <strong>후원하기</strong>
                                 </a>
                             </li>
-                            <li>
+                            <li class="list04">
                                 <a href="#n">
                                     <span> SNS 긴급구호 소식</span>
                                     <strong>골든타임세이버</strong>
@@ -166,8 +167,19 @@
                 </div>
             </section>
             <footer class="section footer fp-auto-height"> 
-                <!-- section과 fp-auto-height를 동시에 선언하면 footer처럼 높이가 낮은 콘텐츠를 배치할 수 있음-->
-                <div><br><br>footer<br><br></div>
+                <!-- section과 fp-auto-height를 동시에 선언하면 
+                    footer처럼 높이가 낮은 콘텐츠를 배치할 수 있음-->
+                <div class="wrapper">
+                    <ul class="fnav">
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">이메일 집단수집거부</a></li>
+                    </ul>
+                    <div class="inner">
+                        <div class="flogo"></div>
+                        <div class="copyright">Copyright © Save the Children Korea All Rights Reserved.</div>
+                    </div>
+                </div>
             </footer>
         </div>
     </div>
