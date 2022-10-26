@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B&TAILOR</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css"><!-- html에서는 scss를 컴파일한 css를 사용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <title>B&TAILOR</title> 
 </head>
 <body>
-    
+    <div id="wrap">
+        <header class="header"></header>
+        <section class="visual">
+            <div class="tit">
+                <h2 >B&TAILOR 1967<br>
+                    FULL-HAND BESPOKE</h2>
+                <strong>비앤테일러는 양질의 비스포크 서비스를 제공하는 비스포크 하우스입니다.</strong>
+            </div>
+            <div class="popup swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="images/main/visual1.png" alt="흑백사진"></li>
+                    <li class="swiper-slide"><img src="images/main/visual2.png" alt="흑백사진"></li>
+                    <li class="swiper-slide"><img src="images/main/visual3.png" alt="흑백사진"></li>
+                </ul>
+                <div class="btn_wrap">
+                    <div class="btn_paging">
+                    </div>
+                    <button class="btn_stop">일시정지</button><!--일시정지/재생 두가지 기능을 가진 버튼-->
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
