@@ -35,5 +35,30 @@ $(document).ready(function(){
 			$(this).addClass('play');
 			$(this).text('재생');
 		}
+	});//visual stop
+
+
+
+
+	/* fabric 이미지 스크롤 효과 */
+	let scrolling;
+	let moveTop;
+	let objName = $('.fabric .bg img');
+	fabScroll(); //로딩 됐을때 한번
+	$(window).scroll(function(){ //스크롤 할 때마다 실행
+		fabScroll();
+
 	});
-});
+
+	function fabScroll(){ // 스크롤값을 계산해서 fabric 이미지를 움직일 함수 
+		/* 스크롤값을 요소의 위치값으로 변경해서 스타일 적용
+		(효과를 줄 요소가 화면 하단에 등장하기 시작했을 때부터의 이동값을 적용) */
+		scrolling = $(window).scrollTop();
+		console.log(scrolling, 'scroll');
+		console.log(objName.offset().top, 'top');
+		moveTop = scrolling*0.1;
+		// objName.css('transform', 'translate(0, -'+moveTop+'px)');
+	}
+
+
+});//document.ready
