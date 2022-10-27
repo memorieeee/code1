@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3" height="6" viewBox="0 0 3 6">
-  <g id="visual_btn_stop" transform="translate(-492 -628)">
-    <rect id="사각형_25" data-name="사각형 25" width="1" height="6" transform="translate(492 628)" fill="#fff"/>
-    <rect id="사각형_26" data-name="사각형 26" width="1" height="6" transform="translate(494 628)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6">
+  <g id="visual_btn_stop" transform="translate(-491 -628)">
+    <rect id="사각형_25" data-name="사각형 25" width="2" height="6" transform="translate(491 628)" fill="#fff"/>
+    <rect id="사각형_26" data-name="사각형 26" width="2" height="6" transform="translate(494 628)" fill="#fff"/>
   </g>
 </svg>
