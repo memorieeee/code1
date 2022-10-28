@@ -18,7 +18,8 @@ $(document).ready(function(){
 
 	});//visual swiper
 
-	/* visual popup의 정지/재생 버튼 
+	/* 
+		visual popup의 정지/재생 버튼 
 		하나의 버튼에 두가지 기능
 		정지/재생 기능 구분하는 값 
 		btn_stop버튼에 play클래스가 없으면 일시정지
@@ -37,28 +38,62 @@ $(document).ready(function(){
 		}
 	});//visual stop
 
+	/* 
+		이미지가 스크롤 될 때 오브젝트가 움직이는 효과. 
+		오브젝트가 화면에 나타나기 시작했을때부터 스크롤된 값을 계산해서 움직일 값으로 변환해줘야 함.
+		1. 브라우저가 스크롤되는 값 - $(window),scrollTop();
+		2. 오브젝트가 화면 하단에 나타나기 시작하는 값
+			-- offset().top - 맨 위에서부터 오브젝트까지의 거리값
+			offset().top과 $(window).scrollTop값이 같아지는 시기는 오브젝트가 화면 상단에 딱 붙었을 때이다.
+			--> 필요한 건 오브젝트가 화면 하단에서 보이기 시작할 때.
+			두 값의 차이가 브라우저의 높이값. 
+			오브젝트가 화면하단에서 나타나기 시작하는 값은 
+			오브젝트의 offset().top - 윈도우의 높이값 만큼 스크롤 됐을 때
 
+		3. 오브젝트를 움직일 방법 - 	
+			animate - transform X
+			css로 transform: translate(); 움직일 예정
+	*/
 
-
-	/* fabric 이미지 스크롤 효과 */
+	let winH;
+	let moveVal; //오브젝트가 움직일 값 
+	let offTop; 
 	let scrolling;
-	let moveTop;
-	let objName = $('.fabric .bg img');
-	fabScroll(); //로딩 됐을때 한번
-	$(window).scroll(function(){ //스크롤 할 때마다 실행
-		fabScroll();
 
-	});
+	/* 
+		objMove : 실제 움직일 오브젝트
+		objParent : 움직일 오브젝트의 기준이 되는 요소 (offset.top()을 계산할 오브젝트)
+		moveDir : 스크롤 방향 (좌우)
+		moveRate : 움직일 속도/비율
+	*/
+	objParallax($('.fabric .bg img'), $('.fabric .bg'), 'left', 0.1);
+	// objParallax($('.sns p'), $('.sns p'), 'left', 0.4);
 
-	function fabScroll(){ // 스크롤값을 계산해서 fabric 이미지를 움직일 함수 
-		/* 스크롤값을 요소의 위치값으로 변경해서 스타일 적용
-		(효과를 줄 요소가 화면 하단에 등장하기 시작했을 때부터의 이동값을 적용) */
-		scrolling = $(window).scrollTop();
-		console.log(scrolling, 'scroll');
-		console.log(objName.offset().top, 'top');
-		moveTop = scrolling*0.1;
-		// objName.css('transform', 'translate(0, -'+moveTop+'px)');
+	function objParallax(objMove, objParent, moveDir, moveRate){ //오브젝트를 움직이는 애니메이션 단 한번 세팅
+		objMove.css('transition', '1s');
+		moveAni(objMove, objParent, moveDir, moveRate);
+		$(window).scroll(function(){
+			moveAni(objMove, objParent, moveDir, moveRate);
+		});
+		$(window).resize(function(){
+			moveAni(objMove, objParent, moveDir, moveRate);
+		}); 
 	}
+	function moveAni(objMove, objParent, moveDir, moveRate){ //오브젝트를 실제 움직이는 함수 (반복실행)
+		winH = $(window).height();
+		offTop = objParent.offset().top; 
+		scrolling = $(window).scrollTop();
+		moveVal = (scrolling - offTop + winH)*moveRate; 
+		console.log(moveVal, 'moveVal');
+	
+		if(moveDir == 'left'){
+			objMove.css('transform', 'translateX(-'+moveVal+'px)');
+		}else{//top
+			objMove.css('transform', 'translateY(-'+moveVal+'px)');
+		}
+	}
+
+
 
 
 });//document.ready
