@@ -529,6 +529,8 @@
 }
 @media screen and (max-width: 800px) {
     .product {
+        background-image: none;
+        background-color: #3E3E3F;
         h2 {
             padding: 70px 0 16px 200px;
             font-size: 26px;
