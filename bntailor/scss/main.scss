@@ -3,9 +3,9 @@
 @import "_common.scss";
 
 /* 
-scss내에서 import할 default와 common 등의 파일은
-파일명 앞에 _(언더바)를 입력하면 sass컴파일러가 해당파일은 컴파일 하지 않음
-main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 사용하면 됨.
+    scss내에서 import할 default와 common 등의 파일은
+    파일명 앞에 _(언더바)를 입력하면 sass컴파일러가 해당파일은 컴파일 하지 않음
+    main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 사용하면 됨.
 */
 
 .visual {
@@ -318,7 +318,10 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
         padding: 107px 0 39px 760px;
         color: $w_tit_color;
         font-size: 40px;
-        line-height: 50px
+        line-height: 50px;
+        span {
+            display: inline;
+        }
     }
     strong {
         float: right;
@@ -328,7 +331,7 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
     .list {
         margin: 48px 0 0 0;
         ul {
-            padding: 0 0 60px 0;
+            padding: 54px 0 60px 0;
             li {
                 position: relative;
                 margin: 0 0 70px 0;
@@ -351,9 +354,6 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
                         font-size: 36px;
                         line-height: 50px;
                         color: #fff;
-                    }
-                    p {
-
                     }
                 }
                 &:nth-child(2), &:nth-child(4) {
@@ -378,82 +378,208 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
                         width: 380px;
                     }
                 }
-                
             }// li 종료
-       }
+        }
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1440px) {
     .product {
-        background-image: none;
-        background-color: #3E3E3F;
         h2 {
-            padding: 42px 0 18px 0;
-            font-size: 26px;
-            line-height: 32px
+            padding: 100px 0 30px 690px;
+            font-size: 34px;
+            line-height: 40px
         }
         strong {
-            padding: 0;
-            font-size: 12px;
-            float: left ;
-            color: $grey_light_color;
-            .m_no {
-                display: none;
-            }
+            font-size: 15px;
+            padding: 0 0 0 900px;
         }
         .list {
-            margin: 48px 0 0 0;
+            margin: 40px 0 0 0;
             ul {
-                padding: 0 0 60px 0;
+                padding: 50px 0 60px 0;
                 li {
-                    margin: 0 0 50px 0;
+                    margin: 0 0 70px 0;
                     a {
                         .pic {
-                            width: 85%;
-                            height: 170px;
+                            width: 700px;
+                            height: auto;
                         }
-                    
                         h3 {
-                            margin: 0 0 5px 0;
-                            font-size: 20px;
-                            line-height: 30px; 
+                            font-size: 34px;
+                            line-height: 40px;
                         }
-                        p {
-                            line-height: 20px;
-                        }
+                       
                     }
                     &:nth-child(2), &:nth-child(4) {
-                        display: flex;
-                        justify-content: flex-end;
                         .inner {
-                            position: relative;
-                            right: 0;
-                            top: -7%;
-                            transform: translate(0, 0);
-                            width: 85%;
-                            text-align: left;
-                            margin-right: 15%;
-                        }
-                        .pic {
-                            margin-left: 15%;
+                            right: 600px;
                         }
                     }
                     &:nth-child(1), &:nth-child(3), &:nth-child(5) {
                         display: flex;
                         .inner {
-                            position: relative;
-                            left: 0;
-                            top: -7%;
-                            transform: translate(0, 0);
-                            width: 85%;
-                            text-align: right;
-                            margin-left: 15%;
-
+                            left: 600px;
                         }
                     }
-                    
                 }// li 종료
-           }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .product {
+        h2 {
+            padding: 90px 0 26px 560px;
+            font-size: 30px;
+            line-height: 40px
+        }
+        strong {
+            font-size: 14px;
+            padding: 0 0 0 800px;
+        }
+        .list {
+            margin: 40px 0 0 0;
+            ul {
+                padding: 40px 0 50px 0;
+                li {
+                    margin: 0 0 60px 0;
+                    a {
+                        .pic {
+                            width: 600px;
+                            height: auto;
+                        }
+                        h3 {
+                            margin: 0 0 10px 0;
+                            font-size: 30px;
+                            line-height: 40px;
+                        }
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .inner {
+                            right: 500px;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        display: flex;
+                        .inner {
+                            left: 500px;
+                        }
+                    }
+                }// li 종료
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .product {
+        h2 {
+            padding: 90px 0 20px 400px;
+            font-size: 28px;
+            line-height: 30px
+        }
+        strong {    
+            padding: 0 0 0 600px;
+        }
+        .list {
+            margin: 40px 0 0 0;
+            ul {
+                padding: 30px 0 40px 0;
+                li {
+                    margin: 0 0 50px 0;
+                    a {
+                        .pic {
+                            width: 560px;
+                            height: auto;
+                        }
+                        h3 {
+                            margin: 0 0 10px 0;
+                            font-size: 28px;
+                            line-height: 30px;
+                        }
+                        p {
+                            font-size: 14px;
+                        }
+                       
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .inner {
+                            right: 400px;
+                            top: 40%;
+                            transform: translate(0, 50%);
+                            width: 300px;
+                            text-align: right;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        display: flex;
+                        .inner {
+                            left: 400px;
+                            top: 40%;
+                            transform: translate(0, 50%);
+                            width: 300px;
+                        }
+                    }
+                }// li 종료
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .product {
+        h2 {
+            padding: 70px 0 16px 200px;
+            font-size: 26px;
+            line-height: 30px
+        }
+        strong {    
+            padding: 0 0 0 400px;
+            .m_no {
+                display: none;
+            }
+        }
+        .list {
+            margin: 40px 0 0 0;
+            ul {
+                padding: 20px 0 30px 0;
+                li {
+                    margin: 0 0 42px 0;
+                    a {
+                        .pic {
+                            width: 400px;
+                            height: auto;
+                        }
+                        h3 {
+                            margin: 0 0 10px 0;
+                            font-size: 26px;
+                            line-height: 30px;
+                        }
+                        p {
+                            font-size: 13px;
+                        }
+                       
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .inner {
+                            right: 300px;
+                            top: 40%;
+                            transform: translate(0, 50%);
+                            width: 300px;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        display: flex;
+                        .inner {
+                            left: 300px;
+                            top: 40%;
+                            transform: translate(0, 50%);
+                            width: 300px;
+                        }
+                    }
+                }// li 종료
+            }
         }
     }
 }
@@ -464,7 +590,10 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
         h2 {
             padding: 42px 0 18px 0;
             font-size: 26px;
-            line-height: 32px
+            line-height: 32px;
+            span {
+                display: block;
+            }
         }
         strong {
             padding: 0;
@@ -476,9 +605,9 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
             }
         }
         .list {
-            margin: 48px 0 0 0;
+            margin: 0;
             ul {
-                padding: 0 0 60px 0;
+                padding: 40px 0 60px 0;
                 li {
                     margin: 0 0 50px 0;
                     a {
@@ -486,7 +615,6 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
                             width: 85%;
                             height: 170px;
                         }
-                    
                         h3 {
                             margin: 0 0 5px 0;
                             font-size: 20px;
@@ -499,9 +627,12 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
                     &:nth-child(2), &:nth-child(4) {
                         display: flex;
                         justify-content: flex-end;
+                        .pic {
+                            margin-left: 15%;
+                        }
                         .inner {
                             position: relative;
-                            right: 0;
+                            right: -10%;
                             top: -7%;
                             transform: translate(0, 0);
                             width: 85%;
@@ -513,19 +644,159 @@ main.css나 sub.css에서 default나 common을 필요에 따라서 import해서 
                         display: flex;
                         .inner {
                             position: relative;
-                            left: 0;
+                            left: -10%;
                             top: -7%;
                             transform: translate(0, 0);
                             width: 85%;
                             text-align: right;
                             margin-left: 15%;
-
                         }
                     }
-                    
                 }// li 종료
-           }
+            }
         }
     }
 }
+.insta {
+    position: relative;
+    margin: 0 0 190px 0;
+    h2 {
+        @include font_serif;
+        padding: 176px 0 112px 0;
+        font-size: 40px;
+        color: #1D1D1D;
+        text-align: center;
+    }
+    .list {
+        ul {
+            li {
+                width: 320px;
+                font-size: 0; /* 이미지 하단 여백 삭제 */
+                line-height: 0;
+                a {
+                    display: block;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    .bg_txt {
+        @include font_serif;
+        position: absolute;
+        left: 0;
+        top: 106px;
+        z-index: -1;
+        font-size: 120px;
+        font-weight: 300;
+        color: #F4F4F4;
+        white-space: nowrap; /* 줄바꿈 금지 */
 
+        animation-name: bg_txt_ani;
+        animation-duration: 36s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; /*기본값 ease 가속도 - 동일한 속도로 애니메이션 주려면 linear */
+    }
+}
+@keyframes bg_txt_ani {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.3%); } 
+    /* 무조건 html에서 동일한 글자 두번 입력, 
+    css 애니메이션으로 절반을 이동, 그러면 두번째 단락의 글자 다시 나타남 */
+}
+
+@media screen and (min-width: 1441px) {
+    .insta {
+        .list {
+            width: calc(100% + 680px); //하나의 넓이(320)+320+40  
+            margin-left: -360px !important;
+        }
+    }
+}
+@media screen and (max-width: 1440px) {
+    .insta {
+        h2 {
+            padding: 150px 0 96px 0;
+            font-size: 36px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 280px;
+                }
+            }
+        }
+        .bg_txt {
+            left: 0;
+            top: 96px;
+            font-size: 100px;
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .insta {
+        h2 {
+            padding: 120px 0 80px 0;
+            font-size: 30px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 240px;
+                }
+            }
+        }
+        .bg_txt {
+            left: 0;
+            top: 70px;
+            font-size: 90px;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .insta {
+        h2 {
+            padding: 90px 0 60px 0;
+            font-size: 26px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 200px;
+                }
+            }
+        }
+        .bg_txt {
+            left: 0;
+            top: 46px;
+            font-size: 80px;
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .insta {
+        margin: 0 0 72px 0;
+        h2 {
+            padding: 58px 0 50px 0;
+            font-size: 24px;
+        }
+        .list {
+            ul {
+                li {
+                    width: 168px;
+                }
+            }
+        }
+        .bg_txt {
+            left: 0;
+            top: 20px;
+            font-size: 70px;
+        }
+    }
+}

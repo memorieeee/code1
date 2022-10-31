@@ -36,7 +36,7 @@ $(document).ready(function(){
 			$(this).addClass('play');
 			$(this).text('재생');
 		}
-	});//visual stop
+	}); // visual stop
 
 	/* 
 		이미지가 스크롤 될 때 오브젝트가 움직이는 효과. 
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	*/
 
 	let winH;
-	let moveVal; //오브젝트가 움직일 값 
+	let moveVal; // 오브젝트가 움직일 값 
 	let offTop; 
 	let scrolling;
 
@@ -84,15 +84,34 @@ $(document).ready(function(){
 		offTop = objParent.offset().top; 
 		scrolling = $(window).scrollTop();
 		moveVal = (scrolling - offTop + winH)*moveRate; 
-		console.log(moveVal, 'moveVal');
+		// console.log(moveVal, 'moveVal');
 	
 		if(moveDir == 'left'){
 			objMove.css('transform', 'translateX(-'+moveVal+'px)');
-		}else{//top
+		}else{ // top
 			objMove.css('transform', 'translateY(-'+moveVal+'px)');
 		}
 	}
 
+	/* 인스타 팝업 */
+	const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싸는 요소의 class명 */
+		slidesPerView: "auto", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
+		spaceBetween: 20, /* li와 li사이 - 제일 작은 여백 */
+		breakpoints: {
+			640: {  /* 640px 이상이 되면 적용 */
+				spaceBetween: 25, 
+			},
+			800: {  /* 1000px 이상이 되면 적용 */
+				spaceBetween: 30, 
+			},
+			1000: {  /* 1000px 이상이 되면 적용 */
+				spaceBetween: 35, 
+			},
+			1440: {  /* 1440px 이상이 되면 적용 */
+				spaceBetween: 40, 
+			},
+		},
+	});
 
 
 
