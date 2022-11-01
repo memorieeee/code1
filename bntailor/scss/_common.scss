@@ -99,15 +99,17 @@ html, body {
         .gnb_open {
             display: none;
         }
-        ul {
-            li {
-                float: left;
-                a {
-                    display: block;
-                    padding: 0 20px;
-                    color: $w_tit_color;
-                    font-size: 18px;
-                    line-height: 100px;
+        .gnb_wrap {
+            ul {
+                li {
+                    float: left;
+                    a {
+                        display: block;
+                        padding: 0 20px;
+                        color: $w_tit_color;
+                        font-size: 18px;
+                        line-height: 100px;
+                    }
                 }
             }
         }
@@ -126,17 +128,13 @@ html, body {
     .header .gnb {
         margin: 0 50px 0 0;
     }
-    .header .gnb ul li a {
+    .header .gnb .gnb_wrap ul li a {
         font-size: 16px;
         padding: 0 15px;
     }
 }
+
 @media screen and (max-width:1000px){
-    .header .gnb {
-        display: none;
-    }
-}
-@media screen and (max-width:640px){
     .header {
         height: 60px;
         .logo {
@@ -146,9 +144,11 @@ html, body {
             }
         }
         .gnb {
+            display: block;
             margin: 0;
             .gnb_open {
                 position: relative;
+                z-index: 2;
                 display: block;
                 width: 60px;
                 height: 56px;
@@ -161,6 +161,7 @@ html, body {
                     width: 20px;
                     height: 1px;
                     background-color: #fff;
+                    transition: 0.3s;
                     &.line1 { /* span.line1 */
                         top: 20px;
                     }
@@ -172,8 +173,203 @@ html, body {
                     }
                 }
             }
+            .gnb_wrap {
+                display: block;
+                position: fixed;
+                right: -100%;
+                top: 0;
+                z-index: 1;
+                width: 100%;
+                max-width: 375px;
+                height: 100%;
+                background-color: #fff;
+                color: #3D3D3D;
+                transition: right 0.5s;
+                ul {
+                    margin: 100px 0 0 0;
+                    li {
+                        float: none;
+                        border-bottom: 1px solid #ddd;
+                        a {
+                            padding: 0;
+                            color: $basic_color;
+                            font-size: 15px;
+                            line-height: 50px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            &::after {
+                /* 메뉴하단에 검은 배경을 채울때는 positon fixed가 좋음
+                    화면에 꽉 차는 배경은 positon fixed
+                    사방에 0을 주면 wight/height:100%;랑 똑같이 들어감 
+                    
+                    gnb_open, gnb_wrap, after처럼 
+                    태그들이 줄줄이 나열되어 있는 경우에는 z-index로 순서 조정 가능함 
+                    높은 숫자가 위로 올라감 
+                */
+                opacity: 0;
+                transition: opacity 0.3s;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.5);
+                content: "";
+            }
+            //모바일 메뉴가 열렸을때
+            &.mobile_open {
+                .gnb_open {
+                    span {
+                        width: 20px;
+                        background-color: #1d1d1d;
+                        &.line1 { /* span.line1 */
+                            top: 30px;
+                            transform: rotate(45deg);
+                        }
+                        &.line2 {
+                            right: -22px;
+                        }
+                        &.line3 {
+                            top: 30px;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+                .gnb_wrap {
+                    right: 0;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }   
+        }//gnb 종료
+    }
+}
+.footer {
+    @include clearfix;
+    padding: 42px 0 53px 0;
+    border-top: 1px solid $w_basic_color;
+    .sns {
+        float: right;
+        ul {
+            li {
+                float: left;
+                a {
+                    display: block;
+                    position:  relative;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 0;
+                    line-height: 0;
+                    &::before {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        /* 배경이미지가 보이는 영역을 제한해서 써야하기 때문에 before/after에서 표시.
+                        이때 before/after의 사이즈는 저장할때 활용된 아이콘의 넓이 */ 
+                        width: 30px;
+                        height: 30px;
+                        background-image: url(/code1/bntailor/images/common/footer_ico.svg);
+                        background-repeat: no-repeat;
+                        content: "";
+                    }
+                }
+            &.instagram a::before {
+                background-position: left top;
+            }
+            &.facebook a::before {
+                background-position: left -30px top;
+            }
+            &.naver a::before {
+                background-position: left -60px top;
+            }
+            } //li 종료
+        }
+    }
+    .inner {
+        float: left;
+        .finfo {
+            padding: 10px 0 40px 0;
+            color: #666666;
+            font-size: 14px;
+            span {
+                padding: 0 20px 0 0;
+            }
+        }
+        .copyright {
+            color: #CCCCCC;
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .footer {
+        padding: 42px 0 53px 0;
+        .sns {
+            float: right;
             ul {
-                display: none;
+                li {
+                    float: left;
+                    a {
+                        display: block;
+                        position:  relative;
+                        width: 40px;
+                        height: 40px;
+                        font-size: 0;
+                        line-height: 0;
+                    }
+                } //li 종료
+            }
+        }
+        .inner {
+            .finfo {
+                padding: 10px 0 36px 0;
+                font-size: 13px;
+                span {
+                    padding: 0 15px 0 0;
+                }
+            }
+            .copyright {
+                font-size: 13px
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .footer {
+        padding: 20px 0 36px 0;
+        .sns {
+            float: left;
+            padding: 0 0 20px 0;
+            ul {
+                li {
+                    a {
+                        width: 40px;
+                        height: 40px;
+                    }
+                &.instagram a::before {
+                    background-position: left top;
+                }
+                &.facebook a::before {
+                    background-position: left -30px top;
+                }
+                &.naver a::before {
+                    background-position: left -60px top;
+                }
+                } //li 종료
+            }
+        }
+        .inner {
+            .finfo {
+                padding: 0 0 30px 0;
+                font-size: 12px;
+            }
+            .copyright {
+                font-size: 12px
             }
         }
     }

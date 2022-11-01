@@ -1,0 +1,468 @@
+@charset "UTF-8";
+/* 기본글자색상 */
+/* 제목글자색상 */
+/* 기본회색 */
+/* 밝은회색 */
+/* 어두운배경에 기본흰색 */
+/* 어두운배경에 제목흰색 */
+/* 
+    scss에서 mixin은 특정스타일의 속성명과 속성값을 모두 선언하는 방식 (여러개)
+    변수는 특정 속성값 단 한개를 저장하는 방식 (변수 1개에 1개의 속성값)
+    --> 변수의 값은 어느 속성에 사용하더라도 상관없음 
+*/
+/* 모든 태그의 스타일 초기화 */
+/* 모든 태그에 브라우저에서 주는 여백을 삭제 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap");
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i,
+dl, dt, dd, form, fieldset, legend, input, textarea, select, table, colgroup, col, thead, tbody, tfoot, tr, th, td {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* width/height와 padding결합되면 사이즈가 늘어남. 이걸 막는 스타일
+     padding을 줘도 width/height가 유지가 됨 */
+}
+
+/* a태그에 브라우저가 주는 기본 속성 초기화 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 브라우저에서 기울임을 주는 것을 초기화 */
+em, address {
+  font-style: normal;
+}
+
+/* 항목 앞에 동그라미 삭제 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* form태그가 문자 스타일을 상속받지 않아서 상속받게 하기 */
+form, input, select, textarea, button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  /* 서체 상속 - button은 body에서 적용한 서체를 
+     자동으로 상속 받지 않음 - form관련 태그는 다 그럼 */
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  display: none; /* form태그의 legend는 타이틀로 숨김처리 */
+}
+
+button {
+  background-color: transparent; /* 투명 */
+  border: 0;
+  cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+
+table caption {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6, strong, th {
+  font-weight: 400;
+}
+
+/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
+/* serif 바탕체 */
+html, body {
+  color: #3D3D3D;
+  line-height: 1.5;
+  font-family: "Noto Sans KR", "NanumGothic", "Malgun Gothic", "Apple SD Gothic", "Apple SD Gothic Neo", "Dotum", sans-serif;
+  /* 폰트 적용 우선순위
+     웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
+     apple sd gothic - 아이폰에서 지원하는 폰트 */
+  font-size: 16px;
+  font-weight: 400;
+  /* letter-spacing: -0.05em; */
+  word-break: keep-all; /* 단어별 줄바꿈 */
+}
+
+.serif {
+  font-family: "Noto Serif KR", serif;
+}
+
+#wrap { /* id="wrap" */
+  overflow: hidden;
+  position: relative;
+  min-width: 350px;
+}
+
+/* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /* 1400px이하부터 320px까지 모든 사이즈 반응형일때
+  1400px 일때에도 좌우에 여백은 유지해야 함(1400이상에서 1400이하로 - 반응형으로 전환되는 점)
+  부드럽게 여백을 유지하면서 전환
+  원래 좌우에 여백이 20px씩 들어가 있는 걸로 스타일을 줌
+  1400px - 콘텐츠 영역인데 왼쪽 20 + 오른쪽 20 = 1440px이 넓이
+  padding으로 좌우에 여백을 20px씩 줌 */
+}
+
+@media screen and (max-width: 640px) {
+  /* 640px 이하의 디바이스에서만 아래 css가 적용
+    pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
+    모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현
+    구현방식이 달라서 고정값을 모두 삭제 */
+  html, body {
+    font-size: 13px;
+  }
+} /* media 종료 */
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {
+  display: block;
+}
+
+.cnt_wrap {
+  position: relative;
+}
+
+.skip_nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  width: 100%;
+}
+
+.skip_nav a {
+  position: absolute;
+  left: 0;
+  top: -1000px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #0053A3;
+  color: #fff;
+  text-align: center;
+}
+
+.skip_nav a:focus {
+  top: 0;
+}
+
+/* 브라우저에서 글자를 드래그 했을때, 드래그한 영역의 색과 글자 색 
+    -moz- -webkit-이 앞에 붙은 속성은 표준화 되지 않은 속성 */
+::-moz-selection {
+  background: #CBA585;
+  color: #3D3D3D;
+}
+::selection {
+  background: #CBA585;
+  color: #3D3D3D;
+}
+
+::-moz-selection {
+  background: #CBA585;
+  color: 3D3D3D;
+}
+
+::-webkit-selection {
+  background: #CBA585;
+  color: 3D3D3D;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100px;
+  transition: 0.3s;
+}
+.header .logo {
+  float: left;
+  margin: 30px 0 0 70px;
+}
+.header .gnb {
+  float: right;
+  margin: 0 100px 0 0;
+}
+.header .gnb .gnb_open {
+  display: none;
+}
+.header .gnb .gnb_wrap ul li {
+  float: left;
+}
+.header .gnb .gnb_wrap ul li a {
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 100px;
+}
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1440px) {
+  .header .logo a img {
+    width: 110px;
+  }
+  .header .gnb {
+    margin: 0 50px 0 0;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header {
+    height: 60px;
+  }
+  .header .logo {
+    margin: 15px 0 0 15px;
+  }
+  .header .logo a img {
+    width: 86px;
+  }
+  .header .gnb {
+    display: block;
+    margin: 0;
+  }
+  .header .gnb .gnb_open {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 60px;
+    height: 56px;
+  }
+  .header .gnb .gnb_open strong {
+    display: none;
+  }
+  .header .gnb .gnb_open span {
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+  .header .gnb .gnb_open span.line1 { /* span.line1 */
+    top: 20px;
+  }
+  .header .gnb .gnb_open span.line2 {
+    top: 26px;
+  }
+  .header .gnb .gnb_open span.line3 {
+    top: 32px;
+  }
+  .header .gnb .gnb_wrap {
+    display: block;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 375px;
+    height: 100%;
+    background-color: #fff;
+    color: #3D3D3D;
+    transition: right 0.5s;
+  }
+  .header .gnb .gnb_wrap ul {
+    margin: 100px 0 0 0;
+  }
+  .header .gnb .gnb_wrap ul li {
+    float: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    padding: 0;
+    color: #3D3D3D;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .header .gnb::after {
+    /* 메뉴하단에 검은 배경을 채울때는 positon fixed가 좋음
+        화면에 꽉 차는 배경은 positon fixed
+        사방에 0을 주면 wight/height:100%;랑 똑같이 들어감 
+
+        gnb_open, gnb_wrap, after처럼 
+        태그들이 줄줄이 나열되어 있는 경우에는 z-index로 순서 조정 가능함 
+        높은 숫자가 위로 올라감 
+    */
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+  }
+  .header .gnb.mobile_open .gnb_open span {
+    width: 20px;
+    background-color: #1d1d1d;
+  }
+  .header .gnb.mobile_open .gnb_open span.line1 { /* span.line1 */
+    top: 30px;
+    transform: rotate(45deg);
+  }
+  .header .gnb.mobile_open .gnb_open span.line2 {
+    right: -22px;
+  }
+  .header .gnb.mobile_open .gnb_open span.line3 {
+    top: 30px;
+    transform: rotate(-45deg);
+  }
+  .header .gnb.mobile_open .gnb_wrap {
+    right: 0;
+  }
+  .header .gnb.mobile_open::after {
+    opacity: 1;
+  }
+}
+.footer {
+  display: block;
+  padding: 42px 0 53px 0;
+  border-top: 1px solid #DDD;
+}
+.footer::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.footer .sns {
+  float: right;
+}
+.footer .sns ul li {
+  float: left;
+}
+.footer .sns ul li a {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  line-height: 0;
+}
+.footer .sns ul li a::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* 배경이미지가 보이는 영역을 제한해서 써야하기 때문에 before/after에서 표시.
+  이때 before/after의 사이즈는 저장할때 활용된 아이콘의 넓이 */
+  width: 30px;
+  height: 30px;
+  background-image: url(/code1/bntailor/images/common/footer_ico.svg);
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer .sns ul li.instagram a::before {
+  background-position: left top;
+}
+.footer .sns ul li.facebook a::before {
+  background-position: left -30px top;
+}
+.footer .sns ul li.naver a::before {
+  background-position: left -60px top;
+}
+.footer .inner {
+  float: left;
+}
+.footer .inner .finfo {
+  padding: 10px 0 40px 0;
+  color: #666666;
+  font-size: 14px;
+}
+.footer .inner .finfo span {
+  padding: 0 20px 0 0;
+}
+.footer .inner .copyright {
+  color: #CCCCCC;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    padding: 42px 0 53px 0;
+  }
+  .footer .sns {
+    float: right;
+  }
+  .footer .sns ul li {
+    float: left;
+  }
+  .footer .sns ul li a {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    line-height: 0;
+  }
+  .footer .inner .finfo {
+    padding: 10px 0 36px 0;
+    font-size: 13px;
+  }
+  .footer .inner .finfo span {
+    padding: 0 15px 0 0;
+  }
+  .footer .inner .copyright {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .footer {
+    padding: 20px 0 36px 0;
+  }
+  .footer .sns {
+    float: left;
+    padding: 0 0 20px 0;
+  }
+  .footer .sns ul li a {
+    width: 40px;
+    height: 40px;
+  }
+  .footer .sns ul li.instagram a::before {
+    background-position: left top;
+  }
+  .footer .sns ul li.facebook a::before {
+    background-position: left -30px top;
+  }
+  .footer .sns ul li.naver a::before {
+    background-position: left -60px top;
+  }
+  .footer .inner .finfo {
+    padding: 0 0 30px 0;
+    font-size: 12px;
+  }
+  .footer .inner .copyright {
+    font-size: 12px;
+  }
+}
+/* 서브 레이아웃 */
+.container svg path {
+  fill: #A38872;
+}

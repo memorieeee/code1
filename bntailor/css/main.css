@@ -202,10 +202,10 @@ html, body {
 .header .gnb .gnb_open {
   display: none;
 }
-.header .gnb ul li {
+.header .gnb .gnb_wrap ul li {
   float: left;
 }
-.header .gnb ul li a {
+.header .gnb .gnb_wrap ul li a {
   display: block;
   padding: 0 20px;
   color: #fff;
@@ -226,17 +226,12 @@ html, body {
   .header .gnb {
     margin: 0 50px 0 0;
   }
-  .header .gnb ul li a {
+  .header .gnb .gnb_wrap ul li a {
     font-size: 16px;
     padding: 0 15px;
   }
 }
 @media screen and (max-width: 1000px) {
-  .header .gnb {
-    display: none;
-  }
-}
-@media screen and (max-width: 640px) {
   .header {
     height: 60px;
   }
@@ -247,10 +242,12 @@ html, body {
     width: 86px;
   }
   .header .gnb {
+    display: block;
     margin: 0;
   }
   .header .gnb .gnb_open {
     position: relative;
+    z-index: 2;
     display: block;
     width: 60px;
     height: 56px;
@@ -264,6 +261,7 @@ html, body {
     width: 20px;
     height: 1px;
     background-color: #fff;
+    transition: 0.3s;
   }
   .header .gnb .gnb_open span.line1 { /* span.line1 */
     top: 20px;
@@ -274,8 +272,194 @@ html, body {
   .header .gnb .gnb_open span.line3 {
     top: 32px;
   }
-  .header .gnb ul {
-    display: none;
+  .header .gnb .gnb_wrap {
+    display: block;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 375px;
+    height: 100%;
+    background-color: #fff;
+    color: #3D3D3D;
+    transition: right 0.5s;
+  }
+  .header .gnb .gnb_wrap ul {
+    margin: 100px 0 0 0;
+  }
+  .header .gnb .gnb_wrap ul li {
+    float: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    padding: 0;
+    color: #3D3D3D;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .header .gnb::after {
+    /* 메뉴하단에 검은 배경을 채울때는 positon fixed가 좋음
+        화면에 꽉 차는 배경은 positon fixed
+        사방에 0을 주면 wight/height:100%;랑 똑같이 들어감 
+
+        gnb_open, gnb_wrap, after처럼 
+        태그들이 줄줄이 나열되어 있는 경우에는 z-index로 순서 조정 가능함 
+        높은 숫자가 위로 올라감 
+    */
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+  }
+  .header .gnb.mobile_open .gnb_open span {
+    width: 20px;
+    background-color: #1d1d1d;
+  }
+  .header .gnb.mobile_open .gnb_open span.line1 { /* span.line1 */
+    top: 30px;
+    transform: rotate(45deg);
+  }
+  .header .gnb.mobile_open .gnb_open span.line2 {
+    right: -22px;
+  }
+  .header .gnb.mobile_open .gnb_open span.line3 {
+    top: 30px;
+    transform: rotate(-45deg);
+  }
+  .header .gnb.mobile_open .gnb_wrap {
+    right: 0;
+  }
+  .header .gnb.mobile_open::after {
+    opacity: 1;
+  }
+}
+.footer {
+  display: block;
+  padding: 42px 0 53px 0;
+  border-top: 1px solid #DDD;
+}
+.footer::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.footer .sns {
+  float: right;
+}
+.footer .sns ul li {
+  float: left;
+}
+.footer .sns ul li a {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  line-height: 0;
+}
+.footer .sns ul li a::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* 배경이미지가 보이는 영역을 제한해서 써야하기 때문에 before/after에서 표시.
+  이때 before/after의 사이즈는 저장할때 활용된 아이콘의 넓이 */
+  width: 30px;
+  height: 30px;
+  background-image: url(/code1/bntailor/images/common/footer_ico.svg);
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer .sns ul li.instagram a::before {
+  background-position: left top;
+}
+.footer .sns ul li.facebook a::before {
+  background-position: left -30px top;
+}
+.footer .sns ul li.naver a::before {
+  background-position: left -60px top;
+}
+.footer .inner {
+  float: left;
+}
+.footer .inner .finfo {
+  padding: 10px 0 40px 0;
+  color: #666666;
+  font-size: 14px;
+}
+.footer .inner .finfo span {
+  padding: 0 20px 0 0;
+}
+.footer .inner .copyright {
+  color: #CCCCCC;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    padding: 42px 0 53px 0;
+  }
+  .footer .sns {
+    float: right;
+  }
+  .footer .sns ul li {
+    float: left;
+  }
+  .footer .sns ul li a {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    line-height: 0;
+  }
+  .footer .inner .finfo {
+    padding: 10px 0 36px 0;
+    font-size: 13px;
+  }
+  .footer .inner .finfo span {
+    padding: 0 15px 0 0;
+  }
+  .footer .inner .copyright {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .footer {
+    padding: 20px 0 36px 0;
+  }
+  .footer .sns {
+    float: left;
+    padding: 0 0 20px 0;
+  }
+  .footer .sns ul li a {
+    width: 40px;
+    height: 40px;
+  }
+  .footer .sns ul li.instagram a::before {
+    background-position: left top;
+  }
+  .footer .sns ul li.facebook a::before {
+    background-position: left -30px top;
+  }
+  .footer .sns ul li.naver a::before {
+    background-position: left -60px top;
+  }
+  .footer .inner .finfo {
+    padding: 0 0 30px 0;
+    font-size: 12px;
+  }
+  .footer .inner .copyright {
+    font-size: 12px;
   }
 }
 /* 
@@ -311,12 +495,20 @@ html, body {
 .visual .popup { /* .visual .popup */
   height: 100vh;
 }
+.visual .popup ul li {
+  /* 현재 나타나는 팝업에 swiper가 주는 class명 */
+}
 .visual .popup ul li img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transform: scale3d(1.1, 1.1, 1);
+  transition: 2s;
+}
+.visual .popup ul li.swiper-slide-active img {
+  transform: scale3d(1, 1, 1);
 }
 .visual .popup .btn_wrap {
   display: flex;
@@ -857,10 +1049,10 @@ html, body {
     margin: 0;
   }
   .product .list ul {
-    padding: 40px 0 60px 0;
+    padding: 40px 0 30px 0;
   }
   .product .list ul li {
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
   }
   .product .list ul li a .pic {
     width: 85%;
@@ -883,8 +1075,8 @@ html, body {
   }
   .product .list ul li:nth-child(2) .inner, .product .list ul li:nth-child(4) .inner {
     position: relative;
-    right: -10%;
-    top: -7%;
+    right: 0;
+    top: -13%;
     transform: translate(0, 0);
     width: 85%;
     text-align: left;
@@ -895,8 +1087,8 @@ html, body {
   }
   .product .list ul li:nth-child(1) .inner, .product .list ul li:nth-child(3) .inner, .product .list ul li:nth-child(5) .inner {
     position: relative;
-    left: -10%;
-    top: -7%;
+    left: 0;
+    top: -13%;
     transform: translate(0, 0);
     width: 85%;
     text-align: right;
