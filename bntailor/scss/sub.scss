@@ -4,10 +4,39 @@
 
 /* 서브 레이아웃 */
 
-.container {
-    svg {
-        path {
-            fill: #A38872;
+.sub_visual {
+    height: 680px;
+    background-image: url(/code1/bntailor/images/sub/sub_visual1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .location {
+        display: flex;
+        padding: 317px 0 0 0;
+        color: #fff;
+        font-weight: 300;
+        span {
+            position: relative;
+            margin-right: 35px;
+            &::after {
+                position: absolute;
+                right: -20px;
+                top: 8px;
+                width: 6px;
+                height: 11px;
+                background-color: #fff;
+                
+                content: "";
+            }
         }
+
+        
+    }
+    .tit {
+        @include font_serif;
+        font-size: 60px;
+        font-weight: 700;
+        color: $w_tit_color;
     }
 }
+

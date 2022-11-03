@@ -195,6 +195,12 @@ html, body {
   float: left;
   margin: 30px 0 0 70px;
 }
+.header .logo svg {
+  width: 118px;
+}
+.header .logo svg text {
+  fill: #fff;
+}
 .header .gnb {
   float: right;
   margin: 0 100px 0 0;
@@ -220,7 +226,7 @@ html, body {
 }
 
 @media screen and (max-width: 1440px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 110px;
   }
   .header .gnb {
@@ -238,7 +244,7 @@ html, body {
   .header .logo {
     margin: 15px 0 0 15px;
   }
-  .header .logo a img {
+  .header .logo a svg {
     width: 86px;
   }
   .header .gnb {
@@ -463,6 +469,35 @@ html, body {
   }
 }
 /* 서브 레이아웃 */
-.container svg path {
-  fill: #A38872;
+.sub_visual {
+  height: 680px;
+  background-image: url(/code1/bntailor/images/sub/sub_visual1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.sub_visual .location {
+  display: flex;
+  padding: 317px 0 0 0;
+  color: #fff;
+  font-weight: 300;
+}
+.sub_visual .location span {
+  position: relative;
+  margin-right: 35px;
+}
+.sub_visual .location span::after {
+  position: absolute;
+  right: -20px;
+  top: 8px;
+  width: 6px;
+  height: 11px;
+  background-color: #fff;
+  content: "";
+}
+.sub_visual .tit {
+  font-family: "Noto Serif KR", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
 }
