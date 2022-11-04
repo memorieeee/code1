@@ -286,7 +286,7 @@ html, body {
     z-index: 1;
     width: 100%;
     max-width: 375px;
-    height: 100%;
+    height: 100vh;
     background-color: #fff;
     color: #3D3D3D;
     transition: right 0.5s;

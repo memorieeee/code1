@@ -4,6 +4,23 @@
 
 /* 서브 공통 레이아웃 */
 
+
+
+.header.fixed {
+    position: fixed;
+    background-color: rgba(255,255,255,0.7);
+    .logo svg text {
+        fill: #1d1d1d;
+    }
+    .gnb .gnb_wrap ul li a { 
+        color: #1D1D1D;
+    }
+    .gnb .gnb_open span {
+        background-color: #3d3d3d;
+    }
+
+}
+
 .sub_visual {
     position: relative;
     height: 650px;
@@ -117,6 +134,23 @@
 }
 .lnb {
     height: 55px;
+    position: relative;
+    .lnb_fix {
+        /* 나중에 fixed로 변경될 콘텐츠 - absolute로 코딩하는게 좋음 */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 55px;
+        z-index: 200;
+    }
+    &.fixed .lnb_fix {
+        position: fixed;
+        top: 100px; /* header 높이만큼 아래 */
+        background-color: rgba(255,255,255,0.7);
+        backdrop-filter: blur(10px);
+    }
+
     .lnb_wrap {
         overflow-x: auto;
         overflow-y: hidden;
@@ -150,6 +184,12 @@
 @media screen and (max-width:1000px){
     .lnb {
         height: 40px;
+        .lnb_fix {
+            height: 40px;
+        }
+        &.fixed .lnb_fix {
+            top: 60px;
+        }
         .lnb_wrap {
             padding: 10px 0 10px 0;
             ul {
