@@ -2,41 +2,178 @@
 @import "_default.scss";
 @import "_common.scss";
 
-/* 서브 레이아웃 */
+/* 서브 공통 레이아웃 */
 
 .sub_visual {
-    height: 680px;
-    background-image: url(/code1/bntailor/images/sub/sub_visual1.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    position: relative;
+    height: 650px;
+    .sub_visual_bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 700px; /* clip-path로 위치가 정확하지 않아 배경을 별도의 요소에 줌 */
+        background-image: url(/code1/bntailor/images/sub/sub_visual1.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        clip-path: url(#sub_visual_path);
+        /* html에서 입력한 svg clipPath에 지정된 id값을 url로 연결하면 해당요소의 path값이 적용됨
+        배경이 표시될 영역으로 활용됨. 
+        path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우 
+        이런 방식으로 사용함.
+        */
+    }
+    &.sub_bg1 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual1.png);
+    }
+    &.sub_bg2 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual2.png);
+    }
+    &.sub_bg3 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual3.png);
+    }
+    &.sub_bg4 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual4.png);
+    }
+    &.sub_bg5 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual5.png);
+    }
+    &.sub_bg6 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual6.png);
+    }
+    &.sub_bg7 .sub_visual_bg {
+        background-image: url(/code1/bntailor/images/sub/sub_visual7.png);
+    }
+    .sub_visual_path {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        svg {
+            width: 1px;
+            height: 1px;
+        }
+    }
     .location {
         display: flex;
-        padding: 317px 0 0 0;
-        color: #fff;
-        font-weight: 300;
+        padding: 340px 0 0 10px;
+        color: $w_basic_color;
         span {
             position: relative;
-            margin-right: 35px;
+            margin-right: 18px;
             &::after {
                 position: absolute;
-                right: -20px;
-                top: 8px;
-                width: 6px;
-                height: 11px;
-                background-color: #fff;
-                
+                right: -12px;
+                top: 11px;
+                width: 5px;
+                height: 7px;
+                background-color: rgba(255,255,255,0.8);
+                clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
+                /* 이미지로 하는것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
+                   css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고
+                   clip-path: 로 path 값을 줌.. 
+                   장점은 css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
+                   단점 사이즈를 수정이 불가함 (단, %로 path를 그릴 것은 가능)
+                        작은 것은 적용 안됨..
+                        브라우저 호환성이 떨어짐 (안되는 브라우저가 있음)
+                        path를 그리는 방법이 많은데... 일부는 적용이 안됨. (html에서는 되도 css에서 안됨)
+                */
                 content: "";
             }
+            &:last-child::after {
+                display: none;
+            }
         }
-
-        
     }
     .tit {
         @include font_serif;
+        color: $w_tit_color;
         font-size: 60px;
         font-weight: 700;
-        color: $w_tit_color;
     }
 }
-
+@media screen and (max-width:1000px){
+    .sub_visual {
+        height: 400px;
+        .sub_visual_bg {
+            height: 100%;
+            clip-path: none;
+        }
+        .location {
+            padding: 150px 0 0 0;
+            span {
+                margin-right: 14px;
+                &::after {
+                    right: -10px;
+                    top: 8px;
+                }
+            }
+        }
+        .tit {
+            font-size: 30px;
+        }
+    }
+}
+.lnb {
+    height: 55px;
+    .lnb_wrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+        ul {
+            white-space: nowrap;
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    padding: 0 34px;
+                    color: #1D1D1D;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                &:first-child {
+                    a {
+                        padding-left: 0;
+                    }
+                }
+                &.active {
+                    a {
+                        position: relative;
+                        font-weight: 700;
+                        color: #1D1D1D;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .lnb {
+        height: 40px;
+        .lnb_wrap {
+            padding: 10px 0 10px 0;
+            ul {
+                li {
+                    a {
+                        padding: 0 13px;
+                        color: #1D1D1D;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                    &:first-child {
+                        a {
+                            padding-left: 0;
+                        }
+                    }
+                    &.active {
+                        a {
+                            position: relative;
+                            font-weight: 700;
+                            color: #1D1D1D;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,99 @@
+@import "_var.scss";
+
 /* 각각의 콘텐츠 페이지 스타일 */
+/* about us > chairman */
+
+.cts_about1 {
+    padding: 0 0 110px 0;
+    .about_top {
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0 0 0;
+        p {
+            position: absolute;
+            top: 260px;
+            left: calc(50% - 700px);
+            color: #fff;
+            font-size: 32px;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: calc(50% + 289px);
+        }
+        .bg {
+            height: 438px;
+            background: url(/code1/bntailor/images/contents/about_top_bg.png) no-repeat center center / cover; 
+        }
+    }
+    .about_sub {
+        position: relative;
+        z-index: 10;
+        padding: 53px 0 0 80px;
+        margin-top: -120px;
+        margin-left: calc(50% - 190px);
+        background-color: #fff;
+        .inner {
+            width: 790px;
+
+            .tit {
+                @include font_serif;
+                font-size: 40px;
+            }
+            .cnt {
+                margin: 22px 0 60px 0;
+            }
+            .sign {
+                font-size: 20px;
+                text-align: right;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .cts_about1 {
+        padding: 0 0 60px 0;
+        .about_top {
+            padding: 47px 0 0 0;
+            p {
+                width: 50%;
+                top: calc(50% + 15px);
+                left: 20px;
+                transform: translateY(-50%);
+                margin-right: 100px;
+                font-size: 15px;
+                .m_no {
+                    display: none;
+                }
+            }
+            img {
+                left: auto;
+                right: -30px;
+                width: calc(50% - 10px);
+            }
+            .bg {
+                height: 160px;
+            }
+        }
+        .about_sub {
+            padding: 38px 0 0 0;
+            margin-top: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+            .inner {
+                width: auto;
+                .tit {
+                    font-size: 25px;
+                }
+                .cnt {
+                    margin: 10px 0 26px 0;
+                }
+                .sign {
+                    font-size: 14px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

@@ -314,6 +314,7 @@ html, body {
         태그들이 줄줄이 나열되어 있는 경우에는 z-index로 순서 조정 가능함 
         높은 숫자가 위로 올라감 
     */
+    display: none;
     opacity: 0;
     transition: opacity 0.3s;
     position: fixed;
@@ -344,6 +345,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
