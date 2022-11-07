@@ -13,30 +13,27 @@
     <title>풀바셋</title>
 </head>
 <body>
-    <div class="wrap">
+    <div id="wrap">
         <header class="header">
-            <div class="wrapper">
-                <h1 class="logo"><a href="../paulbasset/index.html"><img src="images/logo.svg" alt="로고"></a></h1>
-                <nav class="gnb">
-                    <span>메뉴열기</span>
-                    <button class="gnb_open"><i class="material-symbols-rounded">menu</i></button>
-                    <div class="gnb_wrap">
-                        <ul>
-                            <li><a href="#n">ABOUT US</a></li>
-                            <li><a href="#n">MENU</a></li>
-                            <li><a href="#n">SOCIETY</a></li>
-                            <li><a href="#n">WHAT'S NEW</a></li>
-                            <li><a href="#n">E-SHOP</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="log">
+            <h1 class="logo"><a href="index.html"><img src="images/logo.svg" alt="로고"></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><i class="material-symbols-rounded">menu</i></button>
+                <div class="gnb_wrap">
                     <ul>
-                        <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">account_circle</i></a></li>
-                        <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">home</i></a></li>
-                        <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">local_cafe</i></a></li>
+                        <li><a href="#n">ABOUT US</a></li>
+                        <li><a href="#n">MENU</a></li>
+                        <li><a href="#n">SOCIETY</a></li>
+                        <li><a href="#n">WHAT'S NEW</a></li>
+                        <li><a href="#n">E-SHOP</a></li>
                     </ul>
                 </div>
+            </nav>
+            <div class="log">
+                <ul>
+                    <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">account_circle</i></a></li>
+                    <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">home</i></a></li>
+                    <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">local_cafe</i></a></li>
+                </ul>
             </div>
         </header>
         <section class="visual">
@@ -44,7 +41,7 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide"><img src="images/visual1.png" alt="노란배경사진">
                         <div class="inner">
-                            <h2>Pistachio Ice-cream</h2>
+                            <h2>Pistachio <span>Ice-cream</span></h2>
                             <strong>이탈리아산 피스타치오의 고소함에<br class="m_no">
                                 상하목장 원유의 진한 풍미가 더해진<br class="m_no">
                                 가을 시즌 아이스크림</strong>
@@ -52,14 +49,14 @@
                     </li>
                     <li class="swiper-slide"><img src="images/visual2.png" alt="산딸기요거트사진">
                         <div class="inner">
-                            <h2>Strawberry Yogurt</h2>
+                            <h2>Strawberry <span>Yogurt</span></h2>
                             <strong>상큼한 요거트에 달콤한 딸기를 블렌딩하여<br class="m_no">
                                 새콤달콤하게 즐길 수 있는 드링킹 요거트</strong>
                         </div>
                     </li>
                     <li class="swiper-slide"><img src="images/visual3.png" alt="티백 사진">
                         <div class="inner">
-                            <h2>Fauchon Apple Tea</h2>
+                            <h2>Fauchon <span>Apple Tea</span></h2>
                             <strong>130년의 역사를 가진 프랑스 프리미엄 포숑티의<br class="m_no">
                                 베스트셀러로 붉은 사과향이 감미로운 홍차</strong>
                         </div>
@@ -72,27 +69,107 @@
             </div>
         </section>
         <section class="menu">
-            <div class="swiper">
+            <div class="wrapper">
                 <h2>BEST MENU</h2>
-                <ul>
-                    <li><a href="#n"><img src="images/menu1.png" alt=""><span>아이스 밀크 초콜릿</span></a></li>
-                    <li><a href="#n"><img src="images/menu2.png" alt=""><span>아이스크림 카페라떼</span></a></li>
-                    <li><a href="#n"><img src="images/menu3.png" alt=""><span>아이스 카라멜 마키아토</span></a></li>
-                    <li><a href="#n"><img src="images/menu4.png" alt=""><span>스트로베리 요거트</span></a></li>
-                    <li><a href="#n"><img src="images/menu5.png" alt=""><span>제주 선셋 레몬 에이드</span></a></li>
-                    <li><a href="#n"><img src="images/menu6.png" alt=""><span>아이스 제주 말차 라떼</span></a></li>
-                    <li><a href="#n"><img src="images/menu7.png" alt=""><span>발로나 초콜릿 프라페</span></a></li>
-                </ul>
+                <div class="swiper list">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu1.png" alt=""><span>아이스 밀크 초콜릿</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu2.png" alt=""><span>아이스크림 카페라떼</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu3.png" alt=""><span>아이스 카라멜 마키아토</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu4.png" alt=""><span>스트로베리 요거트</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu5.png" alt=""><span>제주 선셋 레몬 에이드</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu6.png" alt=""><span>아이스 제주 말차 라떼</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/menu7.png" alt=""><span>발로나 초콜릿 프라페</span></a></li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="news">
-            <div class="wrapper"></div>
+            <div class="wrapper">
+                <h2>EVENT & NEWS</h2>
+                <div class="swiper list">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#n"><img src="images/news1.png" alt=""><span>[신제품] 폴 바셋 초콜릿</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/news2.png" alt=""><span>[신규 서비스] 폴 바셋 홀케이크 예약 판매</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/news3.png" alt=""><span>[신제품] 크림 옐로우 앵글 머그</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/news4.png" alt=""><span>[신제품] 룽고 RTD</span></a></li>
+                        <li class="swiper-slide"><a href="#n"><img src="images/news5.png" alt=""><span>[신제품] Miir 스테인리스 텀블러 3종</span></a></li>
+                    </ul>
+                </div>
+                <div class="btn">
+                    <button class="left"><i class="material-symbols-rounded">chevron_left</i></button>
+                    <button class="right"><i class="material-symbols-rounded">chevron_right</i></button>
+                </div>
+                <div class="paging"></div>
+            </div>
         </section>
         <section class="cnt">
-
+            <div class="wrapper">
+                <div class="blend">
+                    <a href="#n">
+                        <h2>SIGNATURE BLEND</h2>
+                        <p>엄선된 원두로 직접 로스팅한 후, 폴바셋만의 비법으로 블렌딩하여 탄생한 Paul Bassett의 대표 원두인 “시그니처 블랜드(Signature Blend)”와 
+                            폴 바셋에게 사사받은 오랜 경력의 전문 바리스타 출신 “Coffee Ambassador”의 관리 서비스 프로그램을 제안합니다.</p>
+                        <button><span>자세히 보기</span><i class="material-symbols-rounded">chevron_right</i></button>
+                    </a>
+                </div>
+                <ul class="app">
+                    <li>
+                        <a href="#n">
+                            <h3>MOBILE APP</h3>
+                            <button><span>폴바셋 APP 이용</span><i class="material-symbols-rounded">chevron_right</i></button>
+                            <strong><i class="material-symbols-rounded">phone_iphone</i></strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <h3>SPECIAL BENEFIT</h3>
+                            <button><span>회원등급혜택</span><i class="material-symbols-rounded">chevron_right</i></button>
+                            <strong><i class="material-symbols-rounded">emoji_food_beverage</i></strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <h3>E-SHOP</h3>
+                            <button><span>풀바셋 공식 온라인몰</span><i class="material-symbols-rounded">chevron_right</i></button>
+                            <strong><i class="material-symbols-rounded">computer</i></strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
-        <footer class="footer">
-
+        <footer class="footer clearfix">
+            <div class="wrapper cnt_wrap">
+                <div class="sns">
+                    <ul>
+                        <li><a href="https://www.instagram.com/paulbassettkorea/" target="_blank" title="새창으로 열림" class="insta">인스타그램</a></li>
+                        <li><a href="https://www.facebook.com/paulbassettkorea/" target="_blank" title="새창으로 열림" class="facebook">페이스북</a></li>
+                    </ul>
+                </div>
+                <div class="fnav">
+                    <ul>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">소사이어티카드 이용약관</a></li>
+                        <li><a href="#n">기프트카드 이용약관</a></li>
+                        <li><a href="#n">매장찾기</a></li>
+                        <li><a href="#n">문의하기</a></li>
+                        <li><a href="#n">채용</a></li>
+                        <li><a href="#n">자주하는 질문</a></li>
+                        <li><a href="#n">사이트맵</a></li>
+                    </ul>
+                </div>
+                <div class="inner">
+                    <div class="finfo">
+                        <span>엠즈씨드(주) 대표이사 : 김용철</span><br>       
+                        <span>주소 : 서울특별시 강남구 도산대로 75길 22 (청담동)</span><br>       
+                        <span>사업자등록번호 211-88-95935</span><br>           
+                        <span>대표번호 1899-8829</span><br> 
+                        <span>개인정보관리책임자 : 정보문</span><br>    
+                    </div>
+                    <div class="copyright">© 2019 m’s seed Co., Ltd. ALl RIGHTS RESERVED.</div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
