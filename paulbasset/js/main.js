@@ -32,12 +32,16 @@ $(document).ready(function(){
     const swiper_menu = new Swiper('.menu .list', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: "auto", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
         spaceBetween: 20, /* li와 li사이 - 제일 작은 여백 */
-        
         breakpoints: {
             640: {  /* 640px 이상이 되면 적용 */
+                spaceBetween: 26, 
+            },
+            800: {  /* 800px 이상이 되면 적용 */
+                spaceBetween: 30, 
+            },
+            1200: {  /* 1200px 이상이 되면 적용 */
                 spaceBetween: 38, 
             },
-        
         },
     });
 
@@ -50,13 +54,18 @@ $(document).ready(function(){
     	},
         breakpoints: {
             640: {    /* 640px 이상일때 적용 */
-                slidesPerView: 3,
-                spaceBetween: 40,
+                slidesPerView: 2,
+                spaceBetween: 26,
             },
+            800: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+     
         },
         navigation: {  /* 이전, 다음 버튼 */
-		nextEl: '.news .btn .right',  /* 다음 버튼의 클래스명 */
-		prevEl: '.news .btn .left',  
+            nextEl: '.news .btn .right',  /* 다음 버튼의 클래스명 */
+            prevEl: '.news .btn .left',  
     	},
 
     });

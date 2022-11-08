@@ -59,7 +59,7 @@
     }
     .header .log {
         float: right;
-        margin: 40px 80px 0 0;
+        margin: 40px 3% 0 0;
     }
     .header .log ul li {
         float: left;
@@ -83,9 +83,6 @@
     .header .gnb .gnb_wrap ul li a {
         padding: 0 10px;
         font-size: 14px;
-    }
-    .header .log {
-        margin: 40px 50px 0 0;
     }
     .header .log ul li {
         float: left;
@@ -337,6 +334,9 @@
     font-weight: 700;
     color: #231815;
 }
+.menu h2 a:hover {
+    color: #E80A4D;
+}
 .menu .list {
     margin-left: -304px;
     width: 2090px;
@@ -344,10 +344,13 @@
 .menu ul li {
     float: left;
     width: 266px;
-    margin: 0 38px 0 0;
 }
 .menu ul li a {
     display: block;
+}
+.menu ul li a img {
+    width: 100%;
+    border-radius: 30px;
 }
 .menu ul li a span {
     display: flex;
@@ -356,40 +359,56 @@
     margin-top: 10px;
     background-color: #F6F6F6;
     border-radius: 30px;
-    width: 266px;
+    width: 100%;
     height: 41px;
+}
+
+@media screen and (max-width:1200px){
+    .menu {
+        padding: 0 0 120px 0;
+    }
+    .menu h2 {
+        margin: 80px 0 30px 0;
+        font-size: 30px;
+    }
+    .menu .list {
+        margin-left: auto;
+        width: calc(100% + 20px);
+    }
+    .menu ul li {
+        width: 200px;
+    }
+    .menu ul li a span {
+        border-radius: 20px;
+        height: 36px;
+    }
 }
 @media screen and (max-width:1000px){
     .menu {
-        padding: 0 0 153px 0;
+        padding: 0 0 90px 0;
     }
     .menu h2 {
-        margin: 99px 0 41px 0;
-        font-size: 32px;
-        font-weight: 700;
-        color: #231815;
-    }
-    .menu .list {
-        margin-left: -304px;
-        width: 2090px;
+        margin: 60px 0 25px 0;
+        font-size: 26px;
     }
     .menu ul li {
-        float: left;
-        width: 266px;
-        margin: 0 38px 0 0;
-    }
-    .menu ul li a {
-        display: block;
+        width: 160px;
     }
     .menu ul li a span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        background-color: #F6F6F6;
-        border-radius: 30px;
-        width: 266px;
-        height: 41px;
+        border-radius: 18px;
+        height: 32px;
+    }
+}
+@media screen and (max-width:800px){
+    .menu {
+        padding: 0 0 80px 0;
+    }
+    .menu h2 {
+        margin: 50px 0 20px 0;
+        font-size: 24px;
+    }
+    .menu ul li a span {
+        border-radius: 16px;
     }
 }
 @media screen and (max-width:640px){
@@ -400,24 +419,15 @@
         margin: 42px 0 20px 0;
         font-size: 20px;
     }
-    .menu .list {
-        margin-left: 0;
-        width: calc(100% + 20px);
-    }
     .menu ul li {
         width: 142px;
-        margin: 0 20px 0 0;
-    }
-    .menu ul li img {
-        width: 100%;
     }
     .menu ul li a span {
         border-radius: 15px;
-        width: 142px;
+        width: auto;
         height: 30px;
     }
 }
-
 .news {
     position: relative;
     margin: 0 0 185px 0;
@@ -428,8 +438,14 @@
     font-weight: 700;
     color: #231815;
 }
+.news h2 a:hover {
+    color: #E80A4D;
+}
 .news ul li {
     width: 440px;
+}
+.news ul li a img {
+    width: 100%;
 }
 .news ul li a span {
     display: block;
@@ -437,16 +453,21 @@
     font-size: 20px;
     font-weight: 700;
     color: #231815;   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 .news .btn .left {
     position: absolute;
     right: calc(50% + 738px);
-    top: 175px;
+    top: 50%;
+    z-index: 10;
 }
 .news .btn .right {
     position: absolute;
     left: calc(50% + 738px);
-    top: 175px;
+    top: 50%;
+    z-index: 10;
 }
 .news .btn i {
     font-size: 40px;
@@ -457,7 +478,63 @@
 .news .paging {
     display: none;
 }
-
+@media screen and (max-width:1440px){
+    .news .btn .left {
+        left: 0;
+        right: auto;
+        top: 50%;
+    }
+    .news .btn .right {
+        right: 0;
+        left: auto;
+        top: 50%;
+    }
+}
+@media screen and (max-width:1200px){
+    .news {
+        margin: 0 0 160px 0;
+    }
+    .news h2 {
+        margin: 0 0 30px 0;
+        font-size: 30px;
+    }
+    .news ul li {
+        width: 400px;
+    }
+    .news ul li a span {
+        font-size: 18px;
+    }
+    .news .btn i {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:1000px){
+    .news {
+        margin: 0 0 100px 0;
+    }
+    .news h2 {
+        margin: 0 0 25px 0;
+        font-size: 26px;
+    }
+    .news ul li {
+        width: 300px;
+    }
+    .news ul li a span {
+        font-size: 15px;
+    }
+    .news .btn i {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:800px){
+    .news {
+        margin: 0 0 80px 0;
+    }
+    .news h2 {
+        margin: 0 0 20px 0;
+        font-size: 24px;
+    }
+}
 @media screen and (max-width:640px){
     .news {
         margin: 0 0 77px 0;
@@ -468,9 +545,6 @@
     }
     .news ul li {
         width: auto;
-    }
-    .news ul li img {
-        width: 100%;
     }
     .news ul li a span {
         display: none;
@@ -574,14 +648,65 @@
 }
 .cnt .app li a strong {
     position: absolute;
-    left: 640px;
+    left: calc(50% + 200px);
     top: 50%;
     transform: translateY(-50%);
 }
 .cnt .app li a strong i {
     font-size: 55px;
 }
-@media screen and (max-width:640px){
+@media screen and (max-width:1440px){
+    .cnt .blend {
+        padding: 208px 0 0 0;
+        width: 40%;
+    }
+    .cnt .blend h2 {
+        font-size: 40px;
+    }
+    .cnt .blend p {
+        font-size: 16px;
+    }
+    .cnt .blend button {
+        width: 140px;
+    }
+    .cnt .app li a {
+        padding: 0 0 0 80px;
+    }
+    .cnt .app li a h3 {
+        font-size: 28px;
+    }
+    .cnt .app li a strong i {
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:1200px){
+    .cnt .blend {
+        padding: 208px 0 0 0;
+        width: 45%;
+    }
+    .cnt .blend h2 {
+        font-size: 36px;
+    }
+    .cnt .blend p {
+        font-size: 15px;
+    }
+    .cnt .blend button {
+        width: 130px;
+    }
+    .cnt .app li a {
+        padding: 0 0 0 60px;
+    }
+    .cnt .app li a h3 {
+        font-size: 24px;
+    }
+    .cnt .app li a strong {
+        left: calc(50% + 120px);
+    }
+    .cnt .app li a strong i {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:800px){
     .cnt {
         height: auto;
     }
@@ -641,9 +766,6 @@
         margin-left: -20px;
         width: calc(100% + 40px);
     }
-    .cnt .app li a:hover {
- 
-    }
     .cnt .app li a h3 {
         font-size: 20px;
     }
@@ -667,6 +789,7 @@
     position: absolute;  
     left: calc(50% + 220px);
     top: 0;
+    z-index: 10;
 }
 .footer .sns ul li {
     float: left;
@@ -710,12 +833,43 @@
     line-height: 35px;
     padding: 60px 0 40px 0;
 }
-.footer .inner .finfo span {
-    margin-right: 36px;
-}
 .footer .inner .copyright {
     margin: 0 0 64px 0;
     color: #CCCCCC;
+}
+@media screen and (max-width:1200px){
+    .footer {
+        height: 400px;
+        padding: 50px 0 0 0;
+    }
+    .footer .sns {
+        left: calc(50% + 50px);
+    }
+    .footer .sns ul li {
+        margin: 0 20px 0 0;
+    }
+    .footer .sns ul li a {
+        width: 25px;
+        height: 25px;
+    }
+    .footer .fnav ul {
+        width: 320px;
+    }
+    .footer .fnav ul li {
+        float: left;
+        width: 50%;
+    }
+    .footer .inner {
+        left: calc(50% + 50px);
+        width: auto;
+        height: 285px;
+    }
+    .footer .inner .finfo {
+        padding: 40px 0 30px 0;
+    }
+    .footer .inner .copyright {
+        margin: 0 0 60px 0;
+    }
 }
 @media screen and (max-width:640px){
     .footer {
@@ -757,10 +911,6 @@
     }
     .footer .inner .finfo {
         line-height: 30px;
-        padding: 0 0 30px 0;
-    }
-    .footer .inner .finfo span {
-        margin-right: 36px;
     }
     .footer .inner .copyright {
         margin: 0 0 40px 0;
