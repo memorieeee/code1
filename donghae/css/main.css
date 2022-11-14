@@ -54,6 +54,7 @@
     top: 22px;
     color: #fff;
     font-family: 'GongGothicMedium';
+    font-size: 34px;
     font-weight: 300;
 }
 .header .header_sub ul li{
@@ -76,6 +77,38 @@
     right: calc(50% - 700px);
     top: 34px;
 }
+@media screen and (max-width:640px){
+    .header {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 60px;
+    }
+    .header .header_top {
+      display: none;
+    }
+    .header .header_sub {
+        border-top: none;
+        border-bottom: none;
+    }
+    .header .header_sub .logo {
+        left: 20px;
+        top: 19px;
+        font-size: 20px;
+    }
+    .header .header_sub .gnb ul {
+        display: none;
+    }
+    .header .header_sub .all_menu {
+        position: absolute;
+        right: 20px;
+        top: 22px;
+    }
+    .header .header_sub .all_menu img {
+        width: 22px;
+    }
+}
+
 .visual {
     position: relative;
     color: #fff;
@@ -133,7 +166,6 @@
 .visual .widget ul li a span.tem {
     font-size: 20px;
 }
-
 .visual .popup { 
     height:1000px 
 } 
@@ -155,6 +187,37 @@
     height: 8px;
     border-radius: 4px;
 }
+
+@media screen and (max-width:640px){
+    .visual .tit {
+        left: 20px;
+        top: 222px;
+    }
+    .visual .tit strong {
+        font-size: 16px;
+        letter-spacing: 7px;
+    }
+    .visual .tit h2 {
+        font-size: 36px;
+    }
+    .visual .widget {
+        display: none;
+    }
+    .visual .popup { 
+        height: 600px 
+    } 
+    .visual .btn_wrap {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translateX(-50%);
+    }
+    .visual .btn_wrap .paging span {
+        width: 5px;
+        height: 5px;
+    }
+}
+
 .course {
     position: relative;
     margin: 130px 0 160px 0;
@@ -182,6 +245,13 @@
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 0 4px rgba(0,0,0,0.12);
+}
+.course .menu ul.name {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.course .menu ul.name > li {
+    margin-bottom: 15px !important;
 }
 .course .menu ul.name > li > a {
     display: flex;
@@ -214,17 +284,22 @@
     width: 100%;
     display: none;
 }
-
-
-
-.course .menu ul li .list ul li a {
+.course .menu ul li .list ul li a span {
+    display: block;
     color: #3D3D3D;
     font-size: 18px;
     font-weight: 700;
-
+    margin-top: 12px;
 }
-.course .menu ul li .list ul li a img {
+.course .menu ul li .list ul li a .img {
+    height: 300px;
+}
+.course .menu ul li .list ul li a .img img {
+    display: block;
     border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .course .btn .left {
     position: absolute;
@@ -241,5 +316,494 @@
 .course .btn button i {
     font-size: 56px;
     color: #082C8F;
+}
 
+@media screen and (max-width:640px){
+    .course {
+        margin: 70px 0 57px 0;
+        height: 328px;
+    }
+    .course h2 {
+        font-size: 22px;
+    }
+    .course .menu > ul {
+        margin: 30px 0 33px 0;
+        justify-content: flex-start;
+    }
+    .course .menu > ul.name > li {
+        margin: 0 5px;
+        border-radius: 15px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+    .course .menu ul.name > li > a {
+        width: 100px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .course .menu ul.name > li > a:hover {
+        border-radius: 15px;
+    }
+    .course .menu ul.name > li.active > a {
+        border-radius: 15px;
+    }
+    .course .menu > ul.name > li .list {
+        position: absolute;
+        left: 28px;
+        top: 60px;
+        width: calc(100% - 56px);
+        display: none;
+    }
+    .course .menu ul li .list ul li a .img {
+        height: 180px;
+    }
+    .course .menu ul li .list ul li a span {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    .course .btn .left {
+        left: 20px;
+        top: 60%;
+    }
+    .course .btn .right {
+        right: 20px;
+        top: 60%;
+    }
+    .course .btn button i {
+        font-size: 30px;
+    }
+}
+.sights {
+    position: relative;
+}
+.sights h2 {
+    position: absolute;
+    left: calc(50% - 700px);
+    top: 0;
+    margin: 70px 0 60px 0;
+    font-family: 'GongGothicMedium';
+    font-size: 32px;
+    font-weight: 700;
+    color: #082C8F;
+}
+.sights .list {
+    position: relative;
+    left: calc(50% - 700px);
+    top: 0;
+}
+.sights .txt {
+    float: left;
+    margin: 167px 0 0 0;
+    width: 23%;
+}
+.sights .txt span {
+    display: block;
+    font-family: 'GongGothicMedium';
+    font-size: 16px;
+    font-weight: 300;
+}
+.sights .txt h3 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-family: 'GongGothicMedium';
+    font-weight: 300;
+}
+.sights .txt p {
+    width: 265px;
+}
+.sights .pic {
+    float: right;
+    margin: 0 0 135px 0;
+    padding: 0 175px 0 0;
+    width: 77%;
+}
+.sights .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sights .list button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    background-color: #082C8F;
+    border-radius: 30px;
+    z-index: 10;
+}
+.sights .list button:hover {
+
+}
+.sights .swiper-pagination {
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+}
+.sights .swiper-pagination span {
+    display: block;
+    float: left;
+    margin: 0 !important;
+    width: 120px;
+    height: 3px;
+    background-color: #1D1D1D;
+    border-radius: 0;
+}
+
+@media screen and (max-width:640px){
+    .sights {
+        position: relative;
+        margin: 0 0 67px 0;
+        height: 455px;
+    }
+    .sights h2 {
+        left: 20px;
+        top: 0;
+        margin: 0 0 20px 0;
+        font-size: 22px;
+    }
+    .sights .list {
+        height: 410px;
+        left: 20px;
+        top: 10%;
+    }
+    .sights .txt {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+    .sights .txt span {
+        display: block;
+        font-size: 13px;
+    }
+    .sights .txt h3 {
+        margin: 5px 0;
+        font-size: 20px;
+    }
+    .sights .txt p {
+        width: 100%;
+    }
+    .sights .pic {
+        float: none;
+        margin: 0 20px 0 0;
+        padding: 0;
+        width: 90%;
+    }
+    .sights .pic img {
+        display: block;
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+    }
+    .sights .list button {
+        left: 0;
+        top: 80%;
+        width: 100px;
+        height: 30px;
+        border-radius: 15px;
+    }
+    .sights .swiper-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .sights .swiper-pagination span {
+        width: 106px;
+        height: 3px;
+    }
+}
+
+.service {
+    position: relative;
+    margin: 0 0 130px 0;
+    background-color: #E4F8FF;
+}
+.service .txt {
+    float: left;
+    width: 20%;
+}
+.service .txt h2 {
+    padding: 0 0 11px 0;
+    color: #00248C;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'GongGothicMedium';
+    white-space: nowrap;
+}
+.service .txt p {
+    font-size: 16px;
+    color: #666666;
+}
+.service .txt p .m_no {
+    display: block;
+}
+.service .ico {
+    float: right;
+    width: 74%;
+}
+.service .ico ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.service .ico ul li a {
+    display: block;
+}
+.service .ico ul li a strong {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+.service .ico ul li a i {
+    margin: 25% 0 0 0;
+    font-size: 50px;
+}
+.service .ico ul li a span {
+    display: block;
+    margin: 30px 0 0 0;   
+    font-family: 'GongGothicMedium';
+    font-size: 16px;
+    font-weight: 300;
+    white-space: nowrap
+}
+@media screen and (max-width:640px){
+    .service {
+        margin: 0 0 70px 0;
+        height: 500px;
+    }
+    .service .txt {
+        width: 100%;
+    }
+    .service .txt h2 {
+        padding: 43px 0 10px 0;
+        font-size: 22px;
+    }
+    .service .txt p {
+        font-size: 13px;
+    }
+    .service .txt p .m_no {
+        display: none;
+    }
+    .service .ico {
+        position: absolute;
+        right: 0;
+        top: 30%;
+    }
+    .service .ico ul li {
+        margin: 0 25px 70px 25px;
+        width: auto;
+    }
+    .service .ico ul li:last-child {
+        display: none;
+    }
+    .service .ico ul li a {
+        width: 100px;
+        height: 100px;
+    }
+    .service .ico ul li a span {
+        display: inline-block;
+        margin: 30px 0 0 0;   
+        font-size: 14px;
+    }
+}
+
+.traffic {
+    position: relative;
+    margin: 0 0 207px 0;
+}
+.traffic .txt {
+    width: 20%;
+}
+.traffic h2 {
+    color: #00248C;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'GongGothicMedium';
+}
+.traffic p {
+    width: 320px;
+    color: #666666;
+    font-size: 16px;
+}
+.traffic .box {
+    position: absolute;
+    right: calc(50% - 700px);
+    top: -20%;
+}
+.traffic .box li {
+    float: left;
+    margin-left: 50px;
+    width: 460px;
+    height: 160px;
+}
+.traffic .box li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #00248C;
+    border-radius: 50px;
+}
+.traffic .box li a i {
+    font-size: 40px;
+}
+.traffic .box li a span {
+    font-size: 26px;
+    font-family: 'GongGothicMedium';
+}
+
+@media screen and (max-width:640px){
+    .traffic {
+        margin: 0 0 86px 0;
+        height: 274px;
+    }
+    .traffic .txt {
+        width: 100%;
+    }
+    .traffic h2 {
+        font-size: 22px;
+    }
+    .traffic p {
+        width: 224px;
+        font-size: 13px;
+    }
+    .traffic .box {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+    }
+    .traffic .box li {
+        margin-left: 0;
+        margin-right: 16px;
+        width: 150px;
+        height: 150px;
+    }
+    .traffic .box li:last-child {
+        margin-right: 0;
+    }
+    .traffic .box li a {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        align-content: space-around;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .traffic .box li a i {
+        font-size: 25px;
+    }
+    .traffic .box li a span {
+        font-size: 18px;
+    }
+}
+
+.footer {
+    position: relative;
+    height: 600px;
+    padding: 136px 0 0 0;
+    background: url(../images/main/footer_img.png) no-repeat center center / cover;
+}
+.footer .sns {
+    float: right;
+    margin: 10px 0 0 0;
+}
+.footer .sns ul {
+    margin-right: 18px;
+}
+.footer .sns ul li {
+    float: left;
+    margin-left: 30px;
+}
+.footer h3 {
+    font-size: 28px;
+    width: 10%;
+    color: #DDDDDD;
+}
+.footer .inner {
+    position: absolute;
+    right: calc(50% - 460px);
+    top: 24%;
+}
+.footer .inner .fnav {
+    color: #fff;
+    font-size: 14px;
+}
+.footer .inner .fnav ul li {
+    float: left;
+    margin: 0 30px 10px 0;
+}
+.footer .inner .finfo {
+    margin: 0 0 50px 0;
+    color: #DDDDDD;
+    font-size: 14px;
+}
+.footer .inner .finfo span {
+    display: inline-block;
+    margin: 0 30px 0 0;
+}
+.footer .inner .end {
+    color: #DDDDDD;
+    font-size: 14px;
+}
+.footer .inner .end p {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        height: 522px;
+        padding: 72px 0 0 0;
+    }
+    .footer .sns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: none;
+        margin: 0;
+    }
+    .footer .sns ul {
+        margin-right: 0;
+    }
+    .footer .sns ul li {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+    .footer h3 {
+        display: none;
+    }
+    .footer .inner {
+        margin: 150px 0 0 0;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        width: 100%;
+    }
+    .footer .inner .fnav {
+        width: 100%;
+        margin-bottom: 22px;
+        font-size: 13px;
+    }
+    .footer .inner .fnav ul li {
+        margin: 0 28px 0 0;
+    }
+    .footer .inner .finfo {
+        margin: 0 0 55px 0;
+        font-size: 13px;
+    }
+    .footer .inner .finfo span {
+        display: inline-block;
+        margin: 0 30px 0 0;
+    }
+    .footer .inner .end {
+        font-size: 13px;
+    }
+    .footer .inner .end p {
+        margin-bottom: 20px;
+    }
 }
