@@ -17,7 +17,6 @@ $(document).ready(function(){
 
     });
 
-
     const swiper_course = new Swiper('.course .list', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 48, /* 팝업과 팝업 사이 여백 */
@@ -42,9 +41,10 @@ $(document).ready(function(){
 
 
    const swiper_sights = new Swiper('.sights .list', { /* 팝업을 감싼는 요소의 class명 */
+        effect: "fade", /* fade 효과 */
 
         autoplay: {  /* 팝업 자동 실행 */
-            delay: 3000,
+            delay: 2500,
             disableOnInteraction: true,
         },
 
@@ -56,8 +56,13 @@ $(document).ready(function(){
         },
 
     });
-
-
+        
+    $('header .header_top, header .header_sub').on('mouseenter focusin', function(){
+        $('header').addClass('over')
+    })
+    $('header').on('mouseleave', function(){
+        $('header').removeClass('over')
+    })
 
 
 });//document.ready

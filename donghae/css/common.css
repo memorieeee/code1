@@ -1,12 +1,36 @@
 /* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
-@font-face {
-    font-family: 'GongGothicMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+@font-face{
+	font-family:'GongGothic';
+	src:url('GongGothic_Light.eot');
+	src:url("../fonts/GongGothic_Light.eot?#iefix") format('embedded-opentype'),
+        url("../fonts/GongGothic_Light.woff") format("woff"),
+        url("../fonts/GongGothic_Light.ttf") format('truetype');
+	font-weight:300;
+	font-style: normal;
 }
+
+@font-face{
+	font-family:'GongGothic';
+	src:url('GongGothic_Medium.eot');
+	src:url("../fonts/GongGothic_Medium.eot?#iefix") format('embedded-opentype'),
+        url("../fonts/GongGothic_Medium.woff") format("woff"),
+        url("../fonts/GongGothic_Medium.ttf") format('truetype');
+	font-weight:400;
+	font-style: normal;
+}
+
+@font-face{
+	font-family:'GongGothic';
+	src:url('GongGothic_Bold.eot');
+	src:url("../fonts/GongGothic_Bold.eot?#iefix") format('embedded-opentype'),
+        url("../fonts/GongGothic_Bold.woff") format("woff"),
+        url("../fonts/GongGothic_Bold.ttf") format('truetype');
+	font-weight:700;
+	font-style: normal;
+}
+
 
 html, body {
     color: #3D3D3D;
