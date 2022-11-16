@@ -72,13 +72,17 @@
     font-family: 'GongGothic';
     line-height: 90px;
 }
-.header .header_sub .all_menu button {
-    display: block;
+.header .header_sub .all_menu  {
     position: absolute;
     right: calc(50% - 700px);
     top: 34px;
+}
+.header .header_sub .all_menu button {
+    display: block;
     background: url(../images/common/menu.svg) no-repeat center center / cover;
     width: 30px;
+    height: 20px;
+
 }
 .header .header_sub .all_menu button span {
     font-size: 0;
@@ -90,6 +94,7 @@ header.over {
     background-color: rgba(255,255,255,0.8);
     color: #3D3D3D;
     height: 130px;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
 }
 header.over .header_top ul li.search::before {
     background-color: #3D3D3D;
@@ -104,8 +109,8 @@ header.over .header_sub .logo {
 header.over .header_sub .all_menu button {
     background: url(../images/common/menu_over.svg) no-repeat center center / cover;
 }
-header.over .header_sub .all_menu:hover {
-    color: #082C8F;
+header.over .header_sub .all_menu button:hover {
+    background: url(../images/common/menu_blue.svg) no-repeat center center / cover;
 }
 header.over a:hover {
     color: #082C8F;
@@ -241,6 +246,7 @@ header.over a:hover {
     padding-top: 33px;
     background-color: rgba(255,255,255,0.3);
     border-radius: 30px;
+    transition: transform 0.3s, background-color 0.2s, color 0.2s;
 }
 .visual .widget ul li a:hover {
     color: #082C8F;
@@ -444,18 +450,29 @@ header.over a:hover {
     font-size: 56px;
     color: #082C8F;
 }
+@media screen and (max-width:1500px){
+    .course .menu > ul.name > li .list {
+        left: 30px;
+        width: calc(100% - 60px);
+    }
+    .course .btn .left {
+        position: absolute;
+        left: 0;
+        top: 57%;
+        z-index: 10;
+    }
+    .course .btn .right {
+        position: absolute;
+        right: 0;
+        top: 57%;
+        z-index: 10;
+    }
+}
 @media screen and (max-width:1440px){
     .course {
         margin: 130px 0 160px 0;
     }
-    .course .btn .left {
-        left: -35px;
-        right: auto;
-    }
-    .course .btn .right {
-        right: -35px;
-        left: auto;
-    }
+
 }
 @media screen and (max-width:900px){
     .course {
@@ -516,14 +533,6 @@ header.over a:hover {
     .course .menu ul li .list ul li a span {
         font-size: 13px;
         margin-top: 10px;
-    }
-    .course .btn .left {
-        left: 5px;
-        top: 62%;
-    }
-    .course .btn .right {
-        right: 5px;
-        top: 62%;
     }
     .course .btn button i {
         font-size: 50px;
@@ -586,6 +595,7 @@ header.over a:hover {
 .sights .list .txt button {
     width: 120px;
     height: 40px;
+    color: #082C8F;
     background-color: #fff;
     border: 1px solid #082C8F;
     border-radius: 30px;
