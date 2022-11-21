@@ -1,0 +1,64 @@
+@import url('default.css');
+@import url('common.css');
+
+body {
+    background: url(../images/main/visual_all.png);
+}
+header {
+    height: 100px;
+}
+header .logo {
+    margin: 35px 0 0 90px;
+    font-size: 24px;
+    color: #6077BD;
+}
+header .gnb {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+}
+header .gnb ul li {
+    float: left;
+    line-height: 100px;
+    padding: 0 17px;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 16px;
+}
+header .ico {
+    position: absolute;
+    right: 260px;
+    top: 40px;
+}
+header .ico ul li {
+    float: left;
+    margin-left: 40px;
+}
+header .ico ul li a {
+    display: block;
+}
+
+.visual {
+    position: relative;
+    text-align: center;
+}
+.visual h2 {
+    display: inline-block;
+    position: relative;
+    color: #1D1D1D;
+    font-family: serif;
+    font-size: 120px;
+    font-weight: 300;
+    line-height: 120px;
+    text-align: left;
+    z-index: 10;
+}
+.visual h2 span {
+    color: #6077BD;
+}
+.visual .pic {
+    position: relative;
+    margin-top: -171px;
+}
