@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
 
 html, body {
+    -webkit-font-smoothing: antialiased;
     color: #3D3D3D;
     line-height: 1.5;
-    font-family: 'Noto Sans KR', 'Noto Serif KR', serif, 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
+    font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
     /* 폰트 적용 우선순위
        을유 웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
        apple sd gothic - 아이폰에서 지원하는 폰트 */
@@ -59,3 +60,24 @@ html, body {
 .skip_nav a:focus {
     top: 0;
 } 
+.serif {
+    font-family: "Noto Serif KR";
+}
+::-moz-selection {
+    background: #6077BD;
+    color: #fff;
+}
+::selection {
+background: #6077BD;
+color: #fff;
+}
+
+::-moz-selection {
+background: #6077BD;
+color: #fff;
+}
+
+::-webkit-selection {
+background: #6077BD;
+color: #fff;
+}

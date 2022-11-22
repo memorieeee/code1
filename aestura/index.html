@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0">
     <title>에스트라 웹사이트</title>
 </head>
@@ -43,41 +41,189 @@
                     <span>Aestura</span>
                 </h2>
                 <div class="pic">
-                    <img src="images/main/visual2.png">
+                    <img src="images/main/visual2.png" alt="">
                 </div>
             </div>
         </section>
         <section class="best">
             <div class="txt"> 
                 <h2>Best Seller</h2>
+                <button><i class="material-symbols-rounded">add_circle</i></button>
                 <p>피부 건강과 아름다움, 마음의 상처까지<br>케어하는 AESTURA의 더마 케어 라인</p>
-                <li><a href="#n" target="_blank" title="새창으로 열림"><i class="material-symbols-rounded">add_circle</i></a></li>
             </div>
-            <div class="swiper">
+            <div class="cnt swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/best1.png" alt=""><span>아토베리어365 크림 ATOBARRIER365 CREAM</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/best2.png" alt=""><span>아토베리어365 하이드로 수딩크림 ATOBARRIER 365 HYDRO SOOTHING CREAM</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/best3.png" alt=""><span>아토베리어365 하이드로 에센스 ATOBARRIER365 HYDRO ESSENCE</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/best4.png" alt=""><span>에이시카 365 소프트 진정 팩 패드 A-CICA 365 SOFT CALMING MASK PAD</span></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="medical">
+            <div class="bg_txt">MADE IN [SAFE FACTORY]™ MADE IN [SAFE FACTORY]™ MADE IN [SAFE FACTORY]™ MADE IN [SAFE FACTORY]™</div>
+            <div class="left">
+                <img src="images/contents/medical.png" alt="">
+                <div class="txt">
+                    <span class="up">매일 케어하는 나의 피부<br>AESTURA 365<br>아토베리어365 크림</span>
+                    <span class="down">데일리 케어로 부족한 피부엔 병<br>원전용 아토베리어 크림</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="txt">
+                    <a href="#n">
+                        <h3>Medical Base Line &<br>
+                            Daily Beauty Line</h3>
+                        <p>연약한 피부의 개선을 도와주는<br>
+                            AESTURA의 병·의원 판매상품 라인</p>
+                    </a>
+                </div>
+                <button><i class="material-symbols-rounded">add_circle</i></button>
+            </div>
+        </section>
+        <section class="steady">
+            <div class="txt"> 
+                <h2>Steady Seller</h2>
+                <button><i class="material-symbols-rounded">add_circle</i></button>
+                <p>메디의 놀라움이 뷰티로 드러난다<br>
+                    메디뷰티 AESTURA'S BEST PRODUCT</p>
+            </div>
+            <div class="cnt swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady1.png" alt="">
+                        <span>THERACNE 365 CLEAR DEEP CLEANSING FOAM<br>테라크네365 클리어 딥 클렌징 폼</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady2.png" alt="">
+                        <span>A-CICA STRESS RELIEF CREAM<br>에이시카 스트레스 릴리프 크림</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady3.png" alt="">
+                        <span>A-CICA 365 SOFT CALMING MASK PAD<br>에이시카 365 소프트 진정 팩 패드</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady4.png" alt="">
+                        <span>A-CICA 365 CALMING CREAM<br>에이시카 365 수분 진정 크림</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady5.png" alt="">
+                        <span>REGEDERM RX LIFTING CAPSULE CREAM<br>리제덤RX 리프팅 캡슐 크림</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady6.png" alt="">
+                        <span>AESTURA DERMA SCALP PRO SEBO SHAMPOO<br>더마 스칼프 프로 세보 샴푸</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady7.png" alt="">
+                        <span>A-CICA PRO POlLUTION CLEANSING GEL<br>에이시카 프로 폴루션 클렌징 젤</span></a></li>
+                    <li class="swiper-slide"><a href="#n"><img src="images/contents/steady8.png" alt="">
+                        <span>AESTURA ATOBARRIER365 BODYLOTION<br>에스트라 아토베리어365 바디로션</span></a></li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="txt"> 
+                <h2>Best Blogview</h2>
+                <button><i class="material-symbols-rounded">add_circle</i></button>
+            </div>
+            <div class="cnt swiper">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <a href="#n">
-                            <img src="images/contents/best1.png">
+                            <div class="img">
+                              <img src="images/contents/blog1.png" alt="">
+                            </div>
+                            <div class="review">
+                                <span>에스트라 아토베리어365 로션 이거 왜애 ~ 인제 썼죠 ?</span>
+                                <p>피부를 보호해주면서 손상된 피부 장벽을 개선해주고 강화해주는 로션을 만나봤어요. 
+                                    얼굴 뿐 아니라, 바디에도 골고루 발라줄 수 있는 로션타입으로 손상된 어느부위라도 부드럽게 감싸주는데요. </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#n">
+                            <div class="img">
+                                <img src="images/contents/blog2.png" alt="">
+                            </div>
+                            <div class="review">
+                                <span>피부장벽을 지켜주는 보습장벽로션 에스트라 아토베리어365 로션</span>
+                                <p>피부가 건조해지고, 이상신호를 보내는 것은 피부 장벽이 무너졌거나, 손상이 되었기 때문이래요! 
+                                    그래서 저는 피부장벽을 지켜주는 에스트라 아토베리어365 로션 사용해요~</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#n">
+                            <div class="img">
+                                <img src="images/contents/blog3.png" alt="">
+                            </div>
+                            <div class="review">
+                                <span>에스트라 테라크네365 설퍼 트러블패치, 트러블 고민 잠재우자!</span>
+                                <p>'에스트라'는 병원에서부터 시작한 믿고 쓸 수 있는 스킨케어 브랜드인데요. 피부과에서도 에스트라 제품 많이 쓰는데 
+                                    특히 '아토베리어365' 보습 라인이 굉장히 유명해서 저도 잘 알고 있었던 바로 이 브랜드에서 이번에 새롭게 설퍼 라인을 선보였어요 !</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#n">
+                            <div class="img">
+                                <img src="images/contents/blog4.png" alt="">
+                            </div>
+                            <div class="review">
+                                <span>에스트라 7인7피셜, 이미도 크림으로 유명한 아토베리어365크림</span>
+                                <p>이 제품은 제가 벌써 한 통은 가볍게 비운 아토베리어365 크림이예요. 
+                                    더마온 보습캡슐이 함유되어서 고보습 케어를 해주는 크림이에요. 
+                                    튜브 타입이라서 위생적이고 끈적임 없이 보습력이 정말 좋아서 진짜 진짜 애정해요</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#n">
+                            <div class="img">
+                                <img src="images/contents/blog5.png" alt="">
+                            </div>
+                            <div class="review">
+                                <span>에스트라(AESTURA) 아토베리어365 로션, 겟잇뷰티 반전로션 찜해요</span>
+                                <p>에스트라는 피부과에서 인정받은 브랜드로 피부과 다니시는 분이라면 한번쯤 꼭 보셨을거예요. 
+                                    기존에는 피부과에서만 구매할 수 있었는데 최근에는 올리브영, 아리따움, 아모레퍼시픽 몰에서 에스트라365 라인을 만날 수 있거든요.</p>
+                            </div>
                         </a>
                     </li>
                 </ul>
             </div>
         </section>
-        <section class="medical">
-            
-        </section>
-        <section class="steady">
-
-        </section>
-        <section class="blog">
-
-        </section>
         <section class="instagram">
-
+            <div class="txt"> 
+                <strong>#AESTURA STORIES</strong>
+                <h2>Instagram</h2>
+                <button><i class="material-symbols-rounded">add_circle</i></button>
+            </div>
+            <div class="pic">
+                <ul>
+                    <li><a href="#n"><img src="images/contents/insta1.png" alt=""></a></li>
+                    <li><a href="#n"><img src="images/contents/insta2.png" alt=""></a></li>
+                    <li><a href="#n"><img src="images/contents/insta3.png" alt=""></a></li>
+                    <li><a href="#n"><img src="images/contents/insta4.png" alt=""></a></li>
+                    <li><a href="#n"><img src="images/contents/insta5.png" alt=""></a></li>
+                </ul>
+            </div>
         </section>
         <footer class="footer">
             <div class="wrapper">
-
+                <div class="sns">
+                    <ul>
+                        <li><a href="https://www.instagram.com/aestura.official/" target="_blank" title="새창으로 열림" class="insta">인스타그램</a></li>
+                        <li><a href="https://www.facebook.com/aestura/" target="_blank" title="새창으로 열림" class="facebook">페이스북</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCVj6JWY6c9IYvI0MWZPp2Gg" target="_blank" title="새창으로 열림" class="yt">유튜브</a></li>
+                    </ul>
+                </div>
+                <div class="fnav clearfix">
+                    <ul>
+                        <li><a href="#n"><span>개인정보 처리방침</span></a></li>
+                        <li><a href="#n">사이트 이용약관</a></li>
+                        <li><a href="#n">이전 사이트 이용약관</a></li>
+                        <li><a href="#n">이전 개인정보 처리방침</a></li>
+                        <li><a href="#n">이메일주소 무단 수집거부</a></li>
+                    </ul>
+                </div>
+                <div class="finfo">
+                   <span>㈜아모레퍼시픽 서울특별시 용산구 한강대로 100(한강로2가)</span>
+                   <span>대표이사 : 안세홍</span>
+                   <span>사업자 등록번호 : 106-86-43373</span>
+                   <span>사업자정보확인</span>
+                   <span>통신판매업 신고번호: 2017-서울용산-1308</span>
+                   <span>호스팅 서비스 제공자 ㈜아모레퍼시픽</span>
+                </div>
+                <div class="copyright">AMOREPACIFIC CORPORATION. ALL RIGHTS RESERVED.</div>
             </div>
         </footer>
     </div>
