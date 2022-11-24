@@ -17,7 +17,7 @@ $(document).ready(function(){
 		breakpoints: {
 			640: {    /* 640px 이상일때 적용 */
 				slidesPerView: 5,
-				spaceBetween: 28,
+				spaceBetween: 35,
 			},
 		},
 		pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
@@ -35,6 +35,42 @@ $(document).ready(function(){
 			},
 		},
 	});
+
+	let winH
+	let docH
+	let scrolling=0
+	let move_scroll
+	let bg_name=$('.body_bg img') 
+
+	bg_scroll()
+	function bg_scroll(){
+		winH = $(window).height()
+		docH = $(document).height()
+		scrolling = $(window).scrollTop()
+		if(scrolling > 100){
+			move_scroll = scrolling - 100
+		}else{
+			move_scroll = 0
+		}
+		console.log()
+		bg_name.height(docH)
+		bg_name.css('top',-scrolling +'px')
+		// bg_name.animate({
+		// 	top: -move_scroll
+		// },0)
+
+		// bg_name.animate({
+		// 	top: -scrolling
+		// },1000)
+
+	}
+	$(window).scroll(function(){
+		bg_scroll()
+		bg_name.addClass('ani')
+	})
+	$(window).resize(function(){
+		bg_scroll()
+	})
 
 
 
